@@ -4,8 +4,6 @@ This repository contains the Verilog HDL implementation of a **direct-mapped cac
 
 The project focuses on understanding memory hierarchy concepts, cache addressing, and control logic through a hardware-level implementation.
 
----
-
 ## 📌 Project Overview
 
 Caches improve processor performance by storing frequently accessed data closer to the CPU.  
@@ -17,8 +15,6 @@ The design demonstrates:
 - Read and write operations
 - Interaction between cache and main memory
 
----
-
 ## 🛠 Features
 
 - Direct-mapped cache architecture
@@ -27,8 +23,6 @@ The design demonstrates:
 - Read and write control logic
 - Integration with a simple main memory module
 - Fully functional testbench for verification
-
----
 
 ## 🧱 Architecture Components
 
@@ -41,8 +35,6 @@ The design demonstrates:
 - **Main Memory Module**  
   Simulates lower-level memory access during cache misses.
 
----
-
 ## 🧪 Verification
 
 A Verilog testbench is included to validate cache behavior under different scenarios:
@@ -52,16 +44,12 @@ A Verilog testbench is included to validate cache behavior under different scena
 
 Waveforms were analyzed to verify correctness of data output and hit/miss signals.
 
----
-
 ## 🧰 Tech Stack
 
 - Verilog HDL
 - Digital Logic Design
 - FSM-based Control Logic
 - Testbench Simulation
-
----
 
 ## 📚 Learning Outcomes
 
@@ -70,10 +58,9 @@ Waveforms were analyzed to verify correctness of data output and hit/miss signal
 - Insight into memory hierarchy and cache performance trade-offs
 - Foundation for advanced cache designs (set-associative, fully associative)
 
----
-
-## 👤 Author
-
-**Moinak Goswami**  
-B.Tech, Computer Science and Engineering  
-Indian Institute of Technology, Ropar
+## 👤 Team Member's:
+1. Moinak Goswami 2024CSB1225
+2. Sarthak Nitin Keshaowar 2024CSB1215
+3. Harshit Sahu 2024CSB1203
+4. Palak Gulati 2024CSB1137
+5. Garima Kamra 2024CSB1115
