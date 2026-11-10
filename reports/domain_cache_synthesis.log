@@ -1,0 +1,457 @@
+
+-- Running command `read_verilog rtl/labs/domain_cache.v; hierarchy -check -top domain_cache; proc; opt; check -assert' --
+
+1. Executing Verilog-2005 frontend: rtl/labs/domain_cache.v
+Parsing Verilog input from `rtl/labs/domain_cache.v' to AST representation.
+Generating RTLIL representation for module `\domain_cache'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \domain_cache
+
+2.2. Analyzing design hierarchy..
+Top module:  \domain_cache
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+Cleaned up 1 empty switch.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 8 switch rules as full_case in process $proc$rtl/labs/domain_cache.v:31$27 in module domain_cache.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 36 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~8 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+     1/82: $4$memwr$\next_way$rtl/labs/domain_cache.v:78$26_EN[0:0]$176
+     2/82: $4$memwr$\next_way$rtl/labs/domain_cache.v:78$26_DATA[0:0]$175
+     3/82: $4$memwr$\next_way$rtl/labs/domain_cache.v:78$26_ADDR[0:0]$174
+     4/82: $8\selected_way[0:0]
+     5/82: $7\selected_way[0:0]
+     6/82: $6\selected_way[0:0]
+     7/82: $3$memwr$\next_way$rtl/labs/domain_cache.v:78$26_EN[0:0]$153
+     8/82: $3$memwr$\next_way$rtl/labs/domain_cache.v:78$26_DATA[0:0]$152
+     9/82: $3$memwr$\next_way$rtl/labs/domain_cache.v:78$26_ADDR[0:0]$151
+    10/82: $3$memwr$\owner$rtl/labs/domain_cache.v:75$25_EN[0:0]$150
+    11/82: $3$memwr$\owner$rtl/labs/domain_cache.v:75$25_DATA[0:0]$149
+    12/82: $3$memwr$\owner$rtl/labs/domain_cache.v:75$25_ADDR[31:0]$148
+    13/82: $3$memwr$\words$rtl/labs/domain_cache.v:74$24_EN[31:0]$147
+    14/82: $3$memwr$\words$rtl/labs/domain_cache.v:74$24_DATA[31:0]$146
+    15/82: $3$memwr$\words$rtl/labs/domain_cache.v:74$24_ADDR[31:0]$145
+    16/82: $3$memwr$\tags$rtl/labs/domain_cache.v:73$23_EN[14:0]$144
+    17/82: $3$memwr$\tags$rtl/labs/domain_cache.v:73$23_DATA[14:0]$143
+    18/82: $3$memwr$\tags$rtl/labs/domain_cache.v:73$23_ADDR[31:0]$142
+    19/82: $3$memwr$\valid$rtl/labs/domain_cache.v:72$22_EN[0:0]$141
+    20/82: $3$memwr$\valid$rtl/labs/domain_cache.v:72$22_ADDR[31:0]$140
+    21/82: $5\selected_way[0:0]
+    22/82: $4\selected_way[0:0]
+    23/82: $4\found[0:0]
+    24/82: $3\selected_way[0:0]
+    25/82: $3\found[0:0]
+    26/82: $2$memwr$\next_way$rtl/labs/domain_cache.v:78$26_EN[0:0]$106
+    27/82: $2$memwr$\next_way$rtl/labs/domain_cache.v:78$26_DATA[0:0]$105
+    28/82: $2$memwr$\next_way$rtl/labs/domain_cache.v:78$26_ADDR[0:0]$104
+    29/82: $2$memwr$\owner$rtl/labs/domain_cache.v:75$25_EN[0:0]$103
+    30/82: $2$memwr$\owner$rtl/labs/domain_cache.v:75$25_DATA[0:0]$102
+    31/82: $2$memwr$\owner$rtl/labs/domain_cache.v:75$25_ADDR[31:0]$101
+    32/82: $2$memwr$\words$rtl/labs/domain_cache.v:74$24_EN[31:0]$100
+    33/82: $2$memwr$\words$rtl/labs/domain_cache.v:74$24_DATA[31:0]$99
+    34/82: $2$memwr$\words$rtl/labs/domain_cache.v:74$24_ADDR[31:0]$98
+    35/82: $2$memwr$\tags$rtl/labs/domain_cache.v:73$23_EN[14:0]$97
+    36/82: $2$memwr$\tags$rtl/labs/domain_cache.v:73$23_DATA[14:0]$96
+    37/82: $2$memwr$\tags$rtl/labs/domain_cache.v:73$23_ADDR[31:0]$95
+    38/82: $2$memwr$\valid$rtl/labs/domain_cache.v:72$22_EN[0:0]$94
+    39/82: $2$memwr$\valid$rtl/labs/domain_cache.v:72$22_ADDR[31:0]$93
+    40/82: $2\selected_way[0:0]
+    41/82: $2\way_i[31:0]
+    42/82: $2\found[0:0]
+    43/82: $1\set_i[31:0]
+    44/82: $1\way_i[31:0]
+    45/82: $1$memwr$\owner$rtl/labs/domain_cache.v:43$21_EN[0:0]$78
+    46/82: $1$memwr$\words$rtl/labs/domain_cache.v:42$20_EN[31:0]$77
+    47/82: $1$memwr$\tags$rtl/labs/domain_cache.v:41$19_EN[14:0]$76
+    48/82: $1$memwr$\valid$rtl/labs/domain_cache.v:40$18_EN[0:0]$75
+    49/82: $1$memwr$\owner$rtl/labs/domain_cache.v:43$17_EN[0:0]$74
+    50/82: $1$memwr$\words$rtl/labs/domain_cache.v:42$16_EN[31:0]$73
+    51/82: $1$memwr$\tags$rtl/labs/domain_cache.v:41$15_EN[14:0]$72
+    52/82: $1$memwr$\valid$rtl/labs/domain_cache.v:40$14_EN[0:0]$71
+    53/82: $1$memwr$\next_way$rtl/labs/domain_cache.v:38$13_EN[0:0]$70
+    54/82: $1$memwr$\owner$rtl/labs/domain_cache.v:43$12_EN[0:0]$69
+    55/82: $1$memwr$\words$rtl/labs/domain_cache.v:42$11_EN[31:0]$68
+    56/82: $1$memwr$\tags$rtl/labs/domain_cache.v:41$10_EN[14:0]$67
+    57/82: $1$memwr$\valid$rtl/labs/domain_cache.v:40$9_EN[0:0]$66
+    58/82: $1$memwr$\owner$rtl/labs/domain_cache.v:43$8_EN[0:0]$65
+    59/82: $1$memwr$\words$rtl/labs/domain_cache.v:42$7_EN[31:0]$64
+    60/82: $1$memwr$\tags$rtl/labs/domain_cache.v:41$6_EN[14:0]$63
+    61/82: $1$memwr$\valid$rtl/labs/domain_cache.v:40$5_EN[0:0]$62
+    62/82: $1$memwr$\next_way$rtl/labs/domain_cache.v:38$4_EN[0:0]$61
+    63/82: $0\response_valid[0:0]
+    64/82: $1$memwr$\next_way$rtl/labs/domain_cache.v:78$26_EN[0:0]$92
+    65/82: $1$memwr$\next_way$rtl/labs/domain_cache.v:78$26_DATA[0:0]$91
+    66/82: $1$memwr$\next_way$rtl/labs/domain_cache.v:78$26_ADDR[0:0]$90
+    67/82: $1$memwr$\owner$rtl/labs/domain_cache.v:75$25_EN[0:0]$89
+    68/82: $1$memwr$\owner$rtl/labs/domain_cache.v:75$25_DATA[0:0]$88
+    69/82: $1$memwr$\owner$rtl/labs/domain_cache.v:75$25_ADDR[31:0]$87
+    70/82: $1$memwr$\words$rtl/labs/domain_cache.v:74$24_EN[31:0]$86
+    71/82: $1$memwr$\words$rtl/labs/domain_cache.v:74$24_DATA[31:0]$85
+    72/82: $1$memwr$\words$rtl/labs/domain_cache.v:74$24_ADDR[31:0]$84
+    73/82: $1$memwr$\tags$rtl/labs/domain_cache.v:73$23_EN[14:0]$83
+    74/82: $1$memwr$\tags$rtl/labs/domain_cache.v:73$23_DATA[14:0]$82
+    75/82: $1$memwr$\tags$rtl/labs/domain_cache.v:73$23_ADDR[31:0]$81
+    76/82: $1$memwr$\valid$rtl/labs/domain_cache.v:72$22_EN[0:0]$80
+    77/82: $1$memwr$\valid$rtl/labs/domain_cache.v:72$22_ADDR[31:0]$79
+    78/82: $1\found[0:0]
+    79/82: $1\selected_way[0:0]
+    80/82: $0\response_data[31:0]
+    81/82: $0\response_cost[7:0]
+    82/82: $0\response_hit[0:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\domain_cache.\response_valid' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$648' with positive edge clock.
+Creating register for signal `\domain_cache.\response_hit' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$649' with positive edge clock.
+Creating register for signal `\domain_cache.\response_cost' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$650' with positive edge clock.
+Creating register for signal `\domain_cache.\response_data' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$651' with positive edge clock.
+Creating register for signal `\domain_cache.\set_i' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$652' with positive edge clock.
+Creating register for signal `\domain_cache.\way_i' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$653' with positive edge clock.
+Creating register for signal `\domain_cache.\selected_way' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$654' with positive edge clock.
+Creating register for signal `\domain_cache.\found' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$655' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\next_way$rtl/labs/domain_cache.v:38$4_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$656' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\valid$rtl/labs/domain_cache.v:40$5_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$657' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\tags$rtl/labs/domain_cache.v:41$6_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$658' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\words$rtl/labs/domain_cache.v:42$7_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$659' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\owner$rtl/labs/domain_cache.v:43$8_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$660' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\valid$rtl/labs/domain_cache.v:40$9_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$661' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\tags$rtl/labs/domain_cache.v:41$10_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$662' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\words$rtl/labs/domain_cache.v:42$11_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$663' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\owner$rtl/labs/domain_cache.v:43$12_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$664' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\next_way$rtl/labs/domain_cache.v:38$13_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$665' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\valid$rtl/labs/domain_cache.v:40$14_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$666' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\tags$rtl/labs/domain_cache.v:41$15_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$667' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\words$rtl/labs/domain_cache.v:42$16_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$668' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\owner$rtl/labs/domain_cache.v:43$17_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$669' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\valid$rtl/labs/domain_cache.v:40$18_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$670' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\tags$rtl/labs/domain_cache.v:41$19_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$671' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\words$rtl/labs/domain_cache.v:42$20_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$672' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\owner$rtl/labs/domain_cache.v:43$21_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$673' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\valid$rtl/labs/domain_cache.v:72$22_ADDR' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$674' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\valid$rtl/labs/domain_cache.v:72$22_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$675' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\tags$rtl/labs/domain_cache.v:73$23_ADDR' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$676' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\tags$rtl/labs/domain_cache.v:73$23_DATA' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$677' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\tags$rtl/labs/domain_cache.v:73$23_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$678' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\words$rtl/labs/domain_cache.v:74$24_ADDR' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$679' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\words$rtl/labs/domain_cache.v:74$24_DATA' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$680' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\words$rtl/labs/domain_cache.v:74$24_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$681' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\owner$rtl/labs/domain_cache.v:75$25_ADDR' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$682' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\owner$rtl/labs/domain_cache.v:75$25_DATA' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$683' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\owner$rtl/labs/domain_cache.v:75$25_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$684' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\next_way$rtl/labs/domain_cache.v:78$26_ADDR' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$685' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\next_way$rtl/labs/domain_cache.v:78$26_DATA' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$686' with positive edge clock.
+Creating register for signal `\domain_cache.$memwr$\next_way$rtl/labs/domain_cache.v:78$26_EN' using process `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+  created $dff cell `$procdff$687' with positive edge clock.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 8 empty switches in `\domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+Removing empty process `domain_cache.$proc$rtl/labs/domain_cache.v:31$27'.
+Cleaned up 8 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module domain_cache.
+<suppressed ~91 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module domain_cache.
+<suppressed ~30 debug messages>
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\domain_cache'.
+<suppressed ~33 debug messages>
+Removed a total of 11 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \domain_cache..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$514.
+    dead port 2/2 on $mux $procmux$508.
+    dead port 2/2 on $mux $procmux$502.
+    dead port 2/2 on $mux $procmux$496.
+    dead port 2/2 on $mux $procmux$490.
+    dead port 2/2 on $mux $procmux$484.
+    dead port 2/2 on $mux $procmux$478.
+    dead port 2/2 on $mux $procmux$472.
+    dead port 2/2 on $mux $procmux$466.
+    dead port 2/2 on $mux $procmux$460.
+    dead port 2/2 on $mux $procmux$454.
+    dead port 2/2 on $mux $procmux$448.
+    dead port 2/2 on $mux $procmux$442.
+    dead port 2/2 on $mux $procmux$436.
+    dead port 2/2 on $mux $procmux$430.
+    dead port 2/2 on $mux $procmux$424.
+    dead port 2/2 on $mux $procmux$418.
+    dead port 2/2 on $mux $procmux$412.
+    dead port 2/2 on $mux $procmux$409.
+    dead port 2/2 on $mux $procmux$403.
+    dead port 2/2 on $mux $procmux$400.
+    dead port 2/2 on $mux $procmux$377.
+    dead port 2/2 on $mux $procmux$374.
+    dead port 2/2 on $mux $procmux$368.
+    dead port 2/2 on $mux $procmux$365.
+    dead port 2/2 on $mux $procmux$359.
+    dead port 2/2 on $mux $procmux$356.
+    dead port 2/2 on $mux $procmux$350.
+    dead port 2/2 on $mux $procmux$347.
+    dead port 2/2 on $mux $procmux$341.
+    dead port 2/2 on $mux $procmux$338.
+    dead port 2/2 on $mux $procmux$332.
+    dead port 2/2 on $mux $procmux$329.
+    dead port 2/2 on $mux $procmux$323.
+    dead port 2/2 on $mux $procmux$320.
+    dead port 2/2 on $mux $procmux$314.
+    dead port 2/2 on $mux $procmux$311.
+    dead port 2/2 on $mux $procmux$305.
+    dead port 2/2 on $mux $procmux$302.
+    dead port 2/2 on $mux $procmux$296.
+    dead port 2/2 on $mux $procmux$293.
+    dead port 2/2 on $mux $procmux$287.
+    dead port 2/2 on $mux $procmux$284.
+    dead port 2/2 on $mux $procmux$278.
+    dead port 2/2 on $mux $procmux$275.
+    dead port 2/2 on $mux $procmux$269.
+    dead port 2/2 on $mux $procmux$266.
+    dead port 2/2 on $mux $procmux$260.
+    dead port 2/2 on $mux $procmux$257.
+    dead port 2/2 on $mux $procmux$251.
+    dead port 2/2 on $mux $procmux$248.
+    dead port 2/2 on $mux $procmux$233.
+    dead port 2/2 on $mux $procmux$230.
+    dead port 1/2 on $mux $procmux$228.
+    dead port 2/2 on $mux $procmux$221.
+    dead port 2/2 on $mux $procmux$218.
+    dead port 1/2 on $mux $procmux$216.
+    dead port 2/2 on $mux $procmux$213.
+    dead port 2/2 on $mux $procmux$206.
+    dead port 2/2 on $mux $procmux$203.
+    dead port 1/2 on $mux $procmux$201.
+    dead port 2/2 on $mux $procmux$196.
+    dead port 2/2 on $mux $procmux$193.
+    dead port 1/2 on $mux $procmux$191.
+    dead port 2/2 on $mux $procmux$186.
+    dead port 2/2 on $mux $procmux$183.
+    dead port 1/2 on $mux $procmux$181.
+Removed 67 multiplexer ports.
+<suppressed ~43 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \domain_cache.
+    Consolidated identical input bits for $mux cell $procmux$541:
+      Old ports: A=15'111111111111111, B=15'000000000000000, Y=$procmux$541_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$541_Y [0]
+      New connections: $procmux$541_Y [14:1] = { $procmux$541_Y [0] $procmux$541_Y [0] $procmux$541_Y [0] $procmux$541_Y [0] $procmux$541_Y [0] $procmux$541_Y [0] $procmux$541_Y [0] $procmux$541_Y [0] $procmux$541_Y [0] $procmux$541_Y [0] $procmux$541_Y [0] $procmux$541_Y [0] $procmux$541_Y [0] $procmux$541_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$538:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$538_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$538_Y [0]
+      New connections: $procmux$538_Y [31:1] = { $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] $procmux$538_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$529:
+      Old ports: A=15'111111111111111, B=15'000000000000000, Y=$procmux$529_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$529_Y [0]
+      New connections: $procmux$529_Y [14:1] = { $procmux$529_Y [0] $procmux$529_Y [0] $procmux$529_Y [0] $procmux$529_Y [0] $procmux$529_Y [0] $procmux$529_Y [0] $procmux$529_Y [0] $procmux$529_Y [0] $procmux$529_Y [0] $procmux$529_Y [0] $procmux$529_Y [0] $procmux$529_Y [0] $procmux$529_Y [0] $procmux$529_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$526:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$526_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$526_Y [0]
+      New connections: $procmux$526_Y [31:1] = { $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] $procmux$526_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$327:
+      Old ports: A=15'111111111111111, B=15'000000000000000, Y=$procmux$327_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$327_Y [0]
+      New connections: $procmux$327_Y [14:1] = { $procmux$327_Y [0] $procmux$327_Y [0] $procmux$327_Y [0] $procmux$327_Y [0] $procmux$327_Y [0] $procmux$327_Y [0] $procmux$327_Y [0] $procmux$327_Y [0] $procmux$327_Y [0] $procmux$327_Y [0] $procmux$327_Y [0] $procmux$327_Y [0] $procmux$327_Y [0] $procmux$327_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$300:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$300_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$300_Y [0]
+      New connections: $procmux$300_Y [31:1] = { $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] $procmux$300_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$568:
+      Old ports: A=15'111111111111111, B=15'000000000000000, Y=$procmux$568_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$568_Y [0]
+      New connections: $procmux$568_Y [14:1] = { $procmux$568_Y [0] $procmux$568_Y [0] $procmux$568_Y [0] $procmux$568_Y [0] $procmux$568_Y [0] $procmux$568_Y [0] $procmux$568_Y [0] $procmux$568_Y [0] $procmux$568_Y [0] $procmux$568_Y [0] $procmux$568_Y [0] $procmux$568_Y [0] $procmux$568_Y [0] $procmux$568_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$565:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$565_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$565_Y [0]
+      New connections: $procmux$565_Y [31:1] = { $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] $procmux$565_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$556:
+      Old ports: A=15'111111111111111, B=15'000000000000000, Y=$procmux$556_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$556_Y [0]
+      New connections: $procmux$556_Y [14:1] = { $procmux$556_Y [0] $procmux$556_Y [0] $procmux$556_Y [0] $procmux$556_Y [0] $procmux$556_Y [0] $procmux$556_Y [0] $procmux$556_Y [0] $procmux$556_Y [0] $procmux$556_Y [0] $procmux$556_Y [0] $procmux$556_Y [0] $procmux$556_Y [0] $procmux$556_Y [0] $procmux$556_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$553:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$553_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$553_Y [0]
+      New connections: $procmux$553_Y [31:1] = { $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] $procmux$553_Y [0] }
+  Optimizing cells in module \domain_cache.
+    Consolidated identical input bits for $mux cell $procmux$469:
+      Old ports: A=15'000000000000000, B=$3$memwr$\tags$rtl/labs/domain_cache.v:73$23_EN[14:0]$144, Y=$procmux$469_Y
+      New ports: A=1'0, B=$procmux$327_Y [0], Y=$procmux$469_Y [0]
+      New connections: $procmux$469_Y [14:1] = { $procmux$469_Y [0] $procmux$469_Y [0] $procmux$469_Y [0] $procmux$469_Y [0] $procmux$469_Y [0] $procmux$469_Y [0] $procmux$469_Y [0] $procmux$469_Y [0] $procmux$469_Y [0] $procmux$469_Y [0] $procmux$469_Y [0] $procmux$469_Y [0] $procmux$469_Y [0] $procmux$469_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$451:
+      Old ports: A=0, B=$3$memwr$\words$rtl/labs/domain_cache.v:74$24_EN[31:0]$147, Y=$procmux$451_Y
+      New ports: A=1'0, B=$procmux$300_Y [0], Y=$procmux$451_Y [0]
+      New connections: $procmux$451_Y [31:1] = { $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] $procmux$451_Y [0] }
+  Optimizing cells in module \domain_cache.
+    Consolidated identical input bits for $mux cell $procmux$607:
+      Old ports: A=15'000000000000000, B=$2$memwr$\tags$rtl/labs/domain_cache.v:73$23_EN[14:0]$97, Y=$procmux$607_Y
+      New ports: A=1'0, B=$procmux$469_Y [0], Y=$procmux$607_Y [0]
+      New connections: $procmux$607_Y [14:1] = { $procmux$607_Y [0] $procmux$607_Y [0] $procmux$607_Y [0] $procmux$607_Y [0] $procmux$607_Y [0] $procmux$607_Y [0] $procmux$607_Y [0] $procmux$607_Y [0] $procmux$607_Y [0] $procmux$607_Y [0] $procmux$607_Y [0] $procmux$607_Y [0] $procmux$607_Y [0] $procmux$607_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$598:
+      Old ports: A=0, B=$2$memwr$\words$rtl/labs/domain_cache.v:74$24_EN[31:0]$100, Y=$procmux$598_Y
+      New ports: A=1'0, B=$procmux$451_Y [0], Y=$procmux$598_Y [0]
+      New connections: $procmux$598_Y [31:1] = { $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] $procmux$598_Y [0] }
+  Optimizing cells in module \domain_cache.
+Performed a total of 14 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\domain_cache'.
+<suppressed ~174 debug messages>
+Removed a total of 58 cells.
+
+4.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$648 ($dff) from module domain_cache (D = \request_valid, Q = \response_valid, rval = 1'0).
+Adding SRST signal on $procdff$649 ($dff) from module domain_cache (D = $procmux$643_Y, Q = \response_hit, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$712 ($sdff) from module domain_cache (D = $4\found[0:0], Q = \response_hit).
+Adding SRST signal on $procdff$650 ($dff) from module domain_cache (D = $procmux$637_Y, Q = \response_cost, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$714 ($sdff) from module domain_cache (D = $ternary$rtl/labs/domain_cache.v:60$139_Y, Q = \response_cost).
+Adding SRST signal on $procdff$651 ($dff) from module domain_cache (D = $procmux$631_Y, Q = \response_data, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$716 ($sdff) from module domain_cache (D = $procmux$629_Y, Q = \response_data).
+Adding EN signal on $procdff$652 ($dff) from module domain_cache (D = 2, Q = \set_i).
+Adding SRST signal on $procdff$653 ($dff) from module domain_cache (D = $2\way_i[31:0], Q = \way_i, rval = 2).
+Adding EN signal on $procdff$654 ($dff) from module domain_cache (D = $2\selected_way[0:0], Q = \selected_way).
+Adding EN signal on $procdff$655 ($dff) from module domain_cache (D = $2\found[0:0], Q = \found).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 1-bit at position 1 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 4 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 6 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$718 ($dffe) from module domain_cache.
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \domain_cache..
+Removed 48 unused cells and 471 unused wires.
+<suppressed ~54 debug messages>
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module domain_cache.
+
+4.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \domain_cache..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \domain_cache.
+Performed a total of 0 changes.
+
+4.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\domain_cache'.
+Removed a total of 0 cells.
+
+4.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \domain_cache..
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module domain_cache.
+
+4.16. Finished OPT passes. (There is nothing left to do.)
+
+5. Executing CHECK pass (checking for obvious problems).
+Checking module domain_cache...
+Found and reported 0 problems.

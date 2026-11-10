@@ -1,0 +1,37 @@
+{
+  "prediction": 0,
+  "kernel_cycles": 630,
+  "firmware_cycles": 78600,
+  "logits": [
+    14829,
+    -20313,
+    -2233,
+    -8822,
+    -10038,
+    -927,
+    -5241,
+    -5375,
+    -841,
+    -1601
+  ],
+  "invalid_frames_rejected": 1,
+  "valid_frames": 2,
+  "second_result": {
+    "prediction": 6,
+    "kernel_cycles": 630,
+    "firmware_cycles": 78540,
+    "logits": [
+      162,
+      -6472,
+      5,
+      -1130,
+      -371,
+      764,
+      1110,
+      202,
+      616,
+      -1107
+    ]
+  },
+  "scope": "Full UART wire protocol + RISC-V + accelerator RTL simulation, accelerated baud divider32; not a physical board test."
+}

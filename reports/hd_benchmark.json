@@ -1,0 +1,21 @@
+{
+  "batch_size": 2,
+  "single_kernel_cycles": [
+    13158,
+    13158
+  ],
+  "batch_kernel_cycles": 13158,
+  "single_transaction_cycles": [
+    118422,
+    118422
+  ],
+  "batch_transaction_cycles": 121802,
+  "transaction_speedup": 1.9445000903105039,
+  "kernel_speedup": 2.0,
+  "predictions": [
+    7,
+    2
+  ],
+  "verified": true,
+  "scope": "Measured standalone RTL cycles, including MMIO transfers and partial-sum accumulation; excludes CPU firmware, image processing and host transport."
+}

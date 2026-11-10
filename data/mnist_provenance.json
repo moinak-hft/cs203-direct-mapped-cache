@@ -1,0 +1,57 @@
+{
+  "dataset": "MNIST",
+  "authors": "Yann LeCun, Corinna Cortes, Christopher J. C. Burges",
+  "homepage": "http://yann.lecun.com/exdb/mnist/",
+  "dataset_card": "https://huggingface.co/datasets/ylecun/mnist/blob/main/README.md",
+  "license": "MIT (as identified by the ylecun/mnist dataset card)",
+  "original_archives": {
+    "train-images-idx3-ubyte.gz": {
+      "url": "https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz",
+      "md5": "f68b3c2dcbeaaa9fbdd348bbdeb94873",
+      "sha256": "440fcabf73cc546fa21475e81ea370265605f56be210a4024d2ca8f203523609",
+      "bytes": 9912422
+    },
+    "train-labels-idx1-ubyte.gz": {
+      "url": "https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz",
+      "md5": "d53e105ee54ea40749a09fcbcd1e9432",
+      "sha256": "3552534a0a558bbed6aed32b30c495cca23d567ec52cac8be1a0730e8010255c",
+      "bytes": 28881
+    },
+    "t10k-images-idx3-ubyte.gz": {
+      "url": "https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz",
+      "md5": "9fb629c4189551a2d022fa330f9573f3",
+      "sha256": "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6",
+      "bytes": 1648877
+    },
+    "t10k-labels-idx1-ubyte.gz": {
+      "url": "https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz",
+      "md5": "ec29112dd5afa0611ce80d1b7f02629c",
+      "sha256": "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6",
+      "bytes": 4542
+    }
+  },
+  "split": "20,000 stratified samples from official60,000 training only; all official10,000 test, original order",
+  "training_subset": {
+    "seed": 2026,
+    "per_class": 2000,
+    "original_count": 60000,
+    "selected_count": 20000,
+    "indices_file": "data/mnist_train_indices.json"
+  },
+  "transform": "Fixed integer pixel quantization: (original_uint8*16+127)//255; no fitted statistics",
+  "binary_format": "gzip of repeated785-byte rows: uint8label,784uint8pixels(0..16)",
+  "bundled_files": {
+    "mnist_train.u8.gz": {
+      "sha256": "06e784f438c387a3c0cfb54c82da71b30c931893e3c7c6c56e2830ba6273cae2",
+      "uncompressed_sha256": "6059372d96d93e2af1c377c3da3416ee6f8e48868308f00dd749e299c23d77c0",
+      "samples": 20000,
+      "bytes": 2053219
+    },
+    "mnist_test.u8.gz": {
+      "sha256": "b0ffb4bf3ea3908d16cc30fb9000f640baa4c82e581300cfb55497ff20710953",
+      "uncompressed_sha256": "7e68e87a32c27e7885e65d10f47c75578c8323879bb5641b6c43e9ede9661a01",
+      "samples": 10000,
+      "bytes": 1013838
+    }
+  }
+}

@@ -1,0 +1,2307 @@
+
+-- Running command `read_verilog rtl/mac_pe.v rtl/neurotile_accel.v; hierarchy -check -top neurotile_accel; proc; opt; check -assert; memory_collect; stat -json' --
+
+1. Executing Verilog-2005 frontend: rtl/mac_pe.v
+Parsing Verilog input from `rtl/mac_pe.v' to AST representation.
+Generating RTLIL representation for module `\mac_pe'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/neurotile_accel.v
+Parsing Verilog input from `rtl/neurotile_accel.v' to AST representation.
+Generating RTLIL representation for module `\neurotile_accel'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \neurotile_accel
+Used module:     \mac_pe
+
+3.2. Analyzing design hierarchy..
+Top module:  \neurotile_accel
+Used module:     \mac_pe
+Removed 0 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 44 switch rules as full_case in process $proc$rtl/neurotile_accel.v:103$149 in module neurotile_accel.
+Marked 5 switch rules as full_case in process $proc$rtl/neurotile_accel.v:81$145 in module neurotile_accel.
+Marked 1 switch rules as full_case in process $proc$rtl/mac_pe.v:14$2 in module mac_pe.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 96 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~55 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+Creating decoders for process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+     1/316: $10\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[31:24]$670
+     2/316: $9\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[23:16]$669
+     3/316: $8\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[15:8]$668
+     4/316: $7\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[7:0]$667
+     5/316: $6\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[31:0]$662 [31:24]
+     6/316: $6\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[31:0]$662 [23:16]
+     7/316: $6\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[31:0]$662 [15:8]
+     8/316: $6\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[31:0]$662 [7:0]
+     9/316: $6\merge_bytes$func$rtl/neurotile_accel.v:193$91.strobes[3:0]$665
+    10/316: $6\merge_bytes$func$rtl/neurotile_accel.v:193$91.new_value[31:0]$664
+    11/316: $6\merge_bytes$func$rtl/neurotile_accel.v:193$91.old_value[31:0]$663
+    12/316: $6\merge_bytes$func$rtl/neurotile_accel.v:193$91.byte_index[31:0]$666
+    13/316: $10\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[31:24]$661
+    14/316: $9\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[23:16]$660
+    15/316: $8\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[15:8]$659
+    16/316: $7\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[7:0]$658
+    17/316: $6\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[31:0]$653 [31:24]
+    18/316: $6\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[31:0]$653 [23:16]
+    19/316: $6\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[31:0]$653 [15:8]
+    20/316: $6\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[31:0]$653 [7:0]
+    21/316: $6\merge_bytes$func$rtl/neurotile_accel.v:191$90.strobes[3:0]$656
+    22/316: $6\merge_bytes$func$rtl/neurotile_accel.v:191$90.new_value[31:0]$655
+    23/316: $6\merge_bytes$func$rtl/neurotile_accel.v:191$90.old_value[31:0]$654
+    24/316: $6\merge_bytes$func$rtl/neurotile_accel.v:191$90.byte_index[31:0]$657
+    25/316: $10\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[31:24]$652
+    26/316: $9\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[23:16]$651
+    27/316: $8\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[15:8]$650
+    28/316: $7\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[7:0]$649
+    29/316: $6\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[31:0]$644 [31:24]
+    30/316: $6\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[31:0]$644 [23:16]
+    31/316: $6\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[31:0]$644 [15:8]
+    32/316: $6\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[31:0]$644 [7:0]
+    33/316: $6\merge_bytes$func$rtl/neurotile_accel.v:189$89.strobes[3:0]$647
+    34/316: $6\merge_bytes$func$rtl/neurotile_accel.v:189$89.new_value[31:0]$646
+    35/316: $6\merge_bytes$func$rtl/neurotile_accel.v:189$89.old_value[31:0]$645
+    36/316: $6\merge_bytes$func$rtl/neurotile_accel.v:189$89.byte_index[31:0]$648
+    37/316: $5\merge_bytes$func$rtl/neurotile_accel.v:193$91.byte_index[31:0]$641
+    38/316: $5\merge_bytes$func$rtl/neurotile_accel.v:193$91.strobes[3:0]$640
+    39/316: $5\merge_bytes$func$rtl/neurotile_accel.v:193$91.new_value[31:0]$639
+    40/316: $5\merge_bytes$func$rtl/neurotile_accel.v:193$91.old_value[31:0]$638
+    41/316: $5\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[31:0]$637
+    42/316: $5\merge_bytes$func$rtl/neurotile_accel.v:191$90.byte_index[31:0]$636
+    43/316: $5\merge_bytes$func$rtl/neurotile_accel.v:191$90.strobes[3:0]$635
+    44/316: $5\merge_bytes$func$rtl/neurotile_accel.v:191$90.new_value[31:0]$634
+    45/316: $5\merge_bytes$func$rtl/neurotile_accel.v:191$90.old_value[31:0]$633
+    46/316: $5\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[31:0]$632
+    47/316: $5\merge_bytes$func$rtl/neurotile_accel.v:189$89.byte_index[31:0]$631
+    48/316: $5\merge_bytes$func$rtl/neurotile_accel.v:189$89.strobes[3:0]$630
+    49/316: $5\merge_bytes$func$rtl/neurotile_accel.v:189$89.new_value[31:0]$629
+    50/316: $5\merge_bytes$func$rtl/neurotile_accel.v:189$89.old_value[31:0]$628
+    51/316: $5\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[31:0]$627
+    52/316: $7$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$623
+    53/316: $7$memwr$\a_mem$rtl/neurotile_accel.v:160$108_DATA[7:0]$622
+    54/316: $7$memwr$\a_mem$rtl/neurotile_accel.v:160$108_ADDR[9:0]$621
+    55/316: $7$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$626
+    56/316: $7$memwr$\b_mem$rtl/neurotile_accel.v:161$109_DATA[7:0]$625
+    57/316: $7$memwr$\b_mem$rtl/neurotile_accel.v:161$109_ADDR[11:0]$624
+    58/316: $6$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$620
+    59/316: $6$memwr$\b_mem$rtl/neurotile_accel.v:161$109_DATA[7:0]$619
+    60/316: $6$memwr$\b_mem$rtl/neurotile_accel.v:161$109_ADDR[11:0]$618
+    61/316: $6$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$617
+    62/316: $6$memwr$\a_mem$rtl/neurotile_accel.v:160$108_DATA[7:0]$616
+    63/316: $6$memwr$\a_mem$rtl/neurotile_accel.v:160$108_ADDR[9:0]$615
+    64/316: $5$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$614
+    65/316: $5$memwr$\b_mem$rtl/neurotile_accel.v:161$109_DATA[7:0]$613
+    66/316: $5$memwr$\b_mem$rtl/neurotile_accel.v:161$109_ADDR[11:0]$612
+    67/316: $5$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$611
+    68/316: $5$memwr$\a_mem$rtl/neurotile_accel.v:160$108_DATA[7:0]$610
+    69/316: $5$memwr$\a_mem$rtl/neurotile_accel.v:160$108_ADDR[9:0]$609
+    70/316: $4$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$608
+    71/316: $4$memwr$\b_mem$rtl/neurotile_accel.v:161$109_DATA[7:0]$607
+    72/316: $4$memwr$\b_mem$rtl/neurotile_accel.v:161$109_ADDR[11:0]$606
+    73/316: $4$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$605
+    74/316: $4$memwr$\a_mem$rtl/neurotile_accel.v:160$108_DATA[7:0]$604
+    75/316: $4$memwr$\a_mem$rtl/neurotile_accel.v:160$108_ADDR[9:0]$603
+    76/316: $4\merge_bytes$func$rtl/neurotile_accel.v:193$91.byte_index[31:0]$602
+    77/316: $4\merge_bytes$func$rtl/neurotile_accel.v:193$91.strobes[3:0]$601
+    78/316: $4\merge_bytes$func$rtl/neurotile_accel.v:193$91.new_value[31:0]$600
+    79/316: $4\merge_bytes$func$rtl/neurotile_accel.v:193$91.old_value[31:0]$599
+    80/316: $4\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[31:0]$598
+    81/316: $4\merge_bytes$func$rtl/neurotile_accel.v:191$90.byte_index[31:0]$597
+    82/316: $4\merge_bytes$func$rtl/neurotile_accel.v:191$90.strobes[3:0]$596
+    83/316: $4\merge_bytes$func$rtl/neurotile_accel.v:191$90.new_value[31:0]$595
+    84/316: $4\merge_bytes$func$rtl/neurotile_accel.v:191$90.old_value[31:0]$594
+    85/316: $4\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[31:0]$593
+    86/316: $4\merge_bytes$func$rtl/neurotile_accel.v:189$89.byte_index[31:0]$592
+    87/316: $4\merge_bytes$func$rtl/neurotile_accel.v:189$89.strobes[3:0]$591
+    88/316: $4\merge_bytes$func$rtl/neurotile_accel.v:189$89.new_value[31:0]$590
+    89/316: $4\merge_bytes$func$rtl/neurotile_accel.v:189$89.old_value[31:0]$589
+    90/316: $4\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[31:0]$588
+    91/316: $3$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$586
+    92/316: $3$memwr$\b_mem$rtl/neurotile_accel.v:161$109_DATA[7:0]$585
+    93/316: $3$memwr$\b_mem$rtl/neurotile_accel.v:161$109_ADDR[11:0]$584
+    94/316: $3$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$583
+    95/316: $3$memwr$\a_mem$rtl/neurotile_accel.v:160$108_DATA[7:0]$582
+    96/316: $3$memwr$\a_mem$rtl/neurotile_accel.v:160$108_ADDR[9:0]$581
+    97/316: $3\merge_bytes$func$rtl/neurotile_accel.v:193$91.byte_index[31:0]$580
+    98/316: $3\merge_bytes$func$rtl/neurotile_accel.v:193$91.strobes[3:0]$579
+    99/316: $3\merge_bytes$func$rtl/neurotile_accel.v:193$91.new_value[31:0]$578
+   100/316: $3\merge_bytes$func$rtl/neurotile_accel.v:193$91.old_value[31:0]$577
+   101/316: $3\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[31:0]$576
+   102/316: $3\merge_bytes$func$rtl/neurotile_accel.v:191$90.byte_index[31:0]$575
+   103/316: $3\merge_bytes$func$rtl/neurotile_accel.v:191$90.strobes[3:0]$574
+   104/316: $3\merge_bytes$func$rtl/neurotile_accel.v:191$90.new_value[31:0]$573
+   105/316: $3\merge_bytes$func$rtl/neurotile_accel.v:191$90.old_value[31:0]$572
+   106/316: $3\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[31:0]$571
+   107/316: $3\merge_bytes$func$rtl/neurotile_accel.v:189$89.byte_index[31:0]$570
+   108/316: $3\merge_bytes$func$rtl/neurotile_accel.v:189$89.strobes[3:0]$569
+   109/316: $3\merge_bytes$func$rtl/neurotile_accel.v:189$89.new_value[31:0]$568
+   110/316: $3\merge_bytes$func$rtl/neurotile_accel.v:189$89.old_value[31:0]$567
+   111/316: $3\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[31:0]$566
+   112/316: $2$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$564
+   113/316: $2$memwr$\b_mem$rtl/neurotile_accel.v:161$109_DATA[7:0]$563
+   114/316: $2$memwr$\b_mem$rtl/neurotile_accel.v:161$109_ADDR[11:0]$562
+   115/316: $2$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$561
+   116/316: $2$memwr$\a_mem$rtl/neurotile_accel.v:160$108_DATA[7:0]$560
+   117/316: $2$memwr$\a_mem$rtl/neurotile_accel.v:160$108_ADDR[9:0]$559
+   118/316: $2\merge_bytes$func$rtl/neurotile_accel.v:193$91.byte_index[31:0]$558
+   119/316: $2\merge_bytes$func$rtl/neurotile_accel.v:193$91.strobes[3:0]$557
+   120/316: $2\merge_bytes$func$rtl/neurotile_accel.v:193$91.new_value[31:0]$556
+   121/316: $2\merge_bytes$func$rtl/neurotile_accel.v:193$91.old_value[31:0]$555
+   122/316: $2\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[31:0]$554
+   123/316: $2\merge_bytes$func$rtl/neurotile_accel.v:191$90.byte_index[31:0]$553
+   124/316: $2\merge_bytes$func$rtl/neurotile_accel.v:191$90.strobes[3:0]$552
+   125/316: $2\merge_bytes$func$rtl/neurotile_accel.v:191$90.new_value[31:0]$551
+   126/316: $2\merge_bytes$func$rtl/neurotile_accel.v:191$90.old_value[31:0]$550
+   127/316: $2\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[31:0]$549
+   128/316: $2\merge_bytes$func$rtl/neurotile_accel.v:189$89.byte_index[31:0]$548
+   129/316: $2\merge_bytes$func$rtl/neurotile_accel.v:189$89.strobes[3:0]$547
+   130/316: $2\merge_bytes$func$rtl/neurotile_accel.v:189$89.new_value[31:0]$546
+   131/316: $2\merge_bytes$func$rtl/neurotile_accel.v:189$89.old_value[31:0]$545
+   132/316: $2\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[31:0]$544
+   133/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$107_EN[31:0]$529
+   134/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$107_DATA[31:0]$528
+   135/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$107_ADDR[31:0]$527
+   136/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$106_EN[31:0]$517
+   137/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$106_DATA[31:0]$516
+   138/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$106_ADDR[31:0]$515
+   139/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$105_EN[31:0]$505
+   140/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$105_DATA[31:0]$504
+   141/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$105_ADDR[31:0]$503
+   142/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$104_EN[31:0]$493
+   143/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$104_DATA[31:0]$492
+   144/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$104_ADDR[31:0]$491
+   145/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$103_EN[31:0]$481
+   146/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$103_DATA[31:0]$480
+   147/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$103_ADDR[31:0]$479
+   148/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$102_EN[31:0]$469
+   149/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$102_DATA[31:0]$468
+   150/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$102_ADDR[31:0]$467
+   151/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$101_EN[31:0]$457
+   152/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$101_DATA[31:0]$456
+   153/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$101_ADDR[31:0]$455
+   154/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$100_EN[31:0]$445
+   155/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$100_DATA[31:0]$444
+   156/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$100_ADDR[31:0]$443
+   157/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$99_EN[31:0]$433
+   158/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$99_DATA[31:0]$432
+   159/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$99_ADDR[31:0]$431
+   160/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$98_EN[31:0]$421
+   161/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$98_DATA[31:0]$420
+   162/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$98_ADDR[31:0]$419
+   163/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$97_EN[31:0]$409
+   164/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$97_DATA[31:0]$408
+   165/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$97_ADDR[31:0]$407
+   166/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$96_EN[31:0]$397
+   167/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$96_DATA[31:0]$396
+   168/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$96_ADDR[31:0]$395
+   169/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$95_EN[31:0]$385
+   170/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$95_DATA[31:0]$384
+   171/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$95_ADDR[31:0]$383
+   172/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$94_EN[31:0]$373
+   173/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$94_DATA[31:0]$372
+   174/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$94_ADDR[31:0]$371
+   175/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$93_EN[31:0]$361
+   176/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$93_DATA[31:0]$360
+   177/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$93_ADDR[31:0]$359
+   178/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$92_EN[31:0]$349
+   179/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$92_DATA[31:0]$348
+   180/316: $3$memwr$\c_mem$rtl/neurotile_accel.v:136$92_ADDR[31:0]$347
+   181/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$107_EN[31:0]$337
+   182/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$107_DATA[31:0]$336
+   183/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$107_ADDR[31:0]$335
+   184/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$106_EN[31:0]$334
+   185/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$106_DATA[31:0]$333
+   186/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$106_ADDR[31:0]$332
+   187/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$105_EN[31:0]$331
+   188/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$105_DATA[31:0]$330
+   189/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$105_ADDR[31:0]$329
+   190/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$104_EN[31:0]$328
+   191/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$104_DATA[31:0]$327
+   192/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$104_ADDR[31:0]$326
+   193/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$103_EN[31:0]$325
+   194/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$103_DATA[31:0]$324
+   195/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$103_ADDR[31:0]$323
+   196/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$102_EN[31:0]$322
+   197/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$102_DATA[31:0]$321
+   198/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$102_ADDR[31:0]$320
+   199/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$101_EN[31:0]$319
+   200/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$101_DATA[31:0]$318
+   201/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$101_ADDR[31:0]$317
+   202/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$100_EN[31:0]$316
+   203/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$100_DATA[31:0]$315
+   204/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$100_ADDR[31:0]$314
+   205/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$99_EN[31:0]$313
+   206/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$99_DATA[31:0]$312
+   207/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$99_ADDR[31:0]$311
+   208/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$98_EN[31:0]$310
+   209/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$98_DATA[31:0]$309
+   210/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$98_ADDR[31:0]$308
+   211/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$97_EN[31:0]$307
+   212/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$97_DATA[31:0]$306
+   213/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$97_ADDR[31:0]$305
+   214/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$96_EN[31:0]$304
+   215/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$96_DATA[31:0]$303
+   216/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$96_ADDR[31:0]$302
+   217/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$95_EN[31:0]$301
+   218/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$95_DATA[31:0]$300
+   219/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$95_ADDR[31:0]$299
+   220/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$94_EN[31:0]$298
+   221/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$94_DATA[31:0]$297
+   222/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$94_ADDR[31:0]$296
+   223/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$93_EN[31:0]$295
+   224/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$93_DATA[31:0]$294
+   225/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$93_ADDR[31:0]$293
+   226/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$92_EN[31:0]$292
+   227/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$92_DATA[31:0]$291
+   228/316: $2$memwr$\c_mem$rtl/neurotile_accel.v:136$92_ADDR[31:0]$290
+   229/316: $2\store_col[31:0]
+   230/316: $2\store_row[31:0]
+   231/316: $1$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$288
+   232/316: $1$memwr$\b_mem$rtl/neurotile_accel.v:161$109_DATA[7:0]$287
+   233/316: $1$memwr$\b_mem$rtl/neurotile_accel.v:161$109_ADDR[11:0]$286
+   234/316: $1$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$285
+   235/316: $1$memwr$\a_mem$rtl/neurotile_accel.v:160$108_DATA[7:0]$284
+   236/316: $1$memwr$\a_mem$rtl/neurotile_accel.v:160$108_ADDR[9:0]$283
+   237/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$107_EN[31:0]$282
+   238/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$107_DATA[31:0]$281
+   239/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$107_ADDR[31:0]$280
+   240/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$106_EN[31:0]$279
+   241/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$106_DATA[31:0]$278
+   242/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$106_ADDR[31:0]$277
+   243/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$105_EN[31:0]$276
+   244/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$105_DATA[31:0]$275
+   245/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$105_ADDR[31:0]$274
+   246/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$104_EN[31:0]$273
+   247/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$104_DATA[31:0]$272
+   248/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$104_ADDR[31:0]$271
+   249/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$103_EN[31:0]$270
+   250/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$103_DATA[31:0]$269
+   251/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$103_ADDR[31:0]$268
+   252/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$102_EN[31:0]$267
+   253/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$102_DATA[31:0]$266
+   254/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$102_ADDR[31:0]$265
+   255/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$101_EN[31:0]$264
+   256/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$101_DATA[31:0]$263
+   257/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$101_ADDR[31:0]$262
+   258/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$100_EN[31:0]$261
+   259/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$100_DATA[31:0]$260
+   260/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$100_ADDR[31:0]$259
+   261/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$99_EN[31:0]$258
+   262/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$99_DATA[31:0]$257
+   263/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$99_ADDR[31:0]$256
+   264/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$98_EN[31:0]$255
+   265/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$98_DATA[31:0]$254
+   266/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$98_ADDR[31:0]$253
+   267/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$97_EN[31:0]$252
+   268/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$97_DATA[31:0]$251
+   269/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$97_ADDR[31:0]$250
+   270/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$96_EN[31:0]$249
+   271/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$96_DATA[31:0]$248
+   272/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$96_ADDR[31:0]$247
+   273/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$95_EN[31:0]$246
+   274/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$95_DATA[31:0]$245
+   275/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$95_ADDR[31:0]$244
+   276/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$94_EN[31:0]$243
+   277/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$94_DATA[31:0]$242
+   278/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$94_ADDR[31:0]$241
+   279/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$93_EN[31:0]$240
+   280/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$93_DATA[31:0]$239
+   281/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$93_ADDR[31:0]$238
+   282/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$92_EN[31:0]$237
+   283/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$92_DATA[31:0]$236
+   284/316: $1$memwr$\c_mem$rtl/neurotile_accel.v:136$92_ADDR[31:0]$235
+   285/316: $1\merge_bytes$func$rtl/neurotile_accel.v:193$91.byte_index[31:0]$234
+   286/316: $1\merge_bytes$func$rtl/neurotile_accel.v:193$91.strobes[3:0]$233
+   287/316: $1\merge_bytes$func$rtl/neurotile_accel.v:193$91.new_value[31:0]$232
+   288/316: $1\merge_bytes$func$rtl/neurotile_accel.v:193$91.old_value[31:0]$231
+   289/316: $1\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[31:0]$230
+   290/316: $1\merge_bytes$func$rtl/neurotile_accel.v:191$90.byte_index[31:0]$229
+   291/316: $1\merge_bytes$func$rtl/neurotile_accel.v:191$90.strobes[3:0]$228
+   292/316: $1\merge_bytes$func$rtl/neurotile_accel.v:191$90.new_value[31:0]$227
+   293/316: $1\merge_bytes$func$rtl/neurotile_accel.v:191$90.old_value[31:0]$226
+   294/316: $1\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[31:0]$225
+   295/316: $1\merge_bytes$func$rtl/neurotile_accel.v:189$89.byte_index[31:0]$224
+   296/316: $1\merge_bytes$func$rtl/neurotile_accel.v:189$89.strobes[3:0]$223
+   297/316: $1\merge_bytes$func$rtl/neurotile_accel.v:189$89.new_value[31:0]$222
+   298/316: $1\merge_bytes$func$rtl/neurotile_accel.v:189$89.old_value[31:0]$221
+   299/316: $1\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[31:0]$220
+   300/316: $1\store_col[31:0]
+   301/316: $1\store_row[31:0]
+   302/316: $0\tile_count[31:0]
+   303/316: $0\useful_macs[31:0]
+   304/316: $0\kernel_cycles[31:0]
+   305/316: $0\k_pos[6:0]
+   306/316: $0\tile_col[6:0]
+   307/316: $0\tile_row[6:0]
+   308/316: $0\run_k[6:0]
+   309/316: $0\run_n[6:0]
+   310/316: $0\run_m[6:0]
+   311/316: $0\dim_k[31:0]
+   312/316: $0\dim_n[31:0]
+   313/316: $0\dim_m[31:0]
+   314/316: $0\error[0:0]
+   315/316: $0\done[0:0]
+   316/316: $0\state[1:0]
+Creating decoders for process `\neurotile_accel.$proc$rtl/neurotile_accel.v:81$145'.
+     1/5: $5\bus_rdata[31:0]
+     2/5: $4\bus_rdata[31:0]
+     3/5: $3\bus_rdata[31:0]
+     4/5: $2\bus_rdata[31:0]
+     5/5: $1\bus_rdata[31:0]
+Creating decoders for process `\mac_pe.$proc$rtl/mac_pe.v:14$2'.
+     1/1: $0\acc[31:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\neurotile_accel.\a_lane[0]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\a_lane[1]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\a_lane[2]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\a_lane[3]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\b_lane[0]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\b_lane[1]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\b_lane[2]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\b_lane[3]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[0]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[1]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[2]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[3]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[4]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[5]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[6]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[7]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[8]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[9]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[10]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[11]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[12]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[13]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[14]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\pe_result[15]' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+No latch inferred for signal `\neurotile_accel.\bus_rdata' from process `\neurotile_accel.$proc$rtl/neurotile_accel.v:81$145'.
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\neurotile_accel.\state' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4180' with positive edge clock.
+Creating register for signal `\neurotile_accel.\done' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4181' with positive edge clock.
+Creating register for signal `\neurotile_accel.\error' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4182' with positive edge clock.
+Creating register for signal `\neurotile_accel.\dim_m' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4183' with positive edge clock.
+Creating register for signal `\neurotile_accel.\dim_n' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4184' with positive edge clock.
+Creating register for signal `\neurotile_accel.\dim_k' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4185' with positive edge clock.
+Creating register for signal `\neurotile_accel.\run_m' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4186' with positive edge clock.
+Creating register for signal `\neurotile_accel.\run_n' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4187' with positive edge clock.
+Creating register for signal `\neurotile_accel.\run_k' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4188' with positive edge clock.
+Creating register for signal `\neurotile_accel.\tile_row' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4189' with positive edge clock.
+Creating register for signal `\neurotile_accel.\tile_col' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4190' with positive edge clock.
+Creating register for signal `\neurotile_accel.\k_pos' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4191' with positive edge clock.
+Creating register for signal `\neurotile_accel.\kernel_cycles' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4192' with positive edge clock.
+Creating register for signal `\neurotile_accel.\useful_macs' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4193' with positive edge clock.
+Creating register for signal `\neurotile_accel.\tile_count' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4194' with positive edge clock.
+Creating register for signal `\neurotile_accel.\store_row' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4195' with positive edge clock.
+Creating register for signal `\neurotile_accel.\store_col' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4196' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4197' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:189$89.old_value' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4198' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:189$89.new_value' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4199' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:189$89.strobes' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4200' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:189$89.byte_index' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4201' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4202' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:191$90.old_value' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4203' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:191$90.new_value' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4204' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:191$90.strobes' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4205' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:191$90.byte_index' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4206' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4207' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:193$91.old_value' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4208' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:193$91.new_value' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4209' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:193$91.strobes' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4210' with positive edge clock.
+Creating register for signal `\neurotile_accel.\merge_bytes$func$rtl/neurotile_accel.v:193$91.byte_index' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4211' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$92_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4212' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$92_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4213' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$92_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4214' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$93_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4215' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$93_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4216' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$93_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4217' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$94_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4218' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$94_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4219' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$94_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4220' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$95_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4221' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$95_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4222' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$95_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4223' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$96_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4224' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$96_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4225' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$96_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4226' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$97_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4227' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$97_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4228' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$97_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4229' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$98_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4230' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$98_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4231' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$98_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4232' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$99_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4233' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$99_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4234' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$99_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4235' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$100_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4236' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$100_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4237' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$100_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4238' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$101_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4239' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$101_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4240' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$101_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4241' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$102_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4242' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$102_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4243' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$102_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4244' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$103_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4245' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$103_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4246' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$103_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4247' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$104_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4248' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$104_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4249' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$104_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4250' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$105_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4251' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$105_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4252' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$105_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4253' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$106_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4254' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$106_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4255' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$106_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4256' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$107_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4257' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$107_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4258' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\c_mem$rtl/neurotile_accel.v:136$107_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4259' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\a_mem$rtl/neurotile_accel.v:160$108_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4260' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\a_mem$rtl/neurotile_accel.v:160$108_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4261' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4262' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\b_mem$rtl/neurotile_accel.v:161$109_ADDR' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4263' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\b_mem$rtl/neurotile_accel.v:161$109_DATA' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4264' with positive edge clock.
+Creating register for signal `\neurotile_accel.$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN' using process `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+  created $dff cell `$procdff$4265' with positive edge clock.
+Creating register for signal `\mac_pe.\acc' using process `\mac_pe.$proc$rtl/mac_pe.v:14$2'.
+  created $dff cell `$procdff$4266' with positive edge clock.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `neurotile_accel.$proc$rtl/neurotile_accel.v:0$799'.
+Found and cleaned up 48 empty switches in `\neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+Removing empty process `neurotile_accel.$proc$rtl/neurotile_accel.v:103$149'.
+Found and cleaned up 5 empty switches in `\neurotile_accel.$proc$rtl/neurotile_accel.v:81$145'.
+Removing empty process `neurotile_accel.$proc$rtl/neurotile_accel.v:81$145'.
+Found and cleaned up 2 empty switches in `\mac_pe.$proc$rtl/mac_pe.v:14$2'.
+Removing empty process `mac_pe.$proc$rtl/mac_pe.v:14$2'.
+Cleaned up 55 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neurotile_accel.
+<suppressed ~451 debug messages>
+Optimizing module mac_pe.
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neurotile_accel.
+<suppressed ~28 debug messages>
+Optimizing module mac_pe.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neurotile_accel'.
+<suppressed ~1323 debug messages>
+Finding identical cells in module `\mac_pe'.
+Removed a total of 441 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \neurotile_accel..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$3339.
+    dead port 2/2 on $mux $procmux$3333.
+    dead port 2/2 on $mux $procmux$3327.
+    dead port 2/2 on $mux $procmux$3321.
+    dead port 2/2 on $mux $procmux$3315.
+    dead port 2/2 on $mux $procmux$3309.
+    dead port 2/2 on $mux $procmux$3303.
+    dead port 2/2 on $mux $procmux$3297.
+    dead port 2/2 on $mux $procmux$3291.
+    dead port 2/2 on $mux $procmux$3285.
+    dead port 2/2 on $mux $procmux$3279.
+    dead port 2/2 on $mux $procmux$3273.
+    dead port 2/2 on $mux $procmux$3267.
+    dead port 2/2 on $mux $procmux$3261.
+    dead port 2/2 on $mux $procmux$3255.
+    dead port 2/2 on $mux $procmux$3249.
+    dead port 2/2 on $mux $procmux$3243.
+    dead port 2/2 on $mux $procmux$3237.
+    dead port 2/2 on $mux $procmux$3231.
+    dead port 2/2 on $mux $procmux$3225.
+    dead port 2/2 on $mux $procmux$3219.
+    dead port 2/2 on $mux $procmux$3213.
+    dead port 2/2 on $mux $procmux$3207.
+    dead port 2/2 on $mux $procmux$4170.
+    dead port 2/2 on $mux $procmux$3201.
+    dead port 2/2 on $mux $procmux$3195.
+    dead port 2/2 on $mux $procmux$3189.
+    dead port 2/2 on $mux $procmux$3183.
+    dead port 2/2 on $mux $procmux$3177.
+    dead port 2/2 on $mux $procmux$3171.
+    dead port 2/2 on $mux $procmux$3165.
+    dead port 2/2 on $mux $procmux$3159.
+    dead port 2/2 on $mux $procmux$3153.
+    dead port 2/2 on $mux $procmux$3150.
+    dead port 2/2 on $mux $procmux$3144.
+    dead port 2/2 on $mux $procmux$3141.
+    dead port 2/2 on $mux $procmux$4157.
+    dead port 2/2 on $mux $procmux$3135.
+    dead port 2/2 on $mux $procmux$3132.
+    dead port 2/2 on $mux $procmux$3126.
+    dead port 2/2 on $mux $procmux$3123.
+    dead port 2/2 on $mux $procmux$3117.
+    dead port 2/2 on $mux $procmux$3114.
+    dead port 2/2 on $mux $procmux$3108.
+    dead port 2/2 on $mux $procmux$3105.
+    dead port 2/2 on $mux $procmux$3099.
+    dead port 2/2 on $mux $procmux$3096.
+    dead port 2/2 on $mux $procmux$3090.
+    dead port 2/2 on $mux $procmux$3087.
+    dead port 2/2 on $mux $procmux$3081.
+    dead port 2/2 on $mux $procmux$3078.
+    dead port 2/2 on $mux $procmux$3072.
+    dead port 2/2 on $mux $procmux$3069.
+    dead port 1/9 on $pmux $procmux$4148.
+    dead port 2/9 on $pmux $procmux$4148.
+    dead port 3/9 on $pmux $procmux$4148.
+    dead port 4/9 on $pmux $procmux$4148.
+    dead port 5/9 on $pmux $procmux$4148.
+    dead port 6/9 on $pmux $procmux$4148.
+    dead port 7/9 on $pmux $procmux$4148.
+    dead port 8/9 on $pmux $procmux$4148.
+    dead port 2/2 on $mux $procmux$3063.
+    dead port 2/2 on $mux $procmux$3060.
+    dead port 2/2 on $mux $procmux$3054.
+    dead port 2/2 on $mux $procmux$3051.
+    dead port 2/2 on $mux $procmux$3045.
+    dead port 2/2 on $mux $procmux$3042.
+    dead port 2/2 on $mux $procmux$4141.
+    dead port 2/2 on $mux $procmux$3036.
+    dead port 2/2 on $mux $procmux$3033.
+    dead port 2/2 on $mux $procmux$3027.
+    dead port 2/2 on $mux $procmux$3024.
+    dead port 2/2 on $mux $procmux$3018.
+    dead port 2/2 on $mux $procmux$3015.
+    dead port 2/2 on $mux $procmux$3009.
+    dead port 2/2 on $mux $procmux$3006.
+    dead port 2/2 on $mux $procmux$3000.
+    dead port 2/2 on $mux $procmux$2997.
+    dead port 2/2 on $mux $procmux$2991.
+    dead port 2/2 on $mux $procmux$2988.
+    dead port 2/2 on $mux $procmux$2982.
+    dead port 2/2 on $mux $procmux$2979.
+    dead port 2/2 on $mux $procmux$2973.
+    dead port 2/2 on $mux $procmux$2970.
+    dead port 1/9 on $pmux $procmux$4132.
+    dead port 2/9 on $pmux $procmux$4132.
+    dead port 3/9 on $pmux $procmux$4132.
+    dead port 4/9 on $pmux $procmux$4132.
+    dead port 5/9 on $pmux $procmux$4132.
+    dead port 6/9 on $pmux $procmux$4132.
+    dead port 7/9 on $pmux $procmux$4132.
+    dead port 8/9 on $pmux $procmux$4132.
+    dead port 2/2 on $mux $procmux$2964.
+    dead port 2/2 on $mux $procmux$2961.
+    dead port 2/2 on $mux $procmux$2955.
+    dead port 2/2 on $mux $procmux$2952.
+    dead port 1/2 on $mux $procmux$4129.
+    dead port 2/2 on $mux $procmux$2946.
+    dead port 2/2 on $mux $procmux$2943.
+    dead port 2/2 on $mux $procmux$2937.
+    dead port 2/2 on $mux $procmux$2934.
+    dead port 2/2 on $mux $procmux$4122.
+    dead port 2/2 on $mux $procmux$2928.
+    dead port 2/2 on $mux $procmux$2925.
+    dead port 2/2 on $mux $procmux$2919.
+    dead port 2/2 on $mux $procmux$2916.
+    dead port 2/2 on $mux $procmux$2910.
+    dead port 2/2 on $mux $procmux$2907.
+    dead port 2/2 on $mux $procmux$2901.
+    dead port 2/2 on $mux $procmux$2898.
+    dead port 2/2 on $mux $procmux$2892.
+    dead port 2/2 on $mux $procmux$2889.
+    dead port 2/2 on $mux $procmux$2883.
+    dead port 2/2 on $mux $procmux$2880.
+    dead port 2/2 on $mux $procmux$2874.
+    dead port 2/2 on $mux $procmux$2871.
+    dead port 2/2 on $mux $procmux$2865.
+    dead port 2/2 on $mux $procmux$2862.
+    dead port 1/9 on $pmux $procmux$4113.
+    dead port 2/9 on $pmux $procmux$4113.
+    dead port 3/9 on $pmux $procmux$4113.
+    dead port 4/9 on $pmux $procmux$4113.
+    dead port 5/9 on $pmux $procmux$4113.
+    dead port 6/9 on $pmux $procmux$4113.
+    dead port 7/9 on $pmux $procmux$4113.
+    dead port 8/9 on $pmux $procmux$4113.
+    dead port 2/2 on $mux $procmux$2856.
+    dead port 2/2 on $mux $procmux$2853.
+    dead port 2/2 on $mux $procmux$2847.
+    dead port 2/2 on $mux $procmux$2844.
+    dead port 1/2 on $mux $procmux$4110.
+    dead port 2/2 on $mux $procmux$2838.
+    dead port 2/2 on $mux $procmux$2835.
+    dead port 1/2 on $mux $procmux$4107.
+    dead port 2/2 on $mux $procmux$2829.
+    dead port 2/2 on $mux $procmux$2826.
+    dead port 2/2 on $mux $procmux$2820.
+    dead port 2/2 on $mux $procmux$2817.
+    dead port 2/2 on $mux $procmux$2811.
+    dead port 2/2 on $mux $procmux$2808.
+    dead port 2/2 on $mux $procmux$2802.
+    dead port 2/2 on $mux $procmux$2799.
+    dead port 2/2 on $mux $procmux$2793.
+    dead port 2/2 on $mux $procmux$2790.
+    dead port 2/2 on $mux $procmux$2784.
+    dead port 2/2 on $mux $procmux$2781.
+    dead port 2/2 on $mux $procmux$2775.
+    dead port 2/2 on $mux $procmux$2772.
+    dead port 2/2 on $mux $procmux$2766.
+    dead port 2/2 on $mux $procmux$2763.
+    dead port 2/2 on $mux $procmux$2757.
+    dead port 2/2 on $mux $procmux$2754.
+    dead port 2/2 on $mux $procmux$2748.
+    dead port 2/2 on $mux $procmux$2745.
+    dead port 2/2 on $mux $procmux$2739.
+    dead port 2/2 on $mux $procmux$2736.
+    dead port 2/2 on $mux $procmux$2730.
+    dead port 2/2 on $mux $procmux$2727.
+    dead port 1/2 on $mux $procmux$2721.
+    dead port 2/2 on $mux $procmux$2721.
+    dead port 1/2 on $mux $procmux$2718.
+    dead port 2/2 on $mux $procmux$2718.
+    dead port 1/2 on $mux $procmux$2715.
+    dead port 2/2 on $mux $procmux$2715.
+    dead port 1/2 on $mux $procmux$2712.
+    dead port 2/2 on $mux $procmux$2712.
+    dead port 1/2 on $mux $procmux$2709.
+    dead port 2/2 on $mux $procmux$2709.
+    dead port 1/2 on $mux $procmux$2706.
+    dead port 2/2 on $mux $procmux$2706.
+    dead port 1/2 on $mux $procmux$2703.
+    dead port 2/2 on $mux $procmux$2703.
+    dead port 1/2 on $mux $procmux$2700.
+    dead port 2/2 on $mux $procmux$2700.
+    dead port 1/2 on $mux $procmux$2697.
+    dead port 2/2 on $mux $procmux$2697.
+    dead port 1/2 on $mux $procmux$2694.
+    dead port 2/2 on $mux $procmux$2694.
+    dead port 1/2 on $mux $procmux$2691.
+    dead port 2/2 on $mux $procmux$2691.
+    dead port 1/2 on $mux $procmux$2688.
+    dead port 2/2 on $mux $procmux$2688.
+    dead port 1/2 on $mux $procmux$2685.
+    dead port 2/2 on $mux $procmux$2685.
+    dead port 1/2 on $mux $procmux$2682.
+    dead port 2/2 on $mux $procmux$2682.
+    dead port 1/2 on $mux $procmux$2679.
+    dead port 2/2 on $mux $procmux$2679.
+    dead port 1/2 on $mux $procmux$2676.
+    dead port 2/2 on $mux $procmux$2676.
+    dead port 1/2 on $mux $procmux$2673.
+    dead port 2/2 on $mux $procmux$2673.
+    dead port 1/2 on $mux $procmux$2670.
+    dead port 2/2 on $mux $procmux$2670.
+    dead port 1/2 on $mux $procmux$2667.
+    dead port 2/2 on $mux $procmux$2667.
+    dead port 1/2 on $mux $procmux$2664.
+    dead port 2/2 on $mux $procmux$2664.
+    dead port 1/2 on $mux $procmux$2661.
+    dead port 2/2 on $mux $procmux$2661.
+    dead port 1/2 on $mux $procmux$2658.
+    dead port 2/2 on $mux $procmux$2658.
+    dead port 1/2 on $mux $procmux$2655.
+    dead port 2/2 on $mux $procmux$2655.
+    dead port 1/2 on $mux $procmux$2652.
+    dead port 2/2 on $mux $procmux$2652.
+    dead port 1/2 on $mux $procmux$2649.
+    dead port 2/2 on $mux $procmux$2649.
+    dead port 1/2 on $mux $procmux$2646.
+    dead port 2/2 on $mux $procmux$2646.
+    dead port 1/2 on $mux $procmux$2643.
+    dead port 2/2 on $mux $procmux$2643.
+    dead port 1/2 on $mux $procmux$2640.
+    dead port 2/2 on $mux $procmux$2640.
+    dead port 1/2 on $mux $procmux$2637.
+    dead port 2/2 on $mux $procmux$2637.
+    dead port 1/2 on $mux $procmux$2634.
+    dead port 2/2 on $mux $procmux$2634.
+    dead port 2/2 on $mux $procmux$2631.
+    dead port 2/2 on $mux $procmux$2625.
+    dead port 2/2 on $mux $procmux$2619.
+    dead port 2/2 on $mux $procmux$2613.
+    dead port 2/2 on $mux $procmux$2607.
+    dead port 2/2 on $mux $procmux$2601.
+    dead port 1/2 on $mux $procmux$2595.
+    dead port 2/2 on $mux $procmux$2595.
+    dead port 1/2 on $mux $procmux$2592.
+    dead port 2/2 on $mux $procmux$2592.
+    dead port 1/2 on $mux $procmux$2590.
+    dead port 2/2 on $mux $procmux$2590.
+    dead port 1/2 on $mux $procmux$2586.
+    dead port 2/2 on $mux $procmux$2586.
+    dead port 1/2 on $mux $procmux$2583.
+    dead port 2/2 on $mux $procmux$2583.
+    dead port 1/2 on $mux $procmux$2581.
+    dead port 2/2 on $mux $procmux$2581.
+    dead port 1/2 on $mux $procmux$2577.
+    dead port 2/2 on $mux $procmux$2577.
+    dead port 1/2 on $mux $procmux$2574.
+    dead port 2/2 on $mux $procmux$2574.
+    dead port 1/2 on $mux $procmux$2572.
+    dead port 2/2 on $mux $procmux$2572.
+    dead port 1/2 on $mux $procmux$2568.
+    dead port 2/2 on $mux $procmux$2568.
+    dead port 1/2 on $mux $procmux$2565.
+    dead port 2/2 on $mux $procmux$2565.
+    dead port 1/2 on $mux $procmux$2563.
+    dead port 2/2 on $mux $procmux$2563.
+    dead port 1/2 on $mux $procmux$2559.
+    dead port 2/2 on $mux $procmux$2559.
+    dead port 1/2 on $mux $procmux$2556.
+    dead port 2/2 on $mux $procmux$2556.
+    dead port 1/2 on $mux $procmux$2554.
+    dead port 2/2 on $mux $procmux$2554.
+    dead port 1/2 on $mux $procmux$2550.
+    dead port 2/2 on $mux $procmux$2550.
+    dead port 1/2 on $mux $procmux$2547.
+    dead port 2/2 on $mux $procmux$2547.
+    dead port 1/2 on $mux $procmux$2545.
+    dead port 2/2 on $mux $procmux$2545.
+    dead port 1/2 on $mux $procmux$2541.
+    dead port 2/2 on $mux $procmux$2541.
+    dead port 1/2 on $mux $procmux$2538.
+    dead port 2/2 on $mux $procmux$2538.
+    dead port 1/2 on $mux $procmux$2536.
+    dead port 2/2 on $mux $procmux$2536.
+    dead port 1/2 on $mux $procmux$2532.
+    dead port 2/2 on $mux $procmux$2532.
+    dead port 1/2 on $mux $procmux$2529.
+    dead port 2/2 on $mux $procmux$2529.
+    dead port 1/2 on $mux $procmux$2527.
+    dead port 2/2 on $mux $procmux$2527.
+    dead port 1/2 on $mux $procmux$2523.
+    dead port 2/2 on $mux $procmux$2523.
+    dead port 1/2 on $mux $procmux$2520.
+    dead port 2/2 on $mux $procmux$2520.
+    dead port 1/2 on $mux $procmux$2518.
+    dead port 2/2 on $mux $procmux$2518.
+    dead port 1/2 on $mux $procmux$2514.
+    dead port 2/2 on $mux $procmux$2514.
+    dead port 1/2 on $mux $procmux$2511.
+    dead port 2/2 on $mux $procmux$2511.
+    dead port 1/2 on $mux $procmux$2509.
+    dead port 2/2 on $mux $procmux$2509.
+    dead port 1/2 on $mux $procmux$2505.
+    dead port 2/2 on $mux $procmux$2505.
+    dead port 1/2 on $mux $procmux$2502.
+    dead port 2/2 on $mux $procmux$2502.
+    dead port 1/2 on $mux $procmux$2500.
+    dead port 2/2 on $mux $procmux$2500.
+    dead port 1/2 on $mux $procmux$2496.
+    dead port 2/2 on $mux $procmux$2496.
+    dead port 1/2 on $mux $procmux$2493.
+    dead port 2/2 on $mux $procmux$2493.
+    dead port 1/2 on $mux $procmux$2491.
+    dead port 2/2 on $mux $procmux$2491.
+    dead port 1/2 on $mux $procmux$2487.
+    dead port 2/2 on $mux $procmux$2487.
+    dead port 1/2 on $mux $procmux$2484.
+    dead port 2/2 on $mux $procmux$2484.
+    dead port 1/2 on $mux $procmux$2482.
+    dead port 2/2 on $mux $procmux$2482.
+    dead port 1/2 on $mux $procmux$2478.
+    dead port 2/2 on $mux $procmux$2478.
+    dead port 1/2 on $mux $procmux$2475.
+    dead port 2/2 on $mux $procmux$2475.
+    dead port 1/2 on $mux $procmux$2473.
+    dead port 2/2 on $mux $procmux$2473.
+    dead port 1/2 on $mux $procmux$2469.
+    dead port 2/2 on $mux $procmux$2469.
+    dead port 1/2 on $mux $procmux$2466.
+    dead port 2/2 on $mux $procmux$2466.
+    dead port 1/2 on $mux $procmux$2464.
+    dead port 2/2 on $mux $procmux$2464.
+    dead port 2/2 on $mux $procmux$2460.
+    dead port 2/2 on $mux $procmux$2457.
+    dead port 2/2 on $mux $procmux$2451.
+    dead port 2/2 on $mux $procmux$2448.
+    dead port 2/2 on $mux $procmux$2442.
+    dead port 2/2 on $mux $procmux$2439.
+    dead port 2/2 on $mux $procmux$2433.
+    dead port 2/2 on $mux $procmux$2430.
+    dead port 2/2 on $mux $procmux$2424.
+    dead port 2/2 on $mux $procmux$2421.
+    dead port 2/2 on $mux $procmux$2415.
+    dead port 2/2 on $mux $procmux$2412.
+    dead port 1/2 on $mux $procmux$2406.
+    dead port 2/2 on $mux $procmux$2406.
+    dead port 1/2 on $mux $procmux$2403.
+    dead port 2/2 on $mux $procmux$2403.
+    dead port 1/2 on $mux $procmux$2401.
+    dead port 2/2 on $mux $procmux$2401.
+    dead port 1/2 on $mux $procmux$2398.
+    dead port 2/2 on $mux $procmux$2398.
+    dead port 1/2 on $mux $procmux$2394.
+    dead port 2/2 on $mux $procmux$2394.
+    dead port 1/2 on $mux $procmux$2391.
+    dead port 2/2 on $mux $procmux$2391.
+    dead port 1/2 on $mux $procmux$2389.
+    dead port 2/2 on $mux $procmux$2389.
+    dead port 1/2 on $mux $procmux$2386.
+    dead port 2/2 on $mux $procmux$2386.
+    dead port 1/2 on $mux $procmux$2382.
+    dead port 2/2 on $mux $procmux$2382.
+    dead port 1/2 on $mux $procmux$2379.
+    dead port 2/2 on $mux $procmux$2379.
+    dead port 1/2 on $mux $procmux$2377.
+    dead port 2/2 on $mux $procmux$2377.
+    dead port 1/2 on $mux $procmux$2374.
+    dead port 2/2 on $mux $procmux$2374.
+    dead port 1/2 on $mux $procmux$2370.
+    dead port 2/2 on $mux $procmux$2370.
+    dead port 1/2 on $mux $procmux$2367.
+    dead port 2/2 on $mux $procmux$2367.
+    dead port 1/2 on $mux $procmux$2365.
+    dead port 2/2 on $mux $procmux$2365.
+    dead port 1/2 on $mux $procmux$2362.
+    dead port 2/2 on $mux $procmux$2362.
+    dead port 1/2 on $mux $procmux$2358.
+    dead port 2/2 on $mux $procmux$2358.
+    dead port 1/2 on $mux $procmux$2355.
+    dead port 2/2 on $mux $procmux$2355.
+    dead port 1/2 on $mux $procmux$2353.
+    dead port 2/2 on $mux $procmux$2353.
+    dead port 1/2 on $mux $procmux$2350.
+    dead port 2/2 on $mux $procmux$2350.
+    dead port 1/2 on $mux $procmux$2346.
+    dead port 2/2 on $mux $procmux$2346.
+    dead port 1/2 on $mux $procmux$2343.
+    dead port 2/2 on $mux $procmux$2343.
+    dead port 1/2 on $mux $procmux$2341.
+    dead port 2/2 on $mux $procmux$2341.
+    dead port 1/2 on $mux $procmux$2338.
+    dead port 2/2 on $mux $procmux$2338.
+    dead port 1/2 on $mux $procmux$2334.
+    dead port 2/2 on $mux $procmux$2334.
+    dead port 1/2 on $mux $procmux$2331.
+    dead port 2/2 on $mux $procmux$2331.
+    dead port 1/2 on $mux $procmux$2329.
+    dead port 2/2 on $mux $procmux$2329.
+    dead port 1/2 on $mux $procmux$2326.
+    dead port 2/2 on $mux $procmux$2326.
+    dead port 1/2 on $mux $procmux$2322.
+    dead port 2/2 on $mux $procmux$2322.
+    dead port 1/2 on $mux $procmux$2319.
+    dead port 2/2 on $mux $procmux$2319.
+    dead port 1/2 on $mux $procmux$2317.
+    dead port 2/2 on $mux $procmux$2317.
+    dead port 1/2 on $mux $procmux$2314.
+    dead port 2/2 on $mux $procmux$2314.
+    dead port 1/2 on $mux $procmux$2310.
+    dead port 2/2 on $mux $procmux$2310.
+    dead port 1/2 on $mux $procmux$2307.
+    dead port 2/2 on $mux $procmux$2307.
+    dead port 1/2 on $mux $procmux$2305.
+    dead port 2/2 on $mux $procmux$2305.
+    dead port 1/2 on $mux $procmux$2302.
+    dead port 2/2 on $mux $procmux$2302.
+    dead port 1/2 on $mux $procmux$2298.
+    dead port 2/2 on $mux $procmux$2298.
+    dead port 1/2 on $mux $procmux$2295.
+    dead port 2/2 on $mux $procmux$2295.
+    dead port 1/2 on $mux $procmux$2293.
+    dead port 2/2 on $mux $procmux$2293.
+    dead port 1/2 on $mux $procmux$2290.
+    dead port 2/2 on $mux $procmux$2290.
+    dead port 1/2 on $mux $procmux$2286.
+    dead port 2/2 on $mux $procmux$2286.
+    dead port 1/2 on $mux $procmux$2283.
+    dead port 2/2 on $mux $procmux$2283.
+    dead port 1/2 on $mux $procmux$2281.
+    dead port 2/2 on $mux $procmux$2281.
+    dead port 1/2 on $mux $procmux$2278.
+    dead port 2/2 on $mux $procmux$2278.
+    dead port 1/2 on $mux $procmux$2274.
+    dead port 2/2 on $mux $procmux$2274.
+    dead port 1/2 on $mux $procmux$2271.
+    dead port 2/2 on $mux $procmux$2271.
+    dead port 1/2 on $mux $procmux$2269.
+    dead port 2/2 on $mux $procmux$2269.
+    dead port 1/2 on $mux $procmux$2266.
+    dead port 2/2 on $mux $procmux$2266.
+    dead port 1/2 on $mux $procmux$2262.
+    dead port 2/2 on $mux $procmux$2262.
+    dead port 1/2 on $mux $procmux$2259.
+    dead port 2/2 on $mux $procmux$2259.
+    dead port 1/2 on $mux $procmux$2257.
+    dead port 2/2 on $mux $procmux$2257.
+    dead port 1/2 on $mux $procmux$2254.
+    dead port 2/2 on $mux $procmux$2254.
+    dead port 1/2 on $mux $procmux$2250.
+    dead port 2/2 on $mux $procmux$2250.
+    dead port 1/2 on $mux $procmux$2247.
+    dead port 2/2 on $mux $procmux$2247.
+    dead port 1/2 on $mux $procmux$2245.
+    dead port 2/2 on $mux $procmux$2245.
+    dead port 1/2 on $mux $procmux$2242.
+    dead port 2/2 on $mux $procmux$2242.
+    dead port 1/2 on $mux $procmux$2238.
+    dead port 2/2 on $mux $procmux$2238.
+    dead port 1/2 on $mux $procmux$2235.
+    dead port 2/2 on $mux $procmux$2235.
+    dead port 1/2 on $mux $procmux$2233.
+    dead port 2/2 on $mux $procmux$2233.
+    dead port 1/2 on $mux $procmux$2230.
+    dead port 2/2 on $mux $procmux$2230.
+    dead port 2/2 on $mux $procmux$2226.
+    dead port 2/2 on $mux $procmux$2223.
+    dead port 2/2 on $mux $procmux$2221.
+    dead port 2/2 on $mux $procmux$2214.
+    dead port 2/2 on $mux $procmux$2211.
+    dead port 2/2 on $mux $procmux$2209.
+    dead port 2/2 on $mux $procmux$2202.
+    dead port 2/2 on $mux $procmux$2199.
+    dead port 2/2 on $mux $procmux$2197.
+    dead port 2/2 on $mux $procmux$2190.
+    dead port 2/2 on $mux $procmux$2187.
+    dead port 2/2 on $mux $procmux$2185.
+    dead port 2/2 on $mux $procmux$2178.
+    dead port 2/2 on $mux $procmux$2175.
+    dead port 2/2 on $mux $procmux$2173.
+    dead port 2/2 on $mux $procmux$2166.
+    dead port 2/2 on $mux $procmux$2163.
+    dead port 2/2 on $mux $procmux$2161.
+    dead port 2/2 on $mux $procmux$2154.
+    dead port 2/2 on $mux $procmux$2151.
+    dead port 2/2 on $mux $procmux$2149.
+    dead port 2/2 on $mux $procmux$2146.
+    dead port 2/2 on $mux $procmux$2139.
+    dead port 2/2 on $mux $procmux$2136.
+    dead port 2/2 on $mux $procmux$2134.
+    dead port 2/2 on $mux $procmux$2131.
+    dead port 2/2 on $mux $procmux$2124.
+    dead port 2/2 on $mux $procmux$2121.
+    dead port 2/2 on $mux $procmux$2119.
+    dead port 2/2 on $mux $procmux$2116.
+    dead port 2/2 on $mux $procmux$2109.
+    dead port 2/2 on $mux $procmux$2106.
+    dead port 2/2 on $mux $procmux$2104.
+    dead port 2/2 on $mux $procmux$2101.
+    dead port 2/2 on $mux $procmux$2094.
+    dead port 2/2 on $mux $procmux$2091.
+    dead port 2/2 on $mux $procmux$2089.
+    dead port 2/2 on $mux $procmux$2086.
+    dead port 2/2 on $mux $procmux$2079.
+    dead port 2/2 on $mux $procmux$2076.
+    dead port 2/2 on $mux $procmux$2074.
+    dead port 2/2 on $mux $procmux$2071.
+    dead port 2/2 on $mux $procmux$2064.
+    dead port 2/2 on $mux $procmux$2061.
+    dead port 2/2 on $mux $procmux$2059.
+    dead port 2/2 on $mux $procmux$2056.
+    dead port 2/2 on $mux $procmux$2054.
+    dead port 2/2 on $mux $procmux$2046.
+    dead port 2/2 on $mux $procmux$2043.
+    dead port 2/2 on $mux $procmux$2041.
+    dead port 2/2 on $mux $procmux$2038.
+    dead port 2/2 on $mux $procmux$2036.
+    dead port 2/2 on $mux $procmux$2028.
+    dead port 2/2 on $mux $procmux$2025.
+    dead port 2/2 on $mux $procmux$2023.
+    dead port 2/2 on $mux $procmux$2020.
+    dead port 2/2 on $mux $procmux$2018.
+    dead port 2/2 on $mux $procmux$2010.
+    dead port 2/2 on $mux $procmux$2007.
+    dead port 2/2 on $mux $procmux$2005.
+    dead port 2/2 on $mux $procmux$2002.
+    dead port 2/2 on $mux $procmux$2000.
+    dead port 2/2 on $mux $procmux$1992.
+    dead port 2/2 on $mux $procmux$1989.
+    dead port 2/2 on $mux $procmux$1987.
+    dead port 2/2 on $mux $procmux$1984.
+    dead port 2/2 on $mux $procmux$1982.
+    dead port 2/2 on $mux $procmux$1974.
+    dead port 2/2 on $mux $procmux$1971.
+    dead port 2/2 on $mux $procmux$1969.
+    dead port 2/2 on $mux $procmux$1966.
+    dead port 2/2 on $mux $procmux$1964.
+    dead port 2/2 on $mux $procmux$1956.
+    dead port 2/2 on $mux $procmux$1953.
+    dead port 2/2 on $mux $procmux$1951.
+    dead port 2/2 on $mux $procmux$1948.
+    dead port 2/2 on $mux $procmux$1946.
+    dead port 1/2 on $mux $procmux$1944.
+    dead port 2/2 on $mux $procmux$1935.
+    dead port 2/2 on $mux $procmux$1932.
+    dead port 2/2 on $mux $procmux$1930.
+    dead port 2/2 on $mux $procmux$1927.
+    dead port 2/2 on $mux $procmux$1925.
+    dead port 1/2 on $mux $procmux$1923.
+    dead port 2/2 on $mux $procmux$1914.
+    dead port 2/2 on $mux $procmux$1911.
+    dead port 2/2 on $mux $procmux$1909.
+    dead port 2/2 on $mux $procmux$1906.
+    dead port 2/2 on $mux $procmux$1904.
+    dead port 1/2 on $mux $procmux$1902.
+    dead port 2/2 on $mux $procmux$1893.
+    dead port 2/2 on $mux $procmux$1890.
+    dead port 2/2 on $mux $procmux$1888.
+    dead port 2/2 on $mux $procmux$1885.
+    dead port 2/2 on $mux $procmux$1883.
+    dead port 1/2 on $mux $procmux$1881.
+    dead port 2/2 on $mux $procmux$1872.
+    dead port 2/2 on $mux $procmux$1869.
+    dead port 2/2 on $mux $procmux$1867.
+    dead port 2/2 on $mux $procmux$1864.
+    dead port 2/2 on $mux $procmux$1862.
+    dead port 1/2 on $mux $procmux$1860.
+    dead port 2/2 on $mux $procmux$1851.
+    dead port 2/2 on $mux $procmux$1848.
+    dead port 2/2 on $mux $procmux$1846.
+    dead port 2/2 on $mux $procmux$1843.
+    dead port 2/2 on $mux $procmux$1841.
+    dead port 1/2 on $mux $procmux$1839.
+    dead port 1/2 on $mux $procmux$1830.
+    dead port 2/2 on $mux $procmux$1830.
+    dead port 1/2 on $mux $procmux$1827.
+    dead port 2/2 on $mux $procmux$1827.
+    dead port 1/2 on $mux $procmux$1825.
+    dead port 2/2 on $mux $procmux$1825.
+    dead port 1/2 on $mux $procmux$1822.
+    dead port 2/2 on $mux $procmux$1822.
+    dead port 1/2 on $mux $procmux$1819.
+    dead port 2/2 on $mux $procmux$1819.
+    dead port 1/2 on $mux $procmux$1813.
+    dead port 2/2 on $mux $procmux$1813.
+    dead port 1/2 on $mux $procmux$1810.
+    dead port 2/2 on $mux $procmux$1810.
+    dead port 1/2 on $mux $procmux$1808.
+    dead port 2/2 on $mux $procmux$1808.
+    dead port 1/2 on $mux $procmux$1805.
+    dead port 2/2 on $mux $procmux$1805.
+    dead port 1/2 on $mux $procmux$1802.
+    dead port 2/2 on $mux $procmux$1802.
+    dead port 1/2 on $mux $procmux$1796.
+    dead port 2/2 on $mux $procmux$1796.
+    dead port 1/2 on $mux $procmux$1793.
+    dead port 2/2 on $mux $procmux$1793.
+    dead port 1/2 on $mux $procmux$1791.
+    dead port 2/2 on $mux $procmux$1791.
+    dead port 1/2 on $mux $procmux$1788.
+    dead port 2/2 on $mux $procmux$1788.
+    dead port 1/2 on $mux $procmux$1785.
+    dead port 2/2 on $mux $procmux$1785.
+    dead port 1/2 on $mux $procmux$1779.
+    dead port 2/2 on $mux $procmux$1779.
+    dead port 1/2 on $mux $procmux$1776.
+    dead port 2/2 on $mux $procmux$1776.
+    dead port 1/2 on $mux $procmux$1774.
+    dead port 2/2 on $mux $procmux$1774.
+    dead port 1/2 on $mux $procmux$1771.
+    dead port 2/2 on $mux $procmux$1771.
+    dead port 1/2 on $mux $procmux$1768.
+    dead port 2/2 on $mux $procmux$1768.
+    dead port 1/2 on $mux $procmux$1762.
+    dead port 2/2 on $mux $procmux$1762.
+    dead port 1/2 on $mux $procmux$1759.
+    dead port 2/2 on $mux $procmux$1759.
+    dead port 1/2 on $mux $procmux$1757.
+    dead port 2/2 on $mux $procmux$1757.
+    dead port 1/2 on $mux $procmux$1754.
+    dead port 2/2 on $mux $procmux$1754.
+    dead port 1/2 on $mux $procmux$1751.
+    dead port 2/2 on $mux $procmux$1751.
+    dead port 1/2 on $mux $procmux$1745.
+    dead port 2/2 on $mux $procmux$1745.
+    dead port 1/2 on $mux $procmux$1742.
+    dead port 2/2 on $mux $procmux$1742.
+    dead port 1/2 on $mux $procmux$1740.
+    dead port 2/2 on $mux $procmux$1740.
+    dead port 1/2 on $mux $procmux$1737.
+    dead port 2/2 on $mux $procmux$1737.
+    dead port 1/2 on $mux $procmux$1734.
+    dead port 2/2 on $mux $procmux$1734.
+    dead port 1/2 on $mux $procmux$1729.
+    dead port 2/2 on $mux $procmux$1729.
+    dead port 1/2 on $mux $procmux$1726.
+    dead port 2/2 on $mux $procmux$1726.
+    dead port 1/2 on $mux $procmux$1724.
+    dead port 2/2 on $mux $procmux$1724.
+    dead port 1/2 on $mux $procmux$1721.
+    dead port 2/2 on $mux $procmux$1721.
+    dead port 1/2 on $mux $procmux$1718.
+    dead port 2/2 on $mux $procmux$1718.
+    dead port 1/2 on $mux $procmux$1713.
+    dead port 2/2 on $mux $procmux$1713.
+    dead port 1/2 on $mux $procmux$1710.
+    dead port 2/2 on $mux $procmux$1710.
+    dead port 1/2 on $mux $procmux$1708.
+    dead port 2/2 on $mux $procmux$1708.
+    dead port 1/2 on $mux $procmux$1705.
+    dead port 2/2 on $mux $procmux$1705.
+    dead port 1/2 on $mux $procmux$1702.
+    dead port 2/2 on $mux $procmux$1702.
+    dead port 1/2 on $mux $procmux$1697.
+    dead port 2/2 on $mux $procmux$1697.
+    dead port 1/2 on $mux $procmux$1694.
+    dead port 2/2 on $mux $procmux$1694.
+    dead port 1/2 on $mux $procmux$1692.
+    dead port 2/2 on $mux $procmux$1692.
+    dead port 1/2 on $mux $procmux$1689.
+    dead port 2/2 on $mux $procmux$1689.
+    dead port 1/2 on $mux $procmux$1686.
+    dead port 2/2 on $mux $procmux$1686.
+    dead port 1/2 on $mux $procmux$1681.
+    dead port 2/2 on $mux $procmux$1681.
+    dead port 1/2 on $mux $procmux$1678.
+    dead port 2/2 on $mux $procmux$1678.
+    dead port 1/2 on $mux $procmux$1676.
+    dead port 2/2 on $mux $procmux$1676.
+    dead port 1/2 on $mux $procmux$1673.
+    dead port 2/2 on $mux $procmux$1673.
+    dead port 1/2 on $mux $procmux$1670.
+    dead port 2/2 on $mux $procmux$1670.
+    dead port 1/2 on $mux $procmux$1665.
+    dead port 2/2 on $mux $procmux$1665.
+    dead port 1/2 on $mux $procmux$1662.
+    dead port 2/2 on $mux $procmux$1662.
+    dead port 1/2 on $mux $procmux$1660.
+    dead port 2/2 on $mux $procmux$1660.
+    dead port 1/2 on $mux $procmux$1657.
+    dead port 2/2 on $mux $procmux$1657.
+    dead port 1/2 on $mux $procmux$1654.
+    dead port 2/2 on $mux $procmux$1654.
+    dead port 1/2 on $mux $procmux$1650.
+    dead port 2/2 on $mux $procmux$1650.
+    dead port 1/2 on $mux $procmux$1647.
+    dead port 2/2 on $mux $procmux$1647.
+    dead port 1/2 on $mux $procmux$1645.
+    dead port 2/2 on $mux $procmux$1645.
+    dead port 1/2 on $mux $procmux$1642.
+    dead port 2/2 on $mux $procmux$1642.
+    dead port 1/2 on $mux $procmux$1639.
+    dead port 2/2 on $mux $procmux$1639.
+    dead port 1/2 on $mux $procmux$1635.
+    dead port 2/2 on $mux $procmux$1635.
+    dead port 1/2 on $mux $procmux$1632.
+    dead port 2/2 on $mux $procmux$1632.
+    dead port 1/2 on $mux $procmux$1630.
+    dead port 2/2 on $mux $procmux$1630.
+    dead port 1/2 on $mux $procmux$1627.
+    dead port 2/2 on $mux $procmux$1627.
+    dead port 1/2 on $mux $procmux$1624.
+    dead port 2/2 on $mux $procmux$1624.
+    dead port 1/2 on $mux $procmux$1620.
+    dead port 2/2 on $mux $procmux$1620.
+    dead port 1/2 on $mux $procmux$1617.
+    dead port 2/2 on $mux $procmux$1617.
+    dead port 1/2 on $mux $procmux$1615.
+    dead port 2/2 on $mux $procmux$1615.
+    dead port 1/2 on $mux $procmux$1612.
+    dead port 2/2 on $mux $procmux$1612.
+    dead port 1/2 on $mux $procmux$1609.
+    dead port 2/2 on $mux $procmux$1609.
+    dead port 1/2 on $mux $procmux$1605.
+    dead port 2/2 on $mux $procmux$1605.
+    dead port 1/2 on $mux $procmux$1602.
+    dead port 2/2 on $mux $procmux$1602.
+    dead port 1/2 on $mux $procmux$1600.
+    dead port 2/2 on $mux $procmux$1600.
+    dead port 1/2 on $mux $procmux$1597.
+    dead port 2/2 on $mux $procmux$1597.
+    dead port 1/2 on $mux $procmux$1594.
+    dead port 2/2 on $mux $procmux$1594.
+    dead port 1/2 on $mux $procmux$1590.
+    dead port 2/2 on $mux $procmux$1590.
+    dead port 1/2 on $mux $procmux$1587.
+    dead port 2/2 on $mux $procmux$1587.
+    dead port 1/2 on $mux $procmux$1585.
+    dead port 2/2 on $mux $procmux$1585.
+    dead port 1/2 on $mux $procmux$1582.
+    dead port 2/2 on $mux $procmux$1582.
+    dead port 1/2 on $mux $procmux$1579.
+    dead port 2/2 on $mux $procmux$1579.
+    dead port 1/2 on $mux $procmux$1577.
+    dead port 2/2 on $mux $procmux$1577.
+    dead port 1/2 on $mux $procmux$1570.
+    dead port 2/2 on $mux $procmux$1570.
+    dead port 1/2 on $mux $procmux$1567.
+    dead port 2/2 on $mux $procmux$1567.
+    dead port 1/2 on $mux $procmux$1565.
+    dead port 2/2 on $mux $procmux$1565.
+    dead port 1/2 on $mux $procmux$1562.
+    dead port 2/2 on $mux $procmux$1562.
+    dead port 1/2 on $mux $procmux$1559.
+    dead port 2/2 on $mux $procmux$1559.
+    dead port 1/2 on $mux $procmux$1557.
+    dead port 2/2 on $mux $procmux$1557.
+    dead port 1/2 on $mux $procmux$1550.
+    dead port 2/2 on $mux $procmux$1550.
+    dead port 1/2 on $mux $procmux$1547.
+    dead port 2/2 on $mux $procmux$1547.
+    dead port 1/2 on $mux $procmux$1545.
+    dead port 2/2 on $mux $procmux$1545.
+    dead port 1/2 on $mux $procmux$1542.
+    dead port 2/2 on $mux $procmux$1542.
+    dead port 1/2 on $mux $procmux$1539.
+    dead port 2/2 on $mux $procmux$1539.
+    dead port 1/2 on $mux $procmux$1537.
+    dead port 2/2 on $mux $procmux$1537.
+    dead port 1/2 on $mux $procmux$1530.
+    dead port 2/2 on $mux $procmux$1530.
+    dead port 1/2 on $mux $procmux$1527.
+    dead port 2/2 on $mux $procmux$1527.
+    dead port 1/2 on $mux $procmux$1525.
+    dead port 2/2 on $mux $procmux$1525.
+    dead port 1/2 on $mux $procmux$1522.
+    dead port 2/2 on $mux $procmux$1522.
+    dead port 1/2 on $mux $procmux$1519.
+    dead port 2/2 on $mux $procmux$1519.
+    dead port 1/2 on $mux $procmux$1517.
+    dead port 2/2 on $mux $procmux$1517.
+    dead port 1/2 on $mux $procmux$1510.
+    dead port 2/2 on $mux $procmux$1510.
+    dead port 1/2 on $mux $procmux$1507.
+    dead port 2/2 on $mux $procmux$1507.
+    dead port 1/2 on $mux $procmux$1505.
+    dead port 2/2 on $mux $procmux$1505.
+    dead port 1/2 on $mux $procmux$1502.
+    dead port 2/2 on $mux $procmux$1502.
+    dead port 1/2 on $mux $procmux$1499.
+    dead port 2/2 on $mux $procmux$1499.
+    dead port 1/2 on $mux $procmux$1497.
+    dead port 2/2 on $mux $procmux$1497.
+    dead port 1/2 on $mux $procmux$1490.
+    dead port 2/2 on $mux $procmux$1490.
+    dead port 1/2 on $mux $procmux$1487.
+    dead port 2/2 on $mux $procmux$1487.
+    dead port 1/2 on $mux $procmux$1485.
+    dead port 2/2 on $mux $procmux$1485.
+    dead port 1/2 on $mux $procmux$1482.
+    dead port 2/2 on $mux $procmux$1482.
+    dead port 1/2 on $mux $procmux$1479.
+    dead port 2/2 on $mux $procmux$1479.
+    dead port 1/2 on $mux $procmux$1477.
+    dead port 2/2 on $mux $procmux$1477.
+    dead port 1/2 on $mux $procmux$1470.
+    dead port 2/2 on $mux $procmux$1470.
+    dead port 1/2 on $mux $procmux$1467.
+    dead port 2/2 on $mux $procmux$1467.
+    dead port 1/2 on $mux $procmux$1465.
+    dead port 2/2 on $mux $procmux$1465.
+    dead port 1/2 on $mux $procmux$1462.
+    dead port 2/2 on $mux $procmux$1462.
+    dead port 1/2 on $mux $procmux$1459.
+    dead port 2/2 on $mux $procmux$1459.
+    dead port 1/2 on $mux $procmux$1457.
+    dead port 2/2 on $mux $procmux$1457.
+    dead port 1/2 on $mux $procmux$1450.
+    dead port 2/2 on $mux $procmux$1450.
+    dead port 1/2 on $mux $procmux$1447.
+    dead port 2/2 on $mux $procmux$1447.
+    dead port 1/2 on $mux $procmux$1445.
+    dead port 2/2 on $mux $procmux$1445.
+    dead port 1/2 on $mux $procmux$1442.
+    dead port 2/2 on $mux $procmux$1442.
+    dead port 1/2 on $mux $procmux$1439.
+    dead port 2/2 on $mux $procmux$1439.
+    dead port 1/2 on $mux $procmux$1437.
+    dead port 2/2 on $mux $procmux$1437.
+    dead port 2/2 on $mux $procmux$1430.
+    dead port 2/2 on $mux $procmux$1427.
+    dead port 2/2 on $mux $procmux$1425.
+    dead port 1/2 on $mux $procmux$1422.
+    dead port 2/2 on $mux $procmux$1419.
+    dead port 1/2 on $mux $procmux$1417.
+    dead port 2/2 on $mux $procmux$1407.
+    dead port 2/2 on $mux $procmux$1404.
+    dead port 2/2 on $mux $procmux$1402.
+    dead port 1/2 on $mux $procmux$1399.
+    dead port 2/2 on $mux $procmux$1396.
+    dead port 1/2 on $mux $procmux$1394.
+    dead port 2/2 on $mux $procmux$1384.
+    dead port 2/2 on $mux $procmux$1381.
+    dead port 2/2 on $mux $procmux$1379.
+    dead port 1/2 on $mux $procmux$1376.
+    dead port 2/2 on $mux $procmux$1373.
+    dead port 1/2 on $mux $procmux$1371.
+    dead port 2/2 on $mux $procmux$1361.
+    dead port 2/2 on $mux $procmux$1358.
+    dead port 2/2 on $mux $procmux$1356.
+    dead port 1/2 on $mux $procmux$1353.
+    dead port 2/2 on $mux $procmux$1350.
+    dead port 1/2 on $mux $procmux$1348.
+    dead port 1/2 on $mux $procmux$1338.
+    dead port 2/2 on $mux $procmux$1338.
+    dead port 1/2 on $mux $procmux$1335.
+    dead port 2/2 on $mux $procmux$1335.
+    dead port 1/2 on $mux $procmux$1333.
+    dead port 2/2 on $mux $procmux$1333.
+    dead port 1/2 on $mux $procmux$1330.
+    dead port 2/2 on $mux $procmux$1330.
+    dead port 1/2 on $mux $procmux$1327.
+    dead port 2/2 on $mux $procmux$1327.
+    dead port 1/2 on $mux $procmux$1325.
+    dead port 2/2 on $mux $procmux$1325.
+    dead port 1/2 on $mux $procmux$1319.
+    dead port 2/2 on $mux $procmux$1319.
+    dead port 1/2 on $mux $procmux$1316.
+    dead port 2/2 on $mux $procmux$1316.
+    dead port 1/2 on $mux $procmux$1314.
+    dead port 2/2 on $mux $procmux$1314.
+    dead port 1/2 on $mux $procmux$1311.
+    dead port 2/2 on $mux $procmux$1311.
+    dead port 1/2 on $mux $procmux$1308.
+    dead port 2/2 on $mux $procmux$1308.
+    dead port 1/2 on $mux $procmux$1306.
+    dead port 2/2 on $mux $procmux$1306.
+    dead port 1/2 on $mux $procmux$1300.
+    dead port 2/2 on $mux $procmux$1300.
+    dead port 1/2 on $mux $procmux$1297.
+    dead port 2/2 on $mux $procmux$1297.
+    dead port 1/2 on $mux $procmux$1295.
+    dead port 2/2 on $mux $procmux$1295.
+    dead port 1/2 on $mux $procmux$1292.
+    dead port 2/2 on $mux $procmux$1292.
+    dead port 1/2 on $mux $procmux$1289.
+    dead port 2/2 on $mux $procmux$1289.
+    dead port 1/2 on $mux $procmux$1287.
+    dead port 2/2 on $mux $procmux$1287.
+    dead port 1/2 on $mux $procmux$1281.
+    dead port 2/2 on $mux $procmux$1281.
+    dead port 1/2 on $mux $procmux$1278.
+    dead port 2/2 on $mux $procmux$1278.
+    dead port 1/2 on $mux $procmux$1276.
+    dead port 2/2 on $mux $procmux$1276.
+    dead port 1/2 on $mux $procmux$1273.
+    dead port 2/2 on $mux $procmux$1273.
+    dead port 1/2 on $mux $procmux$1270.
+    dead port 2/2 on $mux $procmux$1270.
+    dead port 1/2 on $mux $procmux$1268.
+    dead port 2/2 on $mux $procmux$1268.
+    dead port 1/2 on $mux $procmux$1262.
+    dead port 2/2 on $mux $procmux$1262.
+    dead port 1/2 on $mux $procmux$1259.
+    dead port 2/2 on $mux $procmux$1259.
+    dead port 1/2 on $mux $procmux$1257.
+    dead port 2/2 on $mux $procmux$1257.
+    dead port 1/2 on $mux $procmux$1254.
+    dead port 2/2 on $mux $procmux$1254.
+    dead port 1/2 on $mux $procmux$1251.
+    dead port 2/2 on $mux $procmux$1251.
+    dead port 1/2 on $mux $procmux$1249.
+    dead port 2/2 on $mux $procmux$1249.
+    dead port 1/2 on $mux $procmux$1243.
+    dead port 2/2 on $mux $procmux$1243.
+    dead port 1/2 on $mux $procmux$1240.
+    dead port 2/2 on $mux $procmux$1240.
+    dead port 1/2 on $mux $procmux$1238.
+    dead port 2/2 on $mux $procmux$1238.
+    dead port 1/2 on $mux $procmux$1235.
+    dead port 2/2 on $mux $procmux$1235.
+    dead port 1/2 on $mux $procmux$1232.
+    dead port 2/2 on $mux $procmux$1232.
+    dead port 1/2 on $mux $procmux$1230.
+    dead port 2/2 on $mux $procmux$1230.
+    dead port 1/2 on $mux $procmux$1224.
+    dead port 2/2 on $mux $procmux$1224.
+    dead port 1/2 on $mux $procmux$1221.
+    dead port 2/2 on $mux $procmux$1221.
+    dead port 1/2 on $mux $procmux$1219.
+    dead port 2/2 on $mux $procmux$1219.
+    dead port 1/2 on $mux $procmux$1216.
+    dead port 2/2 on $mux $procmux$1216.
+    dead port 1/2 on $mux $procmux$1213.
+    dead port 2/2 on $mux $procmux$1213.
+    dead port 1/2 on $mux $procmux$1211.
+    dead port 2/2 on $mux $procmux$1211.
+    dead port 1/2 on $mux $procmux$1205.
+    dead port 2/2 on $mux $procmux$1205.
+    dead port 1/2 on $mux $procmux$1202.
+    dead port 2/2 on $mux $procmux$1202.
+    dead port 1/2 on $mux $procmux$1200.
+    dead port 2/2 on $mux $procmux$1200.
+    dead port 1/2 on $mux $procmux$1197.
+    dead port 2/2 on $mux $procmux$1197.
+    dead port 1/2 on $mux $procmux$1194.
+    dead port 2/2 on $mux $procmux$1194.
+    dead port 1/2 on $mux $procmux$1192.
+    dead port 2/2 on $mux $procmux$1192.
+    dead port 2/2 on $mux $procmux$1186.
+    dead port 2/2 on $mux $procmux$1183.
+    dead port 2/2 on $mux $procmux$1181.
+    dead port 1/2 on $mux $procmux$1178.
+    dead port 2/2 on $mux $procmux$1175.
+    dead port 1/2 on $mux $procmux$1173.
+    dead port 2/2 on $mux $procmux$1164.
+    dead port 2/2 on $mux $procmux$1161.
+    dead port 2/2 on $mux $procmux$1159.
+    dead port 1/2 on $mux $procmux$1156.
+    dead port 2/2 on $mux $procmux$1153.
+    dead port 1/2 on $mux $procmux$1151.
+    dead port 2/2 on $mux $procmux$1142.
+    dead port 2/2 on $mux $procmux$1139.
+    dead port 2/2 on $mux $procmux$1137.
+    dead port 1/2 on $mux $procmux$1134.
+    dead port 2/2 on $mux $procmux$1131.
+    dead port 1/2 on $mux $procmux$1129.
+    dead port 2/2 on $mux $procmux$1120.
+    dead port 2/2 on $mux $procmux$1117.
+    dead port 2/2 on $mux $procmux$1115.
+    dead port 1/2 on $mux $procmux$1112.
+    dead port 2/2 on $mux $procmux$1109.
+    dead port 1/2 on $mux $procmux$1107.
+    dead port 1/2 on $mux $procmux$1098.
+    dead port 2/2 on $mux $procmux$1098.
+    dead port 1/2 on $mux $procmux$1095.
+    dead port 2/2 on $mux $procmux$1095.
+    dead port 1/2 on $mux $procmux$1093.
+    dead port 2/2 on $mux $procmux$1093.
+    dead port 1/2 on $mux $procmux$1090.
+    dead port 2/2 on $mux $procmux$1090.
+    dead port 1/2 on $mux $procmux$1087.
+    dead port 2/2 on $mux $procmux$1087.
+    dead port 1/2 on $mux $procmux$1085.
+    dead port 2/2 on $mux $procmux$1085.
+    dead port 1/2 on $mux $procmux$1080.
+    dead port 2/2 on $mux $procmux$1080.
+    dead port 1/2 on $mux $procmux$1077.
+    dead port 2/2 on $mux $procmux$1077.
+    dead port 1/2 on $mux $procmux$1075.
+    dead port 2/2 on $mux $procmux$1075.
+    dead port 1/2 on $mux $procmux$1072.
+    dead port 2/2 on $mux $procmux$1072.
+    dead port 1/2 on $mux $procmux$1069.
+    dead port 2/2 on $mux $procmux$1069.
+    dead port 1/2 on $mux $procmux$1067.
+    dead port 2/2 on $mux $procmux$1067.
+    dead port 1/2 on $mux $procmux$1062.
+    dead port 2/2 on $mux $procmux$1062.
+    dead port 1/2 on $mux $procmux$1059.
+    dead port 2/2 on $mux $procmux$1059.
+    dead port 1/2 on $mux $procmux$1057.
+    dead port 2/2 on $mux $procmux$1057.
+    dead port 1/2 on $mux $procmux$1054.
+    dead port 2/2 on $mux $procmux$1054.
+    dead port 1/2 on $mux $procmux$1051.
+    dead port 2/2 on $mux $procmux$1051.
+    dead port 1/2 on $mux $procmux$1049.
+    dead port 2/2 on $mux $procmux$1049.
+    dead port 1/2 on $mux $procmux$1044.
+    dead port 2/2 on $mux $procmux$1044.
+    dead port 1/2 on $mux $procmux$1041.
+    dead port 2/2 on $mux $procmux$1041.
+    dead port 1/2 on $mux $procmux$1039.
+    dead port 2/2 on $mux $procmux$1039.
+    dead port 1/2 on $mux $procmux$1036.
+    dead port 2/2 on $mux $procmux$1036.
+    dead port 1/2 on $mux $procmux$1033.
+    dead port 2/2 on $mux $procmux$1033.
+    dead port 1/2 on $mux $procmux$1031.
+    dead port 2/2 on $mux $procmux$1031.
+    dead port 1/2 on $mux $procmux$1026.
+    dead port 2/2 on $mux $procmux$1026.
+    dead port 1/2 on $mux $procmux$1023.
+    dead port 2/2 on $mux $procmux$1023.
+    dead port 1/2 on $mux $procmux$1021.
+    dead port 2/2 on $mux $procmux$1021.
+    dead port 1/2 on $mux $procmux$1018.
+    dead port 2/2 on $mux $procmux$1018.
+    dead port 1/2 on $mux $procmux$1015.
+    dead port 2/2 on $mux $procmux$1015.
+    dead port 1/2 on $mux $procmux$1013.
+    dead port 2/2 on $mux $procmux$1013.
+    dead port 1/2 on $mux $procmux$1008.
+    dead port 2/2 on $mux $procmux$1008.
+    dead port 1/2 on $mux $procmux$1005.
+    dead port 2/2 on $mux $procmux$1005.
+    dead port 1/2 on $mux $procmux$1003.
+    dead port 2/2 on $mux $procmux$1003.
+    dead port 1/2 on $mux $procmux$1000.
+    dead port 2/2 on $mux $procmux$1000.
+    dead port 1/2 on $mux $procmux$997.
+    dead port 2/2 on $mux $procmux$997.
+    dead port 1/2 on $mux $procmux$995.
+    dead port 2/2 on $mux $procmux$995.
+    dead port 1/2 on $mux $procmux$990.
+    dead port 2/2 on $mux $procmux$990.
+    dead port 1/2 on $mux $procmux$987.
+    dead port 2/2 on $mux $procmux$987.
+    dead port 1/2 on $mux $procmux$985.
+    dead port 2/2 on $mux $procmux$985.
+    dead port 1/2 on $mux $procmux$982.
+    dead port 2/2 on $mux $procmux$982.
+    dead port 1/2 on $mux $procmux$979.
+    dead port 2/2 on $mux $procmux$979.
+    dead port 1/2 on $mux $procmux$977.
+    dead port 2/2 on $mux $procmux$977.
+    dead port 1/2 on $mux $procmux$972.
+    dead port 2/2 on $mux $procmux$972.
+    dead port 1/2 on $mux $procmux$969.
+    dead port 2/2 on $mux $procmux$969.
+    dead port 1/2 on $mux $procmux$967.
+    dead port 2/2 on $mux $procmux$967.
+    dead port 1/2 on $mux $procmux$964.
+    dead port 2/2 on $mux $procmux$964.
+    dead port 1/2 on $mux $procmux$961.
+    dead port 2/2 on $mux $procmux$961.
+    dead port 1/2 on $mux $procmux$959.
+    dead port 2/2 on $mux $procmux$959.
+    dead port 2/2 on $mux $procmux$954.
+    dead port 2/2 on $mux $procmux$951.
+    dead port 2/2 on $mux $procmux$949.
+    dead port 1/2 on $mux $procmux$946.
+    dead port 2/2 on $mux $procmux$943.
+    dead port 1/2 on $mux $procmux$941.
+    dead port 2/2 on $mux $procmux$933.
+    dead port 2/2 on $mux $procmux$930.
+    dead port 2/2 on $mux $procmux$928.
+    dead port 1/2 on $mux $procmux$925.
+    dead port 2/2 on $mux $procmux$922.
+    dead port 1/2 on $mux $procmux$920.
+    dead port 2/2 on $mux $procmux$912.
+    dead port 2/2 on $mux $procmux$909.
+    dead port 2/2 on $mux $procmux$907.
+    dead port 1/2 on $mux $procmux$904.
+    dead port 2/2 on $mux $procmux$901.
+    dead port 1/2 on $mux $procmux$899.
+    dead port 2/2 on $mux $procmux$891.
+    dead port 2/2 on $mux $procmux$888.
+    dead port 2/2 on $mux $procmux$886.
+    dead port 1/2 on $mux $procmux$883.
+    dead port 2/2 on $mux $procmux$880.
+    dead port 1/2 on $mux $procmux$878.
+    dead port 2/2 on $mux $procmux$3387.
+    dead port 2/2 on $mux $procmux$3381.
+    dead port 2/2 on $mux $procmux$3375.
+    dead port 2/2 on $mux $procmux$3369.
+    dead port 2/2 on $mux $procmux$3363.
+    dead port 2/2 on $mux $procmux$3453.
+    dead port 2/2 on $mux $procmux$3447.
+    dead port 2/2 on $mux $procmux$3357.
+    dead port 2/2 on $mux $procmux$3441.
+    dead port 2/2 on $mux $procmux$3435.
+    dead port 1/2 on $mux $procmux$3660.
+    dead port 2/2 on $mux $procmux$3660.
+    dead port 2/2 on $mux $procmux$3429.
+    dead port 1/2 on $mux $procmux$3657.
+    dead port 2/2 on $mux $procmux$3657.
+    dead port 1/2 on $mux $procmux$3654.
+    dead port 2/2 on $mux $procmux$3654.
+    dead port 1/2 on $mux $procmux$3651.
+    dead port 2/2 on $mux $procmux$3651.
+    dead port 2/2 on $mux $procmux$3423.
+    dead port 1/2 on $mux $procmux$3648.
+    dead port 2/2 on $mux $procmux$3648.
+    dead port 1/2 on $mux $procmux$3645.
+    dead port 2/2 on $mux $procmux$3645.
+    dead port 2/2 on $mux $procmux$3351.
+    dead port 1/2 on $mux $procmux$3642.
+    dead port 2/2 on $mux $procmux$3642.
+    dead port 2/2 on $mux $procmux$3417.
+    dead port 1/2 on $mux $procmux$3639.
+    dead port 2/2 on $mux $procmux$3639.
+    dead port 1/2 on $mux $procmux$3636.
+    dead port 2/2 on $mux $procmux$3636.
+    dead port 1/2 on $mux $procmux$3633.
+    dead port 2/2 on $mux $procmux$3633.
+    dead port 1/2 on $mux $procmux$3630.
+    dead port 2/2 on $mux $procmux$3630.
+    dead port 2/2 on $mux $procmux$3411.
+    dead port 1/2 on $mux $procmux$3627.
+    dead port 2/2 on $mux $procmux$3627.
+    dead port 1/2 on $mux $procmux$3624.
+    dead port 2/2 on $mux $procmux$3624.
+    dead port 1/2 on $mux $procmux$3621.
+    dead port 2/2 on $mux $procmux$3621.
+    dead port 2/2 on $mux $procmux$3405.
+    dead port 1/2 on $mux $procmux$3618.
+    dead port 2/2 on $mux $procmux$3618.
+    dead port 2/2 on $mux $procmux$3399.
+    dead port 2/2 on $mux $procmux$3345.
+    dead port 2/2 on $mux $procmux$3393.
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 1113 multiplexer ports.
+<suppressed ~104 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \neurotile_accel.
+    Consolidated identical input bits for $mux cell $procmux$2941:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$2941_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2941_Y [0]
+      New connections: $procmux$2941_Y [31:1] = { $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] $procmux$2941_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2914:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$2914_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2914_Y [0]
+      New connections: $procmux$2914_Y [31:1] = { $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] $procmux$2914_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2887:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$2887_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2887_Y [0]
+      New connections: $procmux$2887_Y [31:1] = { $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] $procmux$2887_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1899:
+      Old ports: A=8'11111111, B=8'00000000, Y=$procmux$1899_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$1899_Y [0]
+      New connections: $procmux$1899_Y [7:1] = { $procmux$1899_Y [0] $procmux$1899_Y [0] $procmux$1899_Y [0] $procmux$1899_Y [0] $procmux$1899_Y [0] $procmux$1899_Y [0] $procmux$1899_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2860:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$2860_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2860_Y [0]
+      New connections: $procmux$2860_Y [31:1] = { $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] $procmux$2860_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3130:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$3130_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$3130_Y [0]
+      New connections: $procmux$3130_Y [31:1] = { $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] $procmux$3130_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1836:
+      Old ports: A=8'00000000, B=8'11111111, Y=$procmux$1836_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1836_Y [0]
+      New connections: $procmux$1836_Y [7:1] = { $procmux$1836_Y [0] $procmux$1836_Y [0] $procmux$1836_Y [0] $procmux$1836_Y [0] $procmux$1836_Y [0] $procmux$1836_Y [0] $procmux$1836_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2833:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$2833_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2833_Y [0]
+      New connections: $procmux$2833_Y [31:1] = { $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] $procmux$2833_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3103:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$3103_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$3103_Y [0]
+      New connections: $procmux$3103_Y [31:1] = { $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] $procmux$3103_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2806:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$2806_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2806_Y [0]
+      New connections: $procmux$2806_Y [31:1] = { $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] $procmux$2806_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2779:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$2779_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2779_Y [0]
+      New connections: $procmux$2779_Y [31:1] = { $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] $procmux$2779_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3076:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$3076_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$3076_Y [0]
+      New connections: $procmux$3076_Y [31:1] = { $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] $procmux$3076_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2752:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$2752_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2752_Y [0]
+      New connections: $procmux$2752_Y [31:1] = { $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] $procmux$2752_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2725:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$2725_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2725_Y [0]
+      New connections: $procmux$2725_Y [31:1] = { $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] $procmux$2725_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3049:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$3049_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$3049_Y [0]
+      New connections: $procmux$3049_Y [31:1] = { $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] $procmux$3049_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3022:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$3022_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$3022_Y [0]
+      New connections: $procmux$3022_Y [31:1] = { $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] $procmux$3022_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2995:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$2995_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2995_Y [0]
+      New connections: $procmux$2995_Y [31:1] = { $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] $procmux$2995_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2968:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$2968_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$2968_Y [0]
+      New connections: $procmux$2968_Y [31:1] = { $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] $procmux$2968_Y [0] }
+  Optimizing cells in module \neurotile_accel.
+    Consolidated identical input bits for $mux cell $procmux$3174:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$106_EN[31:0]$517, Y=$procmux$3174_Y
+      New ports: A=1'0, B=$procmux$2752_Y [0], Y=$procmux$3174_Y [0]
+      New connections: $procmux$3174_Y [31:1] = { $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] $procmux$3174_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2016:
+      Old ports: A=$7$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$623, B=8'00000000, Y=$procmux$2016_Y
+      New ports: A=$procmux$1836_Y [0], B=1'0, Y=$procmux$2016_Y [0]
+      New connections: $procmux$2016_Y [7:1] = { $procmux$2016_Y [0] $procmux$2016_Y [0] $procmux$2016_Y [0] $procmux$2016_Y [0] $procmux$2016_Y [0] $procmux$2016_Y [0] $procmux$2016_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3282:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$100_EN[31:0]$445, Y=$procmux$3282_Y
+      New ports: A=1'0, B=$procmux$2914_Y [0], Y=$procmux$3282_Y [0]
+      New connections: $procmux$3282_Y [31:1] = { $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] $procmux$3282_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3156:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$107_EN[31:0]$529, Y=$procmux$3156_Y
+      New ports: A=1'0, B=$procmux$2725_Y [0], Y=$procmux$3156_Y [0]
+      New connections: $procmux$3156_Y [31:1] = { $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] $procmux$3156_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1962:
+      Old ports: A=$7$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$626, B=8'00000000, Y=$procmux$1962_Y
+      New ports: A=$procmux$1899_Y [0], B=1'0, Y=$procmux$1962_Y [0]
+      New connections: $procmux$1962_Y [7:1] = { $procmux$1962_Y [0] $procmux$1962_Y [0] $procmux$1962_Y [0] $procmux$1962_Y [0] $procmux$1962_Y [0] $procmux$1962_Y [0] $procmux$1962_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3336:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$97_EN[31:0]$409, Y=$procmux$3336_Y
+      New ports: A=1'0, B=$procmux$2995_Y [0], Y=$procmux$3336_Y [0]
+      New connections: $procmux$3336_Y [31:1] = { $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] $procmux$3336_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3318:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$98_EN[31:0]$421, Y=$procmux$3318_Y
+      New ports: A=1'0, B=$procmux$2968_Y [0], Y=$procmux$3318_Y [0]
+      New connections: $procmux$3318_Y [31:1] = { $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] $procmux$3318_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3264:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$101_EN[31:0]$457, Y=$procmux$3264_Y
+      New ports: A=1'0, B=$procmux$2887_Y [0], Y=$procmux$3264_Y [0]
+      New connections: $procmux$3264_Y [31:1] = { $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] $procmux$3264_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3246:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$102_EN[31:0]$469, Y=$procmux$3246_Y
+      New ports: A=1'0, B=$procmux$2860_Y [0], Y=$procmux$3246_Y [0]
+      New connections: $procmux$3246_Y [31:1] = { $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] $procmux$3246_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3228:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$103_EN[31:0]$481, Y=$procmux$3228_Y
+      New ports: A=1'0, B=$procmux$2833_Y [0], Y=$procmux$3228_Y [0]
+      New connections: $procmux$3228_Y [31:1] = { $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] $procmux$3228_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3300:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$99_EN[31:0]$433, Y=$procmux$3300_Y
+      New ports: A=1'0, B=$procmux$2941_Y [0], Y=$procmux$3300_Y [0]
+      New connections: $procmux$3300_Y [31:1] = { $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] $procmux$3300_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3210:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$104_EN[31:0]$493, Y=$procmux$3210_Y
+      New ports: A=1'0, B=$procmux$2806_Y [0], Y=$procmux$3210_Y [0]
+      New connections: $procmux$3210_Y [31:1] = { $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] $procmux$3210_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3390:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$94_EN[31:0]$373, Y=$procmux$3390_Y
+      New ports: A=1'0, B=$procmux$3076_Y [0], Y=$procmux$3390_Y [0]
+      New connections: $procmux$3390_Y [31:1] = { $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] $procmux$3390_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3372:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$95_EN[31:0]$385, Y=$procmux$3372_Y
+      New ports: A=1'0, B=$procmux$3049_Y [0], Y=$procmux$3372_Y [0]
+      New connections: $procmux$3372_Y [31:1] = { $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] $procmux$3372_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3354:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$96_EN[31:0]$397, Y=$procmux$3354_Y
+      New ports: A=1'0, B=$procmux$3022_Y [0], Y=$procmux$3354_Y [0]
+      New connections: $procmux$3354_Y [31:1] = { $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] $procmux$3354_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3426:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$92_EN[31:0]$349, Y=$procmux$3426_Y
+      New ports: A=1'0, B=$procmux$3130_Y [0], Y=$procmux$3426_Y [0]
+      New connections: $procmux$3426_Y [31:1] = { $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] $procmux$3426_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3192:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$105_EN[31:0]$505, Y=$procmux$3192_Y
+      New ports: A=1'0, B=$procmux$2779_Y [0], Y=$procmux$3192_Y [0]
+      New connections: $procmux$3192_Y [31:1] = { $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] $procmux$3192_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3408:
+      Old ports: A=0, B=$3$memwr$\c_mem$rtl/neurotile_accel.v:136$93_EN[31:0]$361, Y=$procmux$3408_Y
+      New ports: A=1'0, B=$procmux$3103_Y [0], Y=$procmux$3408_Y [0]
+      New connections: $procmux$3408_Y [31:1] = { $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] $procmux$3408_Y [0] }
+  Optimizing cells in module \neurotile_accel.
+    Consolidated identical input bits for $mux cell $procmux$3591:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$94_EN[31:0]$298, Y=$procmux$3591_Y
+      New ports: A=1'0, B=$procmux$3390_Y [0], Y=$procmux$3591_Y [0]
+      New connections: $procmux$3591_Y [31:1] = { $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] $procmux$3591_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3582:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$95_EN[31:0]$301, Y=$procmux$3582_Y
+      New ports: A=1'0, B=$procmux$3372_Y [0], Y=$procmux$3582_Y [0]
+      New connections: $procmux$3582_Y [31:1] = { $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] $procmux$3582_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3573:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$96_EN[31:0]$304, Y=$procmux$3573_Y
+      New ports: A=1'0, B=$procmux$3354_Y [0], Y=$procmux$3573_Y [0]
+      New connections: $procmux$3573_Y [31:1] = { $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] $procmux$3573_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3564:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$97_EN[31:0]$307, Y=$procmux$3564_Y
+      New ports: A=1'0, B=$procmux$3336_Y [0], Y=$procmux$3564_Y [0]
+      New connections: $procmux$3564_Y [31:1] = { $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] $procmux$3564_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3555:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$98_EN[31:0]$310, Y=$procmux$3555_Y
+      New ports: A=1'0, B=$procmux$3318_Y [0], Y=$procmux$3555_Y [0]
+      New connections: $procmux$3555_Y [31:1] = { $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] $procmux$3555_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3546:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$99_EN[31:0]$313, Y=$procmux$3546_Y
+      New ports: A=1'0, B=$procmux$3300_Y [0], Y=$procmux$3546_Y [0]
+      New connections: $procmux$3546_Y [31:1] = { $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] $procmux$3546_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3537:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$100_EN[31:0]$316, Y=$procmux$3537_Y
+      New ports: A=1'0, B=$procmux$3282_Y [0], Y=$procmux$3537_Y [0]
+      New connections: $procmux$3537_Y [31:1] = { $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] $procmux$3537_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3528:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$101_EN[31:0]$319, Y=$procmux$3528_Y
+      New ports: A=1'0, B=$procmux$3264_Y [0], Y=$procmux$3528_Y [0]
+      New connections: $procmux$3528_Y [31:1] = { $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] $procmux$3528_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3519:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$102_EN[31:0]$322, Y=$procmux$3519_Y
+      New ports: A=1'0, B=$procmux$3246_Y [0], Y=$procmux$3519_Y [0]
+      New connections: $procmux$3519_Y [31:1] = { $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] $procmux$3519_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3510:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$103_EN[31:0]$325, Y=$procmux$3510_Y
+      New ports: A=1'0, B=$procmux$3228_Y [0], Y=$procmux$3510_Y [0]
+      New connections: $procmux$3510_Y [31:1] = { $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] $procmux$3510_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3501:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$104_EN[31:0]$328, Y=$procmux$3501_Y
+      New ports: A=1'0, B=$procmux$3210_Y [0], Y=$procmux$3501_Y [0]
+      New connections: $procmux$3501_Y [31:1] = { $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] $procmux$3501_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3492:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$105_EN[31:0]$331, Y=$procmux$3492_Y
+      New ports: A=1'0, B=$procmux$3192_Y [0], Y=$procmux$3492_Y [0]
+      New connections: $procmux$3492_Y [31:1] = { $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] $procmux$3492_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3483:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$106_EN[31:0]$334, Y=$procmux$3483_Y
+      New ports: A=1'0, B=$procmux$3174_Y [0], Y=$procmux$3483_Y [0]
+      New connections: $procmux$3483_Y [31:1] = { $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] $procmux$3483_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3474:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$107_EN[31:0]$337, Y=$procmux$3474_Y
+      New ports: A=1'0, B=$procmux$3156_Y [0], Y=$procmux$3474_Y [0]
+      New connections: $procmux$3474_Y [31:1] = { $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] $procmux$3474_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2114:
+      Old ports: A=8'00000000, B=$6$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$617, Y=$procmux$2114_Y
+      New ports: A=1'0, B=$procmux$2016_Y [0], Y=$procmux$2114_Y [0]
+      New connections: $procmux$2114_Y [7:1] = { $procmux$2114_Y [0] $procmux$2114_Y [0] $procmux$2114_Y [0] $procmux$2114_Y [0] $procmux$2114_Y [0] $procmux$2114_Y [0] $procmux$2114_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2069:
+      Old ports: A=8'00000000, B=$6$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$620, Y=$procmux$2069_Y
+      New ports: A=1'0, B=$procmux$1962_Y [0], Y=$procmux$2069_Y [0]
+      New connections: $procmux$2069_Y [7:1] = { $procmux$2069_Y [0] $procmux$2069_Y [0] $procmux$2069_Y [0] $procmux$2069_Y [0] $procmux$2069_Y [0] $procmux$2069_Y [0] $procmux$2069_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3609:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$92_EN[31:0]$292, Y=$procmux$3609_Y
+      New ports: A=1'0, B=$procmux$3426_Y [0], Y=$procmux$3609_Y [0]
+      New connections: $procmux$3609_Y [31:1] = { $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] $procmux$3609_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3600:
+      Old ports: A=0, B=$2$memwr$\c_mem$rtl/neurotile_accel.v:136$93_EN[31:0]$295, Y=$procmux$3600_Y
+      New ports: A=1'0, B=$procmux$3408_Y [0], Y=$procmux$3600_Y [0]
+      New connections: $procmux$3600_Y [31:1] = { $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] $procmux$3600_Y [0] }
+  Optimizing cells in module \neurotile_accel.
+    Consolidated identical input bits for $mux cell $procmux$2194:
+      Old ports: A=8'00000000, B=$5$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$611, Y=$procmux$2194_Y
+      New ports: A=1'0, B=$procmux$2114_Y [0], Y=$procmux$2194_Y [0]
+      New connections: $procmux$2194_Y [7:1] = { $procmux$2194_Y [0] $procmux$2194_Y [0] $procmux$2194_Y [0] $procmux$2194_Y [0] $procmux$2194_Y [0] $procmux$2194_Y [0] $procmux$2194_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2158:
+      Old ports: A=8'00000000, B=$5$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$614, Y=$procmux$2158_Y
+      New ports: A=1'0, B=$procmux$2069_Y [0], Y=$procmux$2158_Y [0]
+      New connections: $procmux$2158_Y [7:1] = { $procmux$2158_Y [0] $procmux$2158_Y [0] $procmux$2158_Y [0] $procmux$2158_Y [0] $procmux$2158_Y [0] $procmux$2158_Y [0] $procmux$2158_Y [0] }
+  Optimizing cells in module \neurotile_accel.
+    Consolidated identical input bits for $mux cell $procmux$2437:
+      Old ports: A=8'00000000, B=$4$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$605, Y=$procmux$2437_Y
+      New ports: A=1'0, B=$procmux$2194_Y [0], Y=$procmux$2437_Y [0]
+      New connections: $procmux$2437_Y [7:1] = { $procmux$2437_Y [0] $procmux$2437_Y [0] $procmux$2437_Y [0] $procmux$2437_Y [0] $procmux$2437_Y [0] $procmux$2437_Y [0] $procmux$2437_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2410:
+      Old ports: A=8'00000000, B=$4$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$608, Y=$procmux$2410_Y
+      New ports: A=1'0, B=$procmux$2158_Y [0], Y=$procmux$2410_Y [0]
+      New connections: $procmux$2410_Y [7:1] = { $procmux$2410_Y [0] $procmux$2410_Y [0] $procmux$2410_Y [0] $procmux$2410_Y [0] $procmux$2410_Y [0] $procmux$2410_Y [0] $procmux$2410_Y [0] }
+  Optimizing cells in module \neurotile_accel.
+    Consolidated identical input bits for $mux cell $procmux$2616:
+      Old ports: A=8'00000000, B=$3$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$583, Y=$procmux$2616_Y
+      New ports: A=1'0, B=$procmux$2437_Y [0], Y=$procmux$2616_Y [0]
+      New connections: $procmux$2616_Y [7:1] = { $procmux$2616_Y [0] $procmux$2616_Y [0] $procmux$2616_Y [0] $procmux$2616_Y [0] $procmux$2616_Y [0] $procmux$2616_Y [0] $procmux$2616_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$2598:
+      Old ports: A=8'00000000, B=$3$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$586, Y=$procmux$2598_Y
+      New ports: A=1'0, B=$procmux$2410_Y [0], Y=$procmux$2598_Y [0]
+      New connections: $procmux$2598_Y [7:1] = { $procmux$2598_Y [0] $procmux$2598_Y [0] $procmux$2598_Y [0] $procmux$2598_Y [0] $procmux$2598_Y [0] $procmux$2598_Y [0] $procmux$2598_Y [0] }
+  Optimizing cells in module \neurotile_accel.
+    Consolidated identical input bits for $mux cell $procmux$3465:
+      Old ports: A=8'00000000, B=$2$memwr$\a_mem$rtl/neurotile_accel.v:160$108_EN[7:0]$561, Y=$procmux$3465_Y
+      New ports: A=1'0, B=$procmux$2616_Y [0], Y=$procmux$3465_Y [0]
+      New connections: $procmux$3465_Y [7:1] = { $procmux$3465_Y [0] $procmux$3465_Y [0] $procmux$3465_Y [0] $procmux$3465_Y [0] $procmux$3465_Y [0] $procmux$3465_Y [0] $procmux$3465_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$3456:
+      Old ports: A=8'00000000, B=$2$memwr$\b_mem$rtl/neurotile_accel.v:161$109_EN[7:0]$564, Y=$procmux$3456_Y
+      New ports: A=1'0, B=$procmux$2598_Y [0], Y=$procmux$3456_Y [0]
+      New connections: $procmux$3456_Y [7:1] = { $procmux$3456_Y [0] $procmux$3456_Y [0] $procmux$3456_Y [0] $procmux$3456_Y [0] $procmux$3456_Y [0] $procmux$3456_Y [0] $procmux$3456_Y [0] }
+  Optimizing cells in module \neurotile_accel.
+  Optimizing cells in module \mac_pe.
+Performed a total of 62 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neurotile_accel'.
+<suppressed ~9 debug messages>
+Finding identical cells in module `\mac_pe'.
+Removed a total of 3 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$4193 ($dff) from module neurotile_accel (D = $procmux$3720_Y, Q = \useful_macs, rval = 0).
+Adding SRST signal on $procdff$4194 ($dff) from module neurotile_accel (D = $procmux$3691_Y, Q = \tile_count, rval = 0).
+Adding SRST signal on $procdff$4180 ($dff) from module neurotile_accel (D = $procmux$4097_Y, Q = \state, rval = 2'00).
+Adding SRST signal on $procdff$4181 ($dff) from module neurotile_accel (D = $procmux$4058_Y, Q = \done, rval = 1'0).
+Adding EN signal on $procdff$4195 ($dff) from module neurotile_accel (D = $2\store_row[31:0], Q = \store_row).
+Adding SRST signal on $procdff$4182 ($dff) from module neurotile_accel (D = $procmux$4022_Y, Q = \error, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$4290 ($sdff) from module neurotile_accel (D = $procmux$4020_Y, Q = \error).
+Adding SRST signal on $procdff$4183 ($dff) from module neurotile_accel (D = $procmux$3980_Y, Q = \dim_m, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$4300 ($sdff) from module neurotile_accel (D = { $10\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[31:24]$652 $9\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[23:16]$651 $8\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[15:8]$650 $7\merge_bytes$func$rtl/neurotile_accel.v:189$89.$result[7:0]$649 }, Q = \dim_m).
+Adding SRST signal on $procdff$4184 ($dff) from module neurotile_accel (D = $procmux$3960_Y, Q = \dim_n, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$4308 ($sdff) from module neurotile_accel (D = { $10\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[31:24]$661 $9\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[23:16]$660 $8\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[15:8]$659 $7\merge_bytes$func$rtl/neurotile_accel.v:191$90.$result[7:0]$658 }, Q = \dim_n).
+Adding EN signal on $procdff$4196 ($dff) from module neurotile_accel (D = $2\store_col[31:0], Q = \store_col).
+Adding SRST signal on $procdff$4185 ($dff) from module neurotile_accel (D = $procmux$3941_Y, Q = \dim_k, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$4317 ($sdff) from module neurotile_accel (D = { $10\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[31:24]$670 $9\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[23:16]$669 $8\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[15:8]$668 $7\merge_bytes$func$rtl/neurotile_accel.v:193$91.$result[7:0]$667 }, Q = \dim_k).
+Adding SRST signal on $procdff$4186 ($dff) from module neurotile_accel (D = $procmux$3923_Y, Q = \run_m, rval = 7'0000000).
+Adding EN signal on $auto$ff.cc:266:slice$4325 ($sdff) from module neurotile_accel (D = \dim_m [6:0], Q = \run_m).
+Adding SRST signal on $procdff$4187 ($dff) from module neurotile_accel (D = $procmux$3898_Y, Q = \run_n, rval = 7'0000000).
+Adding EN signal on $auto$ff.cc:266:slice$4333 ($sdff) from module neurotile_accel (D = \dim_n [6:0], Q = \run_n).
+Adding SRST signal on $procdff$4188 ($dff) from module neurotile_accel (D = $procmux$3873_Y, Q = \run_k, rval = 7'0000000).
+Adding EN signal on $auto$ff.cc:266:slice$4341 ($sdff) from module neurotile_accel (D = \dim_k [6:0], Q = \run_k).
+Adding SRST signal on $procdff$4189 ($dff) from module neurotile_accel (D = $procmux$3848_Y, Q = \tile_row, rval = 7'0000000).
+Adding SRST signal on $procdff$4190 ($dff) from module neurotile_accel (D = $procmux$3814_Y, Q = \tile_col, rval = 7'0000000).
+Adding SRST signal on $procdff$4191 ($dff) from module neurotile_accel (D = $procmux$3780_Y, Q = \k_pos, rval = 7'0000000).
+Adding SRST signal on $procdff$4192 ($dff) from module neurotile_accel (D = $procmux$3747_Y, Q = \kernel_cycles, rval = 0).
+Setting constant 1-bit at position 0 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 1 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 2 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 3 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 4 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 5 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 6 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 7 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 8 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 9 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 10 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 11 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 12 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 13 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 14 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 15 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 16 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 17 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 18 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 19 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 20 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 21 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 22 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 23 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 24 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 25 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 26 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 27 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 28 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 29 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 30 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 31 on $procdff$4211 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 0 on $procdff$4210 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 1 on $procdff$4210 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 2 on $procdff$4210 ($dff) from module neurotile_accel.
+Setting constant 1-bit at position 3 on $procdff$4210 ($dff) from module neurotile_accel.
+Adding SRST signal on $procdff$4266 ($dff) from module mac_pe (D = $procmux$4175_Y, Q = \acc, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$4353 ($sdff) from module mac_pe (D = $add$rtl/mac_pe.v:18$5_Y, Q = \acc).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neurotile_accel..
+Finding unused cells or wires in module \mac_pe..
+Removed 116 unused cells and 2686 unused wires.
+<suppressed ~127 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_pe.
+Optimizing module neurotile_accel.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \neurotile_accel..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~96 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mac_pe.
+  Optimizing cells in module \neurotile_accel.
+    New ctrl vector for $pmux cell $procmux$3990: { $procmux$3684_CMP $auto$opt_reduce.cc:137:opt_pmux$4356 }
+  Optimizing cells in module \neurotile_accel.
+Performed a total of 1 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_pe'.
+Finding identical cells in module `\neurotile_accel'.
+<suppressed ~33 debug messages>
+Removed a total of 11 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:266:slice$4318 ($sdffe) from module neurotile_accel (D = \bus_wdata [7:0], Q = \dim_k [7:0]).
+Adding EN signal on $auto$ff.cc:266:slice$4318 ($sdffe) from module neurotile_accel (D = \bus_wdata [15:8], Q = \dim_k [15:8]).
+Adding EN signal on $auto$ff.cc:266:slice$4318 ($sdffe) from module neurotile_accel (D = \bus_wdata [23:16], Q = \dim_k [23:16]).
+Adding EN signal on $auto$ff.cc:266:slice$4318 ($sdffe) from module neurotile_accel (D = \bus_wdata [31:24], Q = \dim_k [31:24]).
+Adding EN signal on $auto$ff.cc:266:slice$4309 ($sdffe) from module neurotile_accel (D = \bus_wdata [7:0], Q = \dim_n [7:0]).
+Adding EN signal on $auto$ff.cc:266:slice$4309 ($sdffe) from module neurotile_accel (D = \bus_wdata [15:8], Q = \dim_n [15:8]).
+Adding EN signal on $auto$ff.cc:266:slice$4309 ($sdffe) from module neurotile_accel (D = \bus_wdata [23:16], Q = \dim_n [23:16]).
+Adding EN signal on $auto$ff.cc:266:slice$4309 ($sdffe) from module neurotile_accel (D = \bus_wdata [31:24], Q = \dim_n [31:24]).
+Adding EN signal on $auto$ff.cc:266:slice$4301 ($sdffe) from module neurotile_accel (D = \bus_wdata [7:0], Q = \dim_m [7:0]).
+Adding EN signal on $auto$ff.cc:266:slice$4301 ($sdffe) from module neurotile_accel (D = \bus_wdata [15:8], Q = \dim_m [15:8]).
+Adding EN signal on $auto$ff.cc:266:slice$4301 ($sdffe) from module neurotile_accel (D = \bus_wdata [23:16], Q = \dim_m [23:16]).
+Adding EN signal on $auto$ff.cc:266:slice$4301 ($sdffe) from module neurotile_accel (D = \bus_wdata [31:24], Q = \dim_m [31:24]).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_pe..
+Finding unused cells or wires in module \neurotile_accel..
+Removed 12 unused cells and 23 unused wires.
+<suppressed ~13 debug messages>
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_pe.
+Optimizing module neurotile_accel.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \neurotile_accel..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~84 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mac_pe.
+  Optimizing cells in module \neurotile_accel.
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$4392: { $auto$rtlil.cc:2779:Not$4305 $auto$rtlil.cc:2779:Not$4303 $procmux$1351_CMP $logic_and$rtl/neurotile_accel.v:155$543_Y \aligned \bus_wstrb [3] }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$4386: { $auto$rtlil.cc:2779:Not$4305 $auto$rtlil.cc:2779:Not$4303 $procmux$1351_CMP $logic_and$rtl/neurotile_accel.v:155$543_Y \aligned \bus_wstrb [1] }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$4383: { $auto$rtlil.cc:2779:Not$4305 $auto$rtlil.cc:2779:Not$4303 $procmux$1351_CMP $logic_and$rtl/neurotile_accel.v:155$543_Y \aligned \bus_wstrb [0] }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$4380: { $auto$rtlil.cc:2779:Not$4305 $auto$rtlil.cc:2779:Not$4303 $procmux$1110_CMP $logic_and$rtl/neurotile_accel.v:155$543_Y \aligned \bus_wstrb [3] }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$4374: { $auto$rtlil.cc:2779:Not$4305 $auto$rtlil.cc:2779:Not$4303 $procmux$1110_CMP $logic_and$rtl/neurotile_accel.v:155$543_Y \aligned \bus_wstrb [1] }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$4371: { $auto$rtlil.cc:2779:Not$4305 $auto$rtlil.cc:2779:Not$4303 $procmux$1110_CMP $logic_and$rtl/neurotile_accel.v:155$543_Y \aligned \bus_wstrb [0] }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$4368: { $auto$rtlil.cc:2779:Not$4305 $auto$rtlil.cc:2779:Not$4303 $procmux$1016_CMP $logic_and$rtl/neurotile_accel.v:155$543_Y \aligned \bus_wstrb [3] }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$4362: { $auto$rtlil.cc:2779:Not$4305 $auto$rtlil.cc:2779:Not$4303 $procmux$1016_CMP $logic_and$rtl/neurotile_accel.v:155$543_Y \aligned \bus_wstrb [1] }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$4359: { $auto$rtlil.cc:2779:Not$4305 $auto$rtlil.cc:2779:Not$4303 $procmux$1016_CMP $logic_and$rtl/neurotile_accel.v:155$543_Y \aligned \bus_wstrb [0] }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$4365: { $auto$rtlil.cc:2779:Not$4305 $auto$rtlil.cc:2779:Not$4303 $procmux$1016_CMP $logic_and$rtl/neurotile_accel.v:155$543_Y \aligned \bus_wstrb [2] }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$4377: { $auto$rtlil.cc:2779:Not$4305 $auto$rtlil.cc:2779:Not$4303 $procmux$1110_CMP $logic_and$rtl/neurotile_accel.v:155$543_Y \aligned \bus_wstrb [2] }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:220:make_patterns_logic$4389: { $auto$rtlil.cc:2779:Not$4305 $auto$rtlil.cc:2779:Not$4303 $procmux$1351_CMP $logic_and$rtl/neurotile_accel.v:155$543_Y \aligned \bus_wstrb [2] }
+  Optimizing cells in module \neurotile_accel.
+Performed a total of 12 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_pe'.
+Finding identical cells in module `\neurotile_accel'.
+Removed a total of 0 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_pe..
+Finding unused cells or wires in module \neurotile_accel..
+Removed 3 unused cells and 3 unused wires.
+<suppressed ~4 debug messages>
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_pe.
+Optimizing module neurotile_accel.
+
+5.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \neurotile_accel..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~84 debug messages>
+
+5.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mac_pe.
+  Optimizing cells in module \neurotile_accel.
+Performed a total of 0 changes.
+
+5.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_pe'.
+Finding identical cells in module `\neurotile_accel'.
+Removed a total of 0 cells.
+
+5.27. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_pe..
+Finding unused cells or wires in module \neurotile_accel..
+
+5.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_pe.
+Optimizing module neurotile_accel.
+
+5.30. Finished OPT passes. (There is nothing left to do.)
+
+6. Executing CHECK pass (checking for obvious problems).
+Checking module mac_pe...
+Checking module neurotile_accel...
+Found and reported 0 problems.
+
+7. Executing MEMORY_COLLECT pass (generating $mem cells).
+{
+   "creator": "Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)",
+   "invocation": "stat -json ",
+   "modules": {
+      "\\mac_pe": {
+         "num_wires":         12,
+         "num_wire_bits":     134,
+         "num_pub_wires":     9,
+         "num_pub_wire_bits": 100,
+         "num_ports":         7,
+         "num_port_bits":     52,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         5,
+         "num_cells_by_type": {
+            "$add": 1,
+            "$logic_not": 1,
+            "$logic_or": 1,
+            "$mul": 1,
+            "$sdffe": 1
+         }
+      },
+      "\\neurotile_accel": {
+         "num_wires":         525,
+         "num_wire_bits":     9163,
+         "num_pub_wires":     75,
+         "num_pub_wire_bits": 1268,
+         "num_ports":         10,
+         "num_port_bits":     90,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         499,
+         "num_cells_by_type": {
+            "$add": 37,
+            "$eq": 11,
+            "$ge": 9,
+            "$le": 3,
+            "$logic_and": 54,
+            "$logic_not": 3,
+            "$logic_or": 2,
+            "$lt": 14,
+            "$mem_v2": 3,
+            "$mul": 10,
+            "$mux": 281,
+            "$ne": 3,
+            "$not": 3,
+            "$pmux": 4,
+            "$reduce_and": 14,
+            "$reduce_bool": 1,
+            "$reduce_or": 2,
+            "$sdff": 8,
+            "$sdffe": 16,
+            "$sub": 5,
+            "mac_pe": 16
+         }
+      }
+   },
+      "design": {
+         "num_wires":         717,
+         "num_wire_bits":     11307,
+         "num_pub_wires":     219,
+         "num_pub_wire_bits": 2868,
+         "num_ports":         122,
+         "num_port_bits":     922,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         563,
+         "num_cells_by_type": {
+            "$add": 53,
+            "$eq": 11,
+            "$ge": 9,
+            "$le": 3,
+            "$logic_and": 54,
+            "$logic_not": 19,
+            "$logic_or": 18,
+            "$lt": 14,
+            "$mem_v2": 3,
+            "$mul": 26,
+            "$mux": 281,
+            "$ne": 3,
+            "$not": 3,
+            "$pmux": 4,
+            "$reduce_and": 14,
+            "$reduce_bool": 1,
+            "$reduce_or": 2,
+            "$sdff": 8,
+            "$sdffe": 32,
+            "$sub": 5
+         }
+      }
+}
+

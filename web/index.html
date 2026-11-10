@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101512"><link rel="icon" href="data:,">
+  <title>NeuroTile — more pixels, two digits</title>
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to experiment</a>
+  <div class="app-shell">
+    <header class="masthead">
+      <a class="brand" href="/" aria-label="NeuroTile home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>NeuroTile<span class="brand-sub">HARDWARE × VISION · V2</span></span></a>
+      <div class="environment"><span class="status-dot" aria-hidden="true"></span><span id="connection-status">Connecting to local engine</span></div>
+    </header>
+    <nav class="tabs" role="tablist" aria-label="Experiments">
+      <button id="tab-inference" class="tab active" role="tab" aria-selected="true" aria-controls="panel-inference" type="button"><span>01</span> Vision engine</button>
+      <button id="tab-memory" class="tab" role="tab" aria-selected="false" aria-controls="panel-memory" type="button" tabindex="-1"><span>02</span> Memory lab</button>
+      <button id="tab-security" class="tab" role="tab" aria-selected="false" aria-controls="panel-security" type="button" tabindex="-1"><span>03</span> Security lab</button>
+    </nav>
+    <main id="main">
+      <div id="global-error" class="error-message" role="alert" hidden></div>
+      <section id="panel-inference" role="tabpanel" aria-labelledby="tab-inference">
+        <div class="hero"><div><p class="eyebrow">THE HIGH-RESOLUTION VISION ENGINE</p><h1>More pixels.<br><em>Two digits.</em></h1><p class="hero-copy">Draw a number. Watch it become two digit crops, integer activations, and a batched hardware result.</p></div><div class="architecture" aria-label="Architecture"><span class="architecture-label">THE UPGRADED DATA PATH</span><div class="architecture-row"><b>128 × 64</b><span>drawing pixels</span></div><div class="architecture-row"><b id="model-topology">784 → 64 → 10</b><span>28 × 28 per digit</span></div><div class="architecture-row"><b>2 DIGITS / BATCH</b><span>one set of weights</span></div></div></div>
+        <div class="inference-layout hd-layout">
+          <section class="surface input-surface" aria-labelledby="input-title">
+            <div class="section-heading"><div><p class="eyebrow">01 / DRAW OR IMPORT</p><h2 id="input-title">Room for a number.</h2></div><span class="mini-label">8,192 pixels</span></div>
+            <div class="canvas-shell"><canvas id="draw-canvas" width="128" height="64" tabindex="0" aria-label="128 by 64 drawing canvas. Draw with mouse or touch. Use arrow keys and Space to paint with the keyboard."></canvas><canvas id="overlay-canvas" width="512" height="256" aria-hidden="true"></canvas><span class="canvas-corner canvas-corner-left" aria-hidden="true"></span><span class="canvas-corner canvas-corner-right" aria-hidden="true"></span></div>
+            <div class="drawing-toolbar"><div class="tool-switch" role="group" aria-label="Drawing tool"><button id="paint-tool" class="tool-button selected" type="button" aria-pressed="true">Paint</button><button id="erase-tool" class="tool-button" type="button" aria-pressed="false">Erase</button></div><div class="drawing-actions"><button id="undo-input" class="text-button" type="button" disabled>Undo</button><button id="clear-input" class="text-button" type="button">Clear</button></div></div>
+            <div class="brush-row"><label for="brush-size">Brush <span id="brush-value">4 px</span></label><input id="brush-size" type="range" min="2" max="10" value="4" step="1"><button id="upload-image" class="upload-button" type="button">Import image <span aria-hidden="true">↗</span></button><input id="image-upload" class="sr-only" type="file" accept="image/png,image/jpeg" aria-label="Choose a PNG or JPEG image"></div>
+            <p class="canvas-hint">Mouse, pen or touch · keyboard: arrows + Space · PNG / JPEG</p>
+            <div class="sample-line"><span id="sample-description">Loading a higher-resolution example…</span><button id="next-example" class="text-button" type="button">Next example <span aria-hidden="true">↗</span></button></div>
+            <div class="field-grid"><label class="field-label" for="digit-mode">Recognition mode<select id="digit-mode"><option value="auto">Auto detect</option><option value="single">One digit</option><option value="double" selected>Two digits</option></select></label><label class="field-label" for="backend-select">Execution backend<select id="backend-select" disabled><option value="reference">Python integer reference</option></select></label></div>
+            <div class="split-controls"><label class="check-label"><input id="manual-split" type="checkbox"> Adjust the digit split</label><span id="split-value" class="mini-label">x = 64</span><input id="split-position" type="range" min="16" max="112" value="64" step="1" aria-label="Manual digit split column" disabled></div>
+            <button id="run-inference" class="primary-button" type="button" disabled><span id="run-label">Recognize number</span><span aria-hidden="true">↗</span></button>
+            <p class="input-note">Digits are located and normalized to real 28 × 28 model inputs. Leave a little space between them. Touching digits can need a manual split.</p>
+          </section>
+          <section class="surface output-surface hd-output" aria-labelledby="output-title" id="inference-output" aria-busy="false">
+            <div class="section-heading"><div><p class="eyebrow">02 / FOLLOW THE PIPELINE</p><h2 id="output-title">From ink to integer.</h2></div><span id="result-status" class="badge">READY TO COMPUTE</span></div>
+            <div class="pipeline-steps" aria-label="Recognition pipeline"><span><b>01</b> Locate</span><i aria-hidden="true">→</i><span><b>02</b> Normalize</span><i aria-hidden="true">→</i><span><b>03</b> Batch</span></div>
+            <div id="empty-result" class="empty-state"><span class="empty-glyph" aria-hidden="true">0–9</span><h3>A wider canvas.<br>A closer look at each digit.</h3><p>Draw one or two digits, import an image,<br>or run the bundled example.</p></div>
+            <div id="result-content" hidden>
+              <div class="prediction-row"><div class="prediction"><span class="field-label">Recognized number</span><strong id="prediction-digit">—</strong></div><div class="prediction-context"><p id="prediction-caption"></p><span id="verification-badge" class="verification"></span><p id="result-backend" class="secondary-text"></p></div></div>
+              <div id="pipeline-warning" class="pipeline-warning" role="status" hidden></div>
+              <div id="inference-metrics" class="metric-strip"></div>
+              <div class="chart-heading crop-heading"><h3>Normalized model inputs</h3><span>select a digit to inspect</span></div><div id="digit-crops" class="digit-crops" role="group" aria-label="Normalized digit inputs"></div><p id="segmentation-caption" class="chart-note"></p>
+              <div class="chart-heading"><h3 id="logit-title">Raw class logits</h3><span>signed integers · largest wins</span></div><div id="logits-chart" class="logits-chart" role="img" aria-label="Class logits"></div><div id="class-alternatives" class="ranking-line" aria-label="Top three class scores"></div><p class="chart-note">Scores and relative gaps are uncalibrated, not probabilities.</p>
+              <div class="chart-heading hidden-heading"><h3>Hidden activations</h3><span id="hidden-caption">64 neurons · 0–127</span></div><div id="hidden-activations" class="hidden-activations" role="group" aria-label="Hidden neuron values"></div><p class="chart-note">Actual values after bias, arithmetic shift, and saturation.</p>
+            </div>
+            <p id="inference-status" class="sr-only" aria-live="polite"></p>
+          </section>
+        </div>
+        <div class="capability-strip"><div><span class="eyebrow">HIGHER-RESOLUTION INPUT</span><strong>28 × 28 <small>per digit</small></strong></div><div><span class="eyebrow">ORIGINAL HARDWARE</span><strong>4 × 4 <small>INT8 MAC array</small></strong></div><div><span class="eyebrow">REAL WEIGHT REUSE</span><strong>1 or 2 <small>digits in one RTL batch</small></strong></div></div>
+        <div class="model-footnote" id="model-footnote"></div>
+      </section>
+      <section id="panel-memory" role="tabpanel" aria-labelledby="tab-memory" hidden>
+        <div class="hero lab-hero"><div><p class="eyebrow">THE ADAPTIVE MEMORY EXPERIMENT</p><h1>Less waiting.<br><em>Smarter fetching.</em></h1><p class="hero-copy">Compare a learned prefetch selector with fixed policies and a software-managed scratchpad.</p></div><span class="scope-tag">PYTHON TIMING MODEL</span></div>
+        <div id="memory-loading" class="loading-state">Loading reproducible experiments…</div>
+        <div id="memory-content" hidden><div class="lab-intro"><div id="memory-model" class="lab-model"></div><p id="memory-training"></p></div><section class="surface lab-surface"><div class="section-heading"><div><p class="eyebrow">POLICY COMPARISON</p><h2>Where do the cycles go?</h2></div><label class="select-label">Workload<select id="memory-workload"><option value="all">All held-out workloads</option></select></label></div><p id="memory-verdict" class="insight"></p><div class="table-wrap"><table><thead><tr><th scope="col">Policy</th><th scope="col">Modeled cycles</th><th scope="col">Memory reads</th><th scope="col">Speedup vs. off</th></tr></thead><tbody id="memory-table"></tbody></table></div><p class="chart-note">Lower cycle and read counts are better. A speedup below 1× is a slowdown. Scratchpad has a known address schedule.</p></section><details class="limitations"><summary>Model assumptions and limits</summary><ul id="memory-limitations"></ul><p id="memory-timing"></p></details></div>
+      </section>
+      <section id="panel-security" role="tabpanel" aria-labelledby="tab-security" hidden>
+        <div class="hero lab-hero"><div><p class="eyebrow">THE CACHE ISOLATION EXPERIMENT</p><h1>A shared cache.<br><em>A visible footprint.</em></h1><p class="hero-copy">Observe a controlled timing channel, then compare cache ways partitioned between two domains.</p></div><span class="scope-tag">PYTHON EVENT MODEL</span></div>
+        <div id="security-loading" class="loading-state">Loading reproducible experiments…</div>
+        <div id="security-content" hidden><div class="lab-intro"><div id="security-model" class="lab-model"></div><p id="security-threat"></p></div><div id="security-comparison" class="security-comparison"></div><section class="surface lab-surface"><div class="section-heading"><div><p class="eyebrow">THE CAPACITY TRADEOFF</p><h2>Separation has a cost.</h2></div></div><p class="secondary-text">A separate benign trace uses equal access counts in both modes, so its timing comparison is meaningful.</p><div class="table-wrap"><table><thead><tr><th scope="col">Cache mode</th><th scope="col">Benign accesses</th><th scope="col">Modeled cycles</th><th scope="col">Relative cost</th></tr></thead><tbody id="security-cost-table"></tbody></table></div><p id="security-cost-caption" class="insight"></p></section><details class="limitations"><summary>Threat model and limits</summary><ul id="security-limitations"></ul></details></div>
+      </section>
+    </main>
+    <footer><span>NeuroTile <span class="footer-separator">/</span> Verilog · C · Python</span><span>Real RTL simulation. Board implementation remains target-specific.</span></footer>
+  </div>
+</body>
+</html>

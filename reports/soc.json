@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "prediction": 0,
+  "label": 0,
+  "software_cycles": 162378,
+  "accelerated_cycles": 78422,
+  "kernel_cycles": 630,
+  "logits": [
+    14829,
+    -20313,
+    -2233,
+    -8822,
+    -10038,
+    -927,
+    -5241,
+    -5375,
+    -841,
+    -1601
+  ],
+  "backend": "PicoRV32 RV32IM + original accelerator, Icarus RTL simulation",
+  "speedup_including_transfers": 2.0705669327484633
+}

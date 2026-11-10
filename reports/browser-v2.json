@@ -1,0 +1,121 @@
+{
+  "backends": {
+    "reference": {
+      "prediction": "72",
+      "metrics": "23.1 ms\nHost elapsed time",
+      "status": "RESULT RETURNED"
+    },
+    "c": {
+      "prediction": "72",
+      "metrics": "60.3 ms\nHost elapsed time",
+      "status": "CHECKED RESULT"
+    },
+    "rtl": {
+      "prediction": "72",
+      "metrics": "13,158\nRTL kernel cycles\n121,802\nMMIO bench cycles\n101,632\nUseful MACs\n3208.9 ms\nHost elapsed time",
+      "status": "CHECKED RESULT"
+    }
+  },
+  "interactions": [
+    "PNG upload and polarity normalization",
+    "manual split override",
+    "single digit mode",
+    "automatic two-digit detection",
+    "leading zero preserved",
+    "clear invalidates output; undo restores exact image",
+    "keyboard drawing",
+    "interpolated pointer stroke and eraser",
+    "memory/security labs retained"
+  ],
+  "overflow": [
+    {
+      "width": 1440,
+      "tab": "inference",
+      "viewport": 1440,
+      "document": 1440,
+      "body": 1440
+    },
+    {
+      "width": 1440,
+      "tab": "memory",
+      "viewport": 1440,
+      "document": 1440,
+      "body": 1440
+    },
+    {
+      "width": 1440,
+      "tab": "security",
+      "viewport": 1440,
+      "document": 1440,
+      "body": 1440
+    },
+    {
+      "width": 390,
+      "tab": "inference",
+      "viewport": 390,
+      "document": 390,
+      "body": 390
+    },
+    {
+      "width": 390,
+      "tab": "memory",
+      "viewport": 390,
+      "document": 390,
+      "body": 390
+    },
+    {
+      "width": 390,
+      "tab": "security",
+      "viewport": 390,
+      "document": 390,
+      "body": 390
+    },
+    {
+      "width": 320,
+      "tab": "inference",
+      "viewport": 320,
+      "document": 320,
+      "body": 320
+    },
+    {
+      "width": 320,
+      "tab": "memory",
+      "viewport": 320,
+      "document": 320,
+      "body": 320
+    },
+    {
+      "width": 320,
+      "tab": "security",
+      "viewport": 320,
+      "document": 320,
+      "body": 320
+    }
+  ],
+  "upload": {
+    "prediction": "72",
+    "metrics": "24.3 ms\nHost elapsed time",
+    "status": "RESULT RETURNED"
+  },
+  "single": {
+    "prediction": "2",
+    "metrics": "16.4 ms\nHost elapsed time",
+    "status": "RESULT RETURNED"
+  },
+  "auto": {
+    "prediction": "60",
+    "metrics": "22.0 ms\nHost elapsed time",
+    "status": "RESULT RETURNED"
+  },
+  "leadingZero": {
+    "prediction": "04",
+    "metrics": "27.4 ms\nHost elapsed time",
+    "status": "RESULT RETURNED"
+  },
+  "blank": {
+    "prediction": "—",
+    "metrics": "3.2 ms\nHost elapsed time",
+    "status": "BLANK INPUT"
+  },
+  "errors": []
+}

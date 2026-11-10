@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "tests_run": 49,
+  "failures": 0,
+  "errors": 0,
+  "skipped": [],
+  "duration_seconds": 370.661,
+  "python": "3.14.4",
+  "tools": {
+    "gcc": "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+    "iverilog": "Icarus Verilog version 12.0 (stable) ()",
+    "vvp": "Icarus Verilog runtime version 12.0 (stable) ()",
+    "riscv64-unknown-elf-gcc": "riscv64-unknown-elf-gcc (14.2.0+19) 14.2.0",
+    "riscv64-unknown-elf-objcopy": "GNU objcopy (2.45.50.20251209-1ubuntu1+7build1) 2.45.50.20251209",
+    "yosys": "Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)"
+  },
+  "scope": "Simulation and software verification. No physical FPGA timing, power, or area claim.",
+  "synthesis": "Accelerator generic RTL statistics and lab/UART structural checks passed.",
+  "platform": "Local Ubuntu on WSL using native Linux tools",
+  "numpy": "2.3.5",
+  "clean_source_copy": true,
+  "source_snapshot_sha256": "d182437ba8aac896bb85ca613b90d77d16674307bc174343d5021d342fd8922d",
+  "source_files_changed_since_snapshot": [],
+  "validation_command": "python3 -B tools/check.py --require-tools --synth"
+}

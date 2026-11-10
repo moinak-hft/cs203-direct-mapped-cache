@@ -1,0 +1,2578 @@
+{
+  "memory": {
+    "lab": "memory",
+    "seed": 7,
+    "model": {
+      "cache": "16-line direct mapped",
+      "line_bytes": 16,
+      "capacity_bytes": 256,
+      "lookup_cycles": 1,
+      "memory_read_cycles": 12,
+      "compute_gap_cycles": 8,
+      "outstanding_prefetches": 1,
+      "selection_window": 32,
+      "timing": "Prefetch reads overlap compute; demand misses wait for a busy memory port. Final issued reads count as traffic even if unused."
+    },
+    "training": {
+      "algorithm": "CART / Gini",
+      "max_depth": 3,
+      "rows": 336,
+      "trace_ids": [
+        "train/stream/0",
+        "train/stream/1",
+        "train/stream/2",
+        "train/stream/3",
+        "train/stream/4",
+        "train/stream/5",
+        "train/stream/6",
+        "train/stream/7",
+        "train/stride/0",
+        "train/stride/1",
+        "train/stride/2",
+        "train/stride/3",
+        "train/stride/4",
+        "train/stride/5",
+        "train/stride/6",
+        "train/stride/7",
+        "train/reverse/0",
+        "train/reverse/1",
+        "train/reverse/2",
+        "train/reverse/3",
+        "train/reverse/4",
+        "train/reverse/5",
+        "train/reverse/6",
+        "train/reverse/7",
+        "train/hot/0",
+        "train/hot/1",
+        "train/hot/2",
+        "train/hot/3",
+        "train/hot/4",
+        "train/hot/5",
+        "train/hot/6",
+        "train/hot/7",
+        "train/random/0",
+        "train/random/1",
+        "train/random/2",
+        "train/random/3",
+        "train/random/4",
+        "train/random/5",
+        "train/random/6",
+        "train/random/7",
+        "train/phases/0",
+        "train/phases/1",
+        "train/phases/2",
+        "train/phases/3",
+        "train/phases/4",
+        "train/phases/5",
+        "train/phases/6",
+        "train/phases/7"
+      ],
+      "label": "Lowest modeled cycles among off/next-line/stride on the following cold-cache window; ties prefer off, then next-line.",
+      "features": [
+        "unit_delta",
+        "dominant_delta",
+        "reuse",
+        "stride_abs"
+      ],
+      "training_accuracy": 0.9285714285714286,
+      "tree": {
+        "feature": "unit_delta",
+        "feature_index": 0,
+        "threshold": 0,
+        "left": {
+          "feature": "dominant_delta",
+          "feature_index": 1,
+          "threshold": 16,
+          "left": {
+            "policy": "off",
+            "policy_id": 0
+          },
+          "right": {
+            "feature": "dominant_delta",
+            "feature_index": 1,
+            "threshold": 49,
+            "left": {
+              "policy": "next_line",
+              "policy_id": 1
+            },
+            "right": {
+              "policy": "stride",
+              "policy_id": 2
+            }
+          }
+        },
+        "right": {
+          "policy": "next_line",
+          "policy_id": 1
+        }
+      },
+      "test_rows": 77,
+      "held_out_accuracy": 0.948051948051948,
+      "split": "Entire generated traces held out with disjoint seeds and lengths. Six families overlap training; the conflict family is held out entirely."
+    },
+    "workloads": [
+      {
+        "id": "test/stream/0",
+        "kind": "stream",
+        "trace_seed": 1002194,
+        "trace_preview": [
+          1345,
+          1346,
+          1347,
+          1348,
+          1349,
+          1350,
+          1351,
+          1352,
+          1353,
+          1354,
+          1355,
+          1356,
+          1357,
+          1358,
+          1359,
+          1360
+        ],
+        "results": {
+          "off": {
+            "policy": "off",
+            "accesses": 384,
+            "cycles": 8064,
+            "stall_cycles": 4608,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 384,
+            "prefetch_reads": 0,
+            "memory_transactions": 384,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": null,
+            "decisions": []
+          },
+          "next_line": {
+            "policy": "next_line",
+            "accesses": 384,
+            "cycles": 5000,
+            "stall_cycles": 1544,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 1,
+            "prefetch_reads": 384,
+            "memory_transactions": 385,
+            "useful_prefetches": 383,
+            "prefetch_accuracy": 0.9973958333333334,
+            "decisions": []
+          },
+          "stride": {
+            "policy": "stride",
+            "accesses": 384,
+            "cycles": 5016,
+            "stall_cycles": 1560,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 3,
+            "prefetch_reads": 382,
+            "memory_transactions": 385,
+            "useful_prefetches": 381,
+            "prefetch_accuracy": 0.9973821989528796,
+            "decisions": []
+          },
+          "rule": {
+            "policy": "rule",
+            "accesses": 384,
+            "cycles": 5256,
+            "stall_cycles": 1800,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 33,
+            "prefetch_reads": 352,
+            "memory_transactions": 385,
+            "useful_prefetches": 351,
+            "prefetch_accuracy": 0.9971590909090909,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "learned": {
+            "policy": "learned",
+            "accesses": 384,
+            "cycles": 5256,
+            "stall_cycles": 1800,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 33,
+            "prefetch_reads": 352,
+            "memory_transactions": 385,
+            "useful_prefetches": 351,
+            "prefetch_accuracy": 0.9971590909090909,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "scratchpad": {
+            "policy": "scheduled_scratchpad",
+            "accesses": 384,
+            "cycles": 8064,
+            "memory_transactions": 384,
+            "tiles": 24,
+            "assumption": "Software knows the address schedule and explicitly preloads each bounded tile; copies are charged and do not overlap compute."
+          }
+        }
+      },
+      {
+        "id": "test/stride/0",
+        "kind": "stride",
+        "trace_seed": 1002505,
+        "trace_preview": [
+          654,
+          661,
+          668,
+          675,
+          682,
+          689,
+          696,
+          703,
+          710,
+          717,
+          724,
+          731,
+          738,
+          745,
+          752,
+          759
+        ],
+        "results": {
+          "off": {
+            "policy": "off",
+            "accesses": 384,
+            "cycles": 8064,
+            "stall_cycles": 4608,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 384,
+            "prefetch_reads": 0,
+            "memory_transactions": 384,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": null,
+            "decisions": []
+          },
+          "next_line": {
+            "policy": "next_line",
+            "accesses": 384,
+            "cycles": 9596,
+            "stall_cycles": 6140,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 384,
+            "prefetch_reads": 384,
+            "memory_transactions": 768,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": 0.0,
+            "decisions": []
+          },
+          "stride": {
+            "policy": "stride",
+            "accesses": 384,
+            "cycles": 5016,
+            "stall_cycles": 1560,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 3,
+            "prefetch_reads": 382,
+            "memory_transactions": 385,
+            "useful_prefetches": 381,
+            "prefetch_accuracy": 0.9973821989528796,
+            "decisions": []
+          },
+          "rule": {
+            "policy": "rule",
+            "accesses": 384,
+            "cycles": 5256,
+            "stall_cycles": 1800,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 33,
+            "prefetch_reads": 352,
+            "memory_transactions": 385,
+            "useful_prefetches": 351,
+            "prefetch_accuracy": 0.9971590909090909,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              }
+            ]
+          },
+          "learned": {
+            "policy": "learned",
+            "accesses": 384,
+            "cycles": 5256,
+            "stall_cycles": 1800,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 33,
+            "prefetch_reads": 352,
+            "memory_transactions": 385,
+            "useful_prefetches": 351,
+            "prefetch_accuracy": 0.9971590909090909,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              }
+            ]
+          },
+          "scratchpad": {
+            "policy": "scheduled_scratchpad",
+            "accesses": 384,
+            "cycles": 8064,
+            "memory_transactions": 384,
+            "tiles": 24,
+            "assumption": "Software knows the address schedule and explicitly preloads each bounded tile; copies are charged and do not overlap compute."
+          }
+        }
+      },
+      {
+        "id": "test/reverse/0",
+        "kind": "reverse",
+        "trace_seed": 1002816,
+        "trace_preview": [
+          2076,
+          2075,
+          2074,
+          2073,
+          2072,
+          2071,
+          2070,
+          2069,
+          2068,
+          2067,
+          2066,
+          2065,
+          2064,
+          2063,
+          2062,
+          2061
+        ],
+        "results": {
+          "off": {
+            "policy": "off",
+            "accesses": 384,
+            "cycles": 8064,
+            "stall_cycles": 4608,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 384,
+            "prefetch_reads": 0,
+            "memory_transactions": 384,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": null,
+            "decisions": []
+          },
+          "next_line": {
+            "policy": "next_line",
+            "accesses": 384,
+            "cycles": 8068,
+            "stall_cycles": 4612,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 384,
+            "prefetch_reads": 1,
+            "memory_transactions": 385,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": 0.0,
+            "decisions": []
+          },
+          "stride": {
+            "policy": "stride",
+            "accesses": 384,
+            "cycles": 5016,
+            "stall_cycles": 1560,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 3,
+            "prefetch_reads": 382,
+            "memory_transactions": 385,
+            "useful_prefetches": 381,
+            "prefetch_accuracy": 0.9973821989528796,
+            "decisions": []
+          },
+          "rule": {
+            "policy": "rule",
+            "accesses": 384,
+            "cycles": 5256,
+            "stall_cycles": 1800,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 33,
+            "prefetch_reads": 352,
+            "memory_transactions": 385,
+            "useful_prefetches": 351,
+            "prefetch_accuracy": 0.9971590909090909,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "learned": {
+            "policy": "learned",
+            "accesses": 384,
+            "cycles": 5256,
+            "stall_cycles": 1800,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 33,
+            "prefetch_reads": 352,
+            "memory_transactions": 385,
+            "useful_prefetches": 351,
+            "prefetch_accuracy": 0.9971590909090909,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "scratchpad": {
+            "policy": "scheduled_scratchpad",
+            "accesses": 384,
+            "cycles": 8064,
+            "memory_transactions": 384,
+            "tiles": 24,
+            "assumption": "Software knows the address schedule and explicitly preloads each bounded tile; copies are charged and do not overlap compute."
+          }
+        }
+      },
+      {
+        "id": "test/hot/0",
+        "kind": "hot",
+        "trace_seed": 1003127,
+        "trace_preview": [
+          1057,
+          1055,
+          1055,
+          1058,
+          1051,
+          1056,
+          1052,
+          1057,
+          1055,
+          1054,
+          1057,
+          1058,
+          1057,
+          1058,
+          1058,
+          1057
+        ],
+        "results": {
+          "off": {
+            "policy": "off",
+            "accesses": 384,
+            "cycles": 3552,
+            "stall_cycles": 96,
+            "hits": 376,
+            "misses": 8,
+            "hit_rate": 0.9791666666666666,
+            "demand_reads": 8,
+            "prefetch_reads": 0,
+            "memory_transactions": 8,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": null,
+            "decisions": []
+          },
+          "next_line": {
+            "policy": "next_line",
+            "accesses": 384,
+            "cycles": 3512,
+            "stall_cycles": 56,
+            "hits": 380,
+            "misses": 4,
+            "hit_rate": 0.9895833333333334,
+            "demand_reads": 4,
+            "prefetch_reads": 5,
+            "memory_transactions": 9,
+            "useful_prefetches": 4,
+            "prefetch_accuracy": 0.8,
+            "decisions": []
+          },
+          "stride": {
+            "policy": "stride",
+            "accesses": 384,
+            "cycles": 3552,
+            "stall_cycles": 96,
+            "hits": 376,
+            "misses": 8,
+            "hit_rate": 0.9791666666666666,
+            "demand_reads": 8,
+            "prefetch_reads": 6,
+            "memory_transactions": 14,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": 0.0,
+            "decisions": []
+          },
+          "rule": {
+            "policy": "rule",
+            "accesses": 384,
+            "cycles": 3552,
+            "stall_cycles": 96,
+            "hits": 376,
+            "misses": 8,
+            "hit_rate": 0.9791666666666666,
+            "demand_reads": 8,
+            "prefetch_reads": 1,
+            "memory_transactions": 9,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": 0.0,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "next_line",
+                "features": [
+                  16,
+                  41,
+                  191,
+                  0
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "next_line",
+                "features": [
+                  49,
+                  49,
+                  191,
+                  1
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "next_line",
+                "features": [
+                  24,
+                  32,
+                  191,
+                  4
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "next_line",
+                "features": [
+                  16,
+                  65,
+                  191,
+                  3
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "next_line",
+                "features": [
+                  41,
+                  41,
+                  199,
+                  1
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "next_line",
+                "features": [
+                  41,
+                  41,
+                  191,
+                  1
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "next_line",
+                "features": [
+                  24,
+                  41,
+                  191,
+                  1
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "next_line",
+                "features": [
+                  8,
+                  65,
+                  191,
+                  2
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "next_line",
+                "features": [
+                  32,
+                  41,
+                  191,
+                  4
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "next_line",
+                "features": [
+                  24,
+                  49,
+                  191,
+                  0
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "next_line",
+                "features": [
+                  8,
+                  57,
+                  191,
+                  2
+                ]
+              }
+            ]
+          },
+          "learned": {
+            "policy": "learned",
+            "accesses": 384,
+            "cycles": 3552,
+            "stall_cycles": 96,
+            "hits": 376,
+            "misses": 8,
+            "hit_rate": 0.9791666666666666,
+            "demand_reads": 8,
+            "prefetch_reads": 1,
+            "memory_transactions": 9,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": 0.0,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "next_line",
+                "features": [
+                  16,
+                  41,
+                  191,
+                  0
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "next_line",
+                "features": [
+                  49,
+                  49,
+                  191,
+                  1
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "next_line",
+                "features": [
+                  24,
+                  32,
+                  191,
+                  4
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "next_line",
+                "features": [
+                  16,
+                  65,
+                  191,
+                  3
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "next_line",
+                "features": [
+                  41,
+                  41,
+                  199,
+                  1
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "next_line",
+                "features": [
+                  41,
+                  41,
+                  191,
+                  1
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "next_line",
+                "features": [
+                  24,
+                  41,
+                  191,
+                  1
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "next_line",
+                "features": [
+                  8,
+                  65,
+                  191,
+                  2
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "next_line",
+                "features": [
+                  32,
+                  41,
+                  191,
+                  4
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "next_line",
+                "features": [
+                  24,
+                  49,
+                  191,
+                  0
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "next_line",
+                "features": [
+                  8,
+                  57,
+                  191,
+                  2
+                ]
+              }
+            ]
+          },
+          "scratchpad": {
+            "policy": "scheduled_scratchpad",
+            "accesses": 384,
+            "cycles": 3552,
+            "memory_transactions": 8,
+            "tiles": 1,
+            "assumption": "Software knows the address schedule and explicitly preloads each bounded tile; copies are charged and do not overlap compute."
+          }
+        }
+      },
+      {
+        "id": "test/random/0",
+        "kind": "random",
+        "trace_seed": 1003438,
+        "trace_preview": [
+          902,
+          1304,
+          904,
+          1249,
+          1191,
+          1075,
+          1371,
+          935,
+          1353,
+          1316,
+          931,
+          1336,
+          1334,
+          1196,
+          1285,
+          1198
+        ],
+        "results": {
+          "off": {
+            "policy": "off",
+            "accesses": 384,
+            "cycles": 7944,
+            "stall_cycles": 4488,
+            "hits": 10,
+            "misses": 374,
+            "hit_rate": 0.026041666666666668,
+            "demand_reads": 374,
+            "prefetch_reads": 0,
+            "memory_transactions": 374,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": null,
+            "decisions": []
+          },
+          "next_line": {
+            "policy": "next_line",
+            "accesses": 384,
+            "cycles": 9388,
+            "stall_cycles": 5932,
+            "hits": 9,
+            "misses": 375,
+            "hit_rate": 0.0234375,
+            "demand_reads": 375,
+            "prefetch_reads": 368,
+            "memory_transactions": 743,
+            "useful_prefetches": 5,
+            "prefetch_accuracy": 0.01358695652173913,
+            "decisions": []
+          },
+          "stride": {
+            "policy": "stride",
+            "accesses": 384,
+            "cycles": 7944,
+            "stall_cycles": 4488,
+            "hits": 10,
+            "misses": 374,
+            "hit_rate": 0.026041666666666668,
+            "demand_reads": 374,
+            "prefetch_reads": 0,
+            "memory_transactions": 374,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": null,
+            "decisions": []
+          },
+          "rule": {
+            "policy": "rule",
+            "accesses": 384,
+            "cycles": 7944,
+            "stall_cycles": 4488,
+            "hits": 10,
+            "misses": 374,
+            "hit_rate": 0.026041666666666668,
+            "demand_reads": 374,
+            "prefetch_reads": 0,
+            "memory_transactions": 374,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": null,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  0,
+                  138
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  15,
+                  207
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "off",
+                "features": [
+                  0,
+                  8,
+                  7,
+                  131
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  7,
+                  255
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  7,
+                  169
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  7,
+                  255
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "off",
+                "features": [
+                  0,
+                  8,
+                  15,
+                  255
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  7,
+                  211
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "off",
+                "features": [
+                  0,
+                  8,
+                  7,
+                  167
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  0,
+                  39
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "off",
+                "features": [
+                  0,
+                  8,
+                  0,
+                  61
+                ]
+              }
+            ]
+          },
+          "learned": {
+            "policy": "learned",
+            "accesses": 384,
+            "cycles": 7944,
+            "stall_cycles": 4488,
+            "hits": 10,
+            "misses": 374,
+            "hit_rate": 0.026041666666666668,
+            "demand_reads": 374,
+            "prefetch_reads": 0,
+            "memory_transactions": 374,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": null,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  0,
+                  138
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  15,
+                  207
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "off",
+                "features": [
+                  0,
+                  8,
+                  7,
+                  131
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  7,
+                  255
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  7,
+                  169
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  7,
+                  255
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "off",
+                "features": [
+                  0,
+                  8,
+                  15,
+                  255
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  7,
+                  211
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "off",
+                "features": [
+                  0,
+                  8,
+                  7,
+                  167
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  0,
+                  39
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "off",
+                "features": [
+                  0,
+                  8,
+                  0,
+                  61
+                ]
+              }
+            ]
+          },
+          "scratchpad": {
+            "policy": "scheduled_scratchpad",
+            "accesses": 384,
+            "cycles": 7992,
+            "memory_transactions": 378,
+            "tiles": 24,
+            "assumption": "Software knows the address schedule and explicitly preloads each bounded tile; copies are charged and do not overlap compute."
+          }
+        }
+      },
+      {
+        "id": "test/phases/0",
+        "kind": "phases",
+        "trace_seed": 1003749,
+        "trace_preview": [
+          655,
+          656,
+          657,
+          658,
+          659,
+          660,
+          661,
+          662,
+          663,
+          664,
+          665,
+          666,
+          667,
+          668,
+          669,
+          670
+        ],
+        "results": {
+          "off": {
+            "policy": "off",
+            "accesses": 384,
+            "cycles": 6984,
+            "stall_cycles": 3528,
+            "hits": 90,
+            "misses": 294,
+            "hit_rate": 0.234375,
+            "demand_reads": 294,
+            "prefetch_reads": 0,
+            "memory_transactions": 294,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": null,
+            "decisions": []
+          },
+          "next_line": {
+            "policy": "next_line",
+            "accesses": 384,
+            "cycles": 6916,
+            "stall_cycles": 3460,
+            "hits": 94,
+            "misses": 290,
+            "hit_rate": 0.24479166666666666,
+            "demand_reads": 194,
+            "prefetch_reads": 288,
+            "memory_transactions": 482,
+            "useful_prefetches": 101,
+            "prefetch_accuracy": 0.3506944444444444,
+            "decisions": []
+          },
+          "stride": {
+            "policy": "stride",
+            "accesses": 384,
+            "cycles": 5504,
+            "stall_cycles": 2048,
+            "hits": 90,
+            "misses": 294,
+            "hit_rate": 0.234375,
+            "demand_reads": 108,
+            "prefetch_reads": 189,
+            "memory_transactions": 297,
+            "useful_prefetches": 186,
+            "prefetch_accuracy": 0.9841269841269841,
+            "decisions": []
+          },
+          "rule": {
+            "policy": "rule",
+            "accesses": 384,
+            "cycles": 6100,
+            "stall_cycles": 2644,
+            "hits": 91,
+            "misses": 293,
+            "hit_rate": 0.23697916666666666,
+            "demand_reads": 167,
+            "prefetch_reads": 162,
+            "memory_transactions": 329,
+            "useful_prefetches": 128,
+            "prefetch_accuracy": 0.7901234567901234,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  7,
+                  173
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "off",
+                "features": [
+                  0,
+                  8,
+                  0,
+                  72
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "off",
+                "features": [
+                  0,
+                  8,
+                  7,
+                  255
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "next_line",
+                "features": [
+                  24,
+                  49,
+                  199,
+                  2
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "next_line",
+                "features": [
+                  24,
+                  57,
+                  191,
+                  0
+                ]
+              }
+            ]
+          },
+          "learned": {
+            "policy": "learned",
+            "accesses": 384,
+            "cycles": 6100,
+            "stall_cycles": 2644,
+            "hits": 91,
+            "misses": 293,
+            "hit_rate": 0.23697916666666666,
+            "demand_reads": 167,
+            "prefetch_reads": 162,
+            "memory_transactions": 329,
+            "useful_prefetches": 128,
+            "prefetch_accuracy": 0.7901234567901234,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "next_line",
+                "features": [
+                  255,
+                  255,
+                  0,
+                  1
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "off",
+                "features": [
+                  0,
+                  16,
+                  7,
+                  173
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "off",
+                "features": [
+                  0,
+                  8,
+                  0,
+                  72
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "off",
+                "features": [
+                  0,
+                  8,
+                  7,
+                  255
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "stride",
+                "features": [
+                  0,
+                  255,
+                  0,
+                  7
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "next_line",
+                "features": [
+                  24,
+                  49,
+                  199,
+                  2
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "next_line",
+                "features": [
+                  24,
+                  57,
+                  191,
+                  0
+                ]
+              }
+            ]
+          },
+          "scratchpad": {
+            "policy": "scheduled_scratchpad",
+            "accesses": 384,
+            "cycles": 7008,
+            "memory_transactions": 296,
+            "tiles": 19,
+            "assumption": "Software knows the address schedule and explicitly preloads each bounded tile; copies are charged and do not overlap compute."
+          }
+        }
+      },
+      {
+        "id": "test/conflict/0",
+        "kind": "conflict",
+        "trace_seed": 1004060,
+        "trace_preview": [
+          318,
+          334,
+          350,
+          366,
+          318,
+          334,
+          350,
+          366,
+          318,
+          334,
+          350,
+          366,
+          318,
+          334,
+          350,
+          366
+        ],
+        "results": {
+          "off": {
+            "policy": "off",
+            "accesses": 384,
+            "cycles": 8064,
+            "stall_cycles": 4608,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 384,
+            "prefetch_reads": 0,
+            "memory_transactions": 384,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": null,
+            "decisions": []
+          },
+          "next_line": {
+            "policy": "next_line",
+            "accesses": 384,
+            "cycles": 9596,
+            "stall_cycles": 6140,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 384,
+            "prefetch_reads": 384,
+            "memory_transactions": 768,
+            "useful_prefetches": 0,
+            "prefetch_accuracy": 0.0,
+            "decisions": []
+          },
+          "stride": {
+            "policy": "stride",
+            "accesses": 384,
+            "cycles": 7676,
+            "stall_cycles": 4220,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 288,
+            "prefetch_reads": 192,
+            "memory_transactions": 480,
+            "useful_prefetches": 96,
+            "prefetch_accuracy": 0.5,
+            "decisions": []
+          },
+          "rule": {
+            "policy": "rule",
+            "accesses": 384,
+            "cycles": 7708,
+            "stall_cycles": 4252,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 296,
+            "prefetch_reads": 176,
+            "memory_transactions": 472,
+            "useful_prefetches": 88,
+            "prefetch_accuracy": 0.5,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              }
+            ]
+          },
+          "learned": {
+            "policy": "learned",
+            "accesses": 384,
+            "cycles": 7708,
+            "stall_cycles": 4252,
+            "hits": 0,
+            "misses": 384,
+            "hit_rate": 0.0,
+            "demand_reads": 296,
+            "prefetch_reads": 176,
+            "memory_transactions": 472,
+            "useful_prefetches": 88,
+            "prefetch_accuracy": 0.5,
+            "decisions": [
+              {
+                "start": 32,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 64,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 96,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 128,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 160,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 192,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 224,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 256,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 288,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 320,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              },
+              {
+                "start": 352,
+                "policy": "stride",
+                "features": [
+                  0,
+                  197,
+                  223,
+                  16
+                ]
+              }
+            ]
+          },
+          "scratchpad": {
+            "policy": "scheduled_scratchpad",
+            "accesses": 384,
+            "cycles": 3504,
+            "memory_transactions": 4,
+            "tiles": 1,
+            "assumption": "Software knows the address schedule and explicitly preloads each bounded tile; copies are charged and do not overlap compute."
+          }
+        }
+      }
+    ],
+    "summary": {
+      "off": {
+        "cycles": 50736,
+        "memory_transactions": 2212,
+        "speedup_vs_off": 1.0
+      },
+      "next_line": {
+        "cycles": 52076,
+        "memory_transactions": 3540,
+        "speedup_vs_off": 0.9742683769874798
+      },
+      "stride": {
+        "cycles": 39724,
+        "memory_transactions": 2320,
+        "speedup_vs_off": 1.2772127680998893
+      },
+      "rule": {
+        "cycles": 41072,
+        "memory_transactions": 2339,
+        "speedup_vs_off": 1.2352941176470589
+      },
+      "learned": {
+        "cycles": 41072,
+        "memory_transactions": 2339,
+        "speedup_vs_off": 1.2352941176470589
+      },
+      "scratchpad": {
+        "cycles": 46248,
+        "memory_transactions": 1838,
+        "speedup_vs_off": 1.0970420342501297
+      }
+    },
+    "limitations": [
+      "Synthetic line traces, not executed CPU programs or measured FPGA latency.",
+      "The adaptive policy uses only the preceding window and can lose at phase boundaries.",
+      "Scratchpad assumes a known software schedule; this is unsuitable for unknown pointer chains.",
+      "The RTL selector implements the deterministic seed-7 learned tree; Python can retrain other seeds.",
+      "No DDR controller, DMA engine, coherence, power measurement, or integrated accelerator cache is modeled."
+    ]
+  },
+  "security": {
+    "lab": "security",
+    "seed": 7,
+    "shared": {
+      "observer_accuracy": 1.0,
+      "chance_accuracy": 0.5,
+      "trials": 256,
+      "cycles": 20224,
+      "misses": 1536,
+      "memory_transactions": 1536,
+      "mean_trial_cycles": 79.0,
+      "observation_examples": [
+        [
+          13,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          13,
+          1
+        ]
+      ]
+    },
+    "isolated": {
+      "observer_accuracy": 0.48046875,
+      "chance_accuracy": 0.5,
+      "trials": 256,
+      "cycles": 10496,
+      "misses": 768,
+      "memory_transactions": 768,
+      "mean_trial_cycles": 41.0,
+      "observation_examples": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "model": {
+      "sets": 2,
+      "ways": 2,
+      "line_bytes": 4,
+      "hit_cycles": 1,
+      "miss_cycles": 13,
+      "isolation": "one way per domain; tags and replacement state isolated",
+      "threat_model": "Two scheduled requesters, no shared data; observer sees only its own probe latency. Binary secret selects one victim cache set."
+    },
+    "summary": {
+      "accuracy_reduction": 0.51953125,
+      "benign_accesses": 64,
+      "shared_benign_cycles": 88,
+      "isolated_benign_cycles": 832,
+      "isolation_slowdown_on_conflicting_benign_trace": 9.454545454545455
+    },
+    "limitations": [
+      "Controlled binary set-selection example, not cryptographic key extraction.",
+      "Fixed scheduling and constant memory latency exclude arbitration/bandwidth channels.",
+      "Chance-level observations in this experiment do not prove general security.",
+      "Trial totals use each mode's appropriate priming sequence; use the separate equal-length benign trace to compare performance.",
+      "No ML monitor is claimed: this small deterministic experiment does not justify training one."
+    ]
+  }
+}

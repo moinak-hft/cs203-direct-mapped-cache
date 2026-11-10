@@ -1,0 +1,2 @@
+# Only retraining requires NumPy. Reference/demo/labs use Python stdlib.
+numpy==2.4.4

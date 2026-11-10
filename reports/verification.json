@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "tests_run": 49,
+  "failures": 0,
+  "errors": 0,
+  "skipped": [],
+  "duration_seconds": 350.99,
+  "python": "3.14.4",
+  "tools": {
+    "gcc": "gcc.EXE (Rev7, Built by MSYS2 project) 15.1.0",
+    "iverilog": "Icarus Verilog version 12.0 (stable) ()",
+    "vvp": "Icarus Verilog runtime version 12.0 (stable) ()",
+    "riscv64-unknown-elf-gcc": "riscv64-unknown-elf-gcc (14.2.0+19) 14.2.0",
+    "riscv64-unknown-elf-objcopy": "GNU objcopy (2.45.50.20251209-1ubuntu1+7build1) 2.45.50.20251209",
+    "yosys": "Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)"
+  },
+  "scope": "Simulation and software verification. No physical FPGA timing, power, or area claim.",
+  "synthesis": "Accelerator generic RTL statistics and lab/UART structural checks passed."
+}
