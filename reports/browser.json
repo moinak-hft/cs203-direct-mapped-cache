@@ -1,0 +1,88 @@
+{
+  "reference": {
+    "prediction": "0",
+    "metrics": "0.5 ms\nHost execution time",
+    "status": "RESULT RETURNED"
+  },
+  "c": {
+    "prediction": "0",
+    "metrics": "14.9 ms\nHost execution time",
+    "status": "CHECKED RESULT"
+  },
+  "rtl": {
+    "prediction": "0",
+    "metrics": "630\nRTL kernel cycles\n5,678\nRTL transaction cycles\n2636.2 ms\nHost execution time",
+    "status": "CHECKED RESULT"
+  },
+  "memory": {
+    "verdict": "The learned selector ties the fixed rule on modeled cycles in this selection. Learning does not guarantee an improvement over a good heuristic.",
+    "table": "Prefetch off\t50,736\t2,212\t1.000×\nNext-line\t52,076\t3,540\t0.974×\nStride\t39,724\t2,320\t1.277×\nFixed rule\t41,072\t2,339\t1.235×\nLearned selector\nCART decision tree\n\t41,072\t2,339\t1.235×\nScheduled scratchpad\t46,248\t1,838\t1.097×"
+  },
+  "security": "SHARED REPLACEMENT STATE\n\nShared cache\n100.0%\nobserver accuracy\n0%\nchance 50%\n100%\n\nActual probe pairs (cycles): [13, 1] · [13, 1] · [13, 1]. Each pair is the observer’s own latency for the two candidate sets.\n\nThe victim’s selected set can change the observer’s cache residency in this controlled schedule.\n\nONE WAY PER DOMAIN\n\nIsolated cache\n48.0%\nobserver accuracy\n0%\nchance 50%\n100%\n\nActual probe pairs (cycles): [1, 1] · [1, 1] · [1, 1]. Each pair is the observer’s own latency for the two candidate sets.\n\nThe reported rate is for this experiment. A result near chance does not establish general security.",
+  "overflow": [
+    {
+      "width": 1366,
+      "tab": "inference",
+      "viewport": 1366,
+      "document": 1366,
+      "body": 1366
+    },
+    {
+      "width": 1366,
+      "tab": "memory",
+      "viewport": 1366,
+      "document": 1366,
+      "body": 1366
+    },
+    {
+      "width": 1366,
+      "tab": "security",
+      "viewport": 1366,
+      "document": 1366,
+      "body": 1366
+    },
+    {
+      "width": 390,
+      "tab": "inference",
+      "viewport": 390,
+      "document": 390,
+      "body": 390
+    },
+    {
+      "width": 390,
+      "tab": "memory",
+      "viewport": 390,
+      "document": 390,
+      "body": 390
+    },
+    {
+      "width": 390,
+      "tab": "security",
+      "viewport": 390,
+      "document": 390,
+      "body": 390
+    },
+    {
+      "width": 320,
+      "tab": "inference",
+      "viewport": 320,
+      "document": 320,
+      "body": 320
+    },
+    {
+      "width": 320,
+      "tab": "memory",
+      "viewport": 320,
+      "document": 320,
+      "body": 320
+    },
+    {
+      "width": 320,
+      "tab": "security",
+      "viewport": 320,
+      "document": 320,
+      "body": 320
+    }
+  ],
+  "errors": []
+}

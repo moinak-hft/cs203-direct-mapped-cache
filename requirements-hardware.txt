@@ -1,0 +1,2 @@
+# Optional physical UART host client.
+pyserial==3.5

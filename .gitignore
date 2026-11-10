@@ -1,0 +1,15 @@
+/build/
+/work/
+__pycache__/
+*.py[cod]
+.venv/
+*.vcd
+*.fst
+*.elf
+*.bin
+*.vvp
+*.exe
+*.zip
+.DS_Store
+.idea/
+.vscode/

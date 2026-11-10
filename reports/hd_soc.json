@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "batch_size": 2,
+  "second_input": "synthetic horizontal mirror",
+  "predictions": [
+    7,
+    5
+  ],
+  "software_cycles": 3061160,
+  "accelerated_cycles": 1204060,
+  "kernel_cycles": 13158,
+  "macs": 101632,
+  "tiles": 211,
+  "logits": [
+    [
+      -1360,
+      -4417,
+      565,
+      -664,
+      -6772,
+      -1186,
+      -8946,
+      5060,
+      -1764,
+      -901
+    ],
+    [
+      -1250,
+      -4599,
+      301,
+      -4505,
+      -7240,
+      2681,
+      -6215,
+      2012,
+      1145,
+      -3403
+    ]
+  ],
+  "backend": "PicoRV32 RV32IM + K-blocked batched accelerator, Icarus RTL simulation",
+  "cpu_fast_mul": true,
+  "compiler_optimization": "-O2",
+  "speedup_including_transfers": 2.5423649984220056,
+  "scope": "Two normalized28x28 inputs; CPU copies, block accumulation and activation included. Image segmentation and host transport excluded."
+}

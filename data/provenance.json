@@ -1,0 +1,30 @@
+{
+  "dataset": "Optical Recognition of Handwritten Digits",
+  "authors": [
+    "E. Alpaydin",
+    "C. Kaynak"
+  ],
+  "year": 1998,
+  "doi": "https://doi.org/10.24432/C50P49",
+  "source_url": "https://archive.ics.uci.edu/static/public/80/optical+recognition+of+handwritten+digits.zip",
+  "source_zip_sha256": "0d7b054fea010270e9b3f06411c654c5e59547732ad626381980baffe0a23fb0",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "license_verified_at": "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits",
+  "split": "Original UCI writer-disjoint split: 30 training writers and 13 different test writers. No new train/test shuffle.",
+  "transformations": "Original optdigits.tra/.tes text recompressed with gzip mtime=0; values, rows and order unchanged.",
+  "bundled_files": {
+    "digits_train.csv.gz": {
+      "sha256": "f65e3540fdf3c5903b410a9dc221b5506ae38e9b076e206baa37f5081c0bc96f",
+      "uncompressed_sha256": "e1b683cc211604fe8fd8c4417e6a69f31380e0c61d4af22e93cc21e9257ffedd",
+      "samples": 3823,
+      "source_member": "optdigits.tra"
+    },
+    "digits_test.csv.gz": {
+      "sha256": "5797b9e01448a72246e8984775a13fd694dd887d14592a9fa47fbeb8b912a085",
+      "uncompressed_sha256": "6ebb3d2fee246a4e99363262ddf8a00a3c41bee6014c373ed9d9216ba7f651b8",
+      "samples": 1797,
+      "source_member": "optdigits.tes"
+    }
+  }
+}

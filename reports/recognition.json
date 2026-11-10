@@ -1,0 +1,91 @@
+{
+  "pairs": 100,
+  "correct_pairs": 94,
+  "pair_accuracy": 0.94,
+  "digit_accuracy": 0.97,
+  "two_crops_detected": 100,
+  "selection": "Consecutive official test indices0..199; no success filtering.",
+  "scope": "Synthetic side-by-side composition of held-out MNIST digits, including segmentation/normalization. Not a real handwritten two-digit dataset.",
+  "examples": [
+    {
+      "test_indices": [
+        0,
+        1
+      ],
+      "expected": "72",
+      "prediction": "72"
+    },
+    {
+      "test_indices": [
+        2,
+        3
+      ],
+      "expected": "10",
+      "prediction": "60"
+    },
+    {
+      "test_indices": [
+        4,
+        5
+      ],
+      "expected": "41",
+      "prediction": "41"
+    },
+    {
+      "test_indices": [
+        6,
+        7
+      ],
+      "expected": "49",
+      "prediction": "49"
+    },
+    {
+      "test_indices": [
+        8,
+        9
+      ],
+      "expected": "59",
+      "prediction": "59"
+    },
+    {
+      "test_indices": [
+        10,
+        11
+      ],
+      "expected": "06",
+      "prediction": "06"
+    },
+    {
+      "test_indices": [
+        12,
+        13
+      ],
+      "expected": "90",
+      "prediction": "90"
+    },
+    {
+      "test_indices": [
+        14,
+        15
+      ],
+      "expected": "15",
+      "prediction": "15"
+    },
+    {
+      "test_indices": [
+        16,
+        17
+      ],
+      "expected": "97",
+      "prediction": "97"
+    },
+    {
+      "test_indices": [
+        18,
+        19
+      ],
+      "expected": "34",
+      "prediction": "34"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+name: Verify RTL and software
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-training.txt
+      - name: Install hardware tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y iverilog gcc gcc-riscv64-unknown-elf binutils-riscv64-unknown-elf yosys
+      - name: Install training dependency
+        run: python -m pip install -r requirements-training.txt
+      - name: Run software, RTL, firmware and synthesis checks
+        run: python tools/check.py --require-tools --synth
